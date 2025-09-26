@@ -176,7 +176,7 @@ const MembershipStats = ({
 
       {/* Key Metrics */}
       <Grid container spacing={3} sx={{ mb: 4 }}>
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <StatCard
             title='Total Revenue'
             value={formatCurrency(stats.totalRevenue)}
@@ -187,7 +187,7 @@ const MembershipStats = ({
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <StatCard
             title='Active Members'
             value={stats.activeSubscriptions}
@@ -198,7 +198,7 @@ const MembershipStats = ({
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <StatCard
             title='Monthly Revenue'
             value={formatCurrency(stats.monthlyRevenue)}
@@ -209,7 +209,7 @@ const MembershipStats = ({
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} md={3}>
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <StatCard
             title='Average Revenue'
             value={formatCurrency(stats.averageRevenue)}
@@ -234,7 +234,7 @@ const MembershipStats = ({
           <CardContent sx={{ pt: 0 }}>
             <Grid container spacing={2}>
               {stats.overduePayments > 0 && (
-                <Grid item xs={12} sm={4}>
+                <Grid size={{ xs: 12, sm: 4 }}>
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography variant='h6' color='error'>
                       {stats.overduePayments}
@@ -247,7 +247,7 @@ const MembershipStats = ({
               )}
 
               {stats.pendingPayments > 0 && (
-                <Grid item xs={12} sm={4}>
+                <Grid size={{ xs: 12, sm: 4 }}>
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography variant='h6' color='warning.main'>
                       {stats.pendingPayments}
@@ -260,7 +260,7 @@ const MembershipStats = ({
               )}
 
               {stats.expiredSubscriptions > 0 && (
-                <Grid item xs={12} sm={4}>
+                <Grid size={{ xs: 12, sm: 4 }}>
                   <Box sx={{ textAlign: 'center' }}>
                     <Typography variant='h6' color='error'>
                       {stats.expiredSubscriptions}
@@ -278,7 +278,7 @@ const MembershipStats = ({
 
       <Grid container spacing={3}>
         {/* Package Performance */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardHeader
               title='Package Performance'
@@ -350,7 +350,7 @@ const MembershipStats = ({
         </Grid>
 
         {/* Subscription Status Breakdown */}
-        <Grid item xs={12} md={6}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Card>
             <CardHeader
               title='Subscription Status'
@@ -358,7 +358,7 @@ const MembershipStats = ({
             />
             <CardContent sx={{ pt: 0 }}>
               <Grid container spacing={2}>
-                <Grid item xs={6}>
+                <Grid size={{ xs: 6 }}>
                   <Box sx={{ textAlign: 'center', p: 2 }}>
                     <Typography variant='h4' color='success.main'>
                       {stats.activeSubscriptions}
@@ -369,7 +369,7 @@ const MembershipStats = ({
                   </Box>
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid size={{ xs: 6 }}>
                   <Box sx={{ textAlign: 'center', p: 2 }}>
                     <Typography variant='h4' color='error.main'>
                       {stats.expiredSubscriptions}
@@ -380,11 +380,11 @@ const MembershipStats = ({
                   </Box>
                 </Grid>
 
-                <Grid item xs={12}>
+                <Grid size={{ xs: 12 }}>
                   <Divider sx={{ my: 1 }} />
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid size={{ xs: 6 }}>
                   <Box sx={{ textAlign: 'center', p: 1 }}>
                     <Typography variant='h6' color='primary.main'>
                       {stats.totalPackages}
@@ -395,7 +395,7 @@ const MembershipStats = ({
                   </Box>
                 </Grid>
 
-                <Grid item xs={6}>
+                <Grid size={{ xs: 6 }}>
                   <Box sx={{ textAlign: 'center', p: 1 }}>
                     <Typography variant='h6' color='success.main'>
                       {stats.activePackages}

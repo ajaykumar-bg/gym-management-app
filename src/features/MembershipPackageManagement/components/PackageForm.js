@@ -235,13 +235,13 @@ const PackageForm = ({
 
         <Grid container spacing={3}>
           {/* Basic Information */}
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Typography variant='h6' gutterBottom>
               Basic Information
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <TextField
               fullWidth
               label='Package Name'
@@ -253,7 +253,7 @@ const PackageForm = ({
             />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <FormControl fullWidth error={!!errors.status}>
               <InputLabel>Status</InputLabel>
               <Select
@@ -270,7 +270,7 @@ const PackageForm = ({
             </FormControl>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <TextField
               fullWidth
               label='Description'
@@ -285,13 +285,13 @@ const PackageForm = ({
           </Grid>
 
           {/* Membership Details */}
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Typography variant='h6' gutterBottom sx={{ mt: 2 }}>
               Membership Details
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <FormControl fullWidth error={!!errors.type} required>
               <InputLabel>Membership Type</InputLabel>
               <Select
@@ -313,7 +313,7 @@ const PackageForm = ({
             </FormControl>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <FormControl fullWidth error={!!errors.duration} required>
               <InputLabel>Duration</InputLabel>
               <Select
@@ -336,13 +336,13 @@ const PackageForm = ({
           </Grid>
 
           {/* Pricing */}
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Typography variant='h6' gutterBottom sx={{ mt: 2 }}>
               Pricing & Limits
             </Typography>
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <TextField
               fullWidth
               label='Price'
@@ -362,7 +362,7 @@ const PackageForm = ({
             />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <TextField
               fullWidth
               label='Discount Percentage'
@@ -376,7 +376,7 @@ const PackageForm = ({
             />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <TextField
               fullWidth
               label='Max Members (Optional)'
@@ -388,7 +388,7 @@ const PackageForm = ({
             />
           </Grid>
 
-          <Grid item xs={12} md={6}>
+          <Grid size={{ xs: 12, md: 6 }}>
             <FormControlLabel
               control={
                 <Switch
@@ -401,13 +401,13 @@ const PackageForm = ({
           </Grid>
 
           {/* Features */}
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Typography variant='h6' gutterBottom sx={{ mt: 2 }}>
               Features
             </Typography>
           </Grid>
 
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <Box sx={{ display: 'flex', gap: 1, mb: 2 }}>
               <TextField
                 fullWidth

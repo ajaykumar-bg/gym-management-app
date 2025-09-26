@@ -247,7 +247,7 @@ const MembershipPackageManagement = ({
           <CardContent>
             <Grid container spacing={2} alignItems='center'>
               {/* Search */}
-              <Grid item xs={12} md={4}>
+              <Grid size={{ xs: 12, md: 4 }}>
                 <TextField
                   fullWidth
                   label='Search'
@@ -271,7 +271,7 @@ const MembershipPackageManagement = ({
               {/* Package-specific filters */}
               {currentTab === 0 && (
                 <>
-                  <Grid item xs={12} sm={6} md={2}>
+                  <Grid size={{ xs: 12, sm: 6, md: 2 }}>
                     <FormControl fullWidth>
                       <InputLabel>Type</InputLabel>
                       <Select
@@ -291,7 +291,7 @@ const MembershipPackageManagement = ({
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={2}>
+                  <Grid size={{ xs: 12, sm: 6, md: 2 }}>
                     <FormControl fullWidth>
                       <InputLabel>Status</InputLabel>
                       <Select
@@ -309,7 +309,7 @@ const MembershipPackageManagement = ({
                     </FormControl>
                   </Grid>
 
-                  <Grid item xs={12} sm={6} md={2}>
+                  <Grid size={{ xs: 12, sm: 6, md: 2 }}>
                     <FormControl fullWidth>
                       <InputLabel>Sort By</InputLabel>
                       <Select
@@ -329,7 +329,7 @@ const MembershipPackageManagement = ({
 
               {/* Subscription-specific filters */}
               {currentTab === 1 && (
-                <Grid item xs={12} sm={6} md={3}>
+                <Grid size={{ xs: 12, sm: 6, md: 3 }}>
                   <FormControl fullWidth>
                     <InputLabel>Status</InputLabel>
                     <Select
@@ -352,7 +352,7 @@ const MembershipPackageManagement = ({
                 </Grid>
               )}
 
-              <Grid item xs={12} md={2}>
+              <Grid size={{ xs: 12, md: 2 }}>
                 <Button
                   fullWidth
                   variant='outlined'
@@ -411,7 +411,7 @@ const MembershipPackageManagement = ({
           <Grid container spacing={3}>
             {filteredPackages.length > 0 ? (
               filteredPackages.map((pkg) => (
-                <Grid item xs={12} sm={6} lg={4} key={pkg.id}>
+                <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={pkg.id}>
                   <PackageCard
                     package={pkg}
                     onEdit={
@@ -428,7 +428,7 @@ const MembershipPackageManagement = ({
                 </Grid>
               ))
             ) : (
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <Card>
                   <CardContent sx={{ textAlign: 'center', py: 6 }}>
                     <Typography
@@ -470,7 +470,7 @@ const MembershipPackageManagement = ({
           <Grid container spacing={3}>
             {filteredSubscriptions.length > 0 ? (
               filteredSubscriptions.map((subscription) => (
-                <Grid item xs={12} sm={6} lg={4} key={subscription.id}>
+                <Grid size={{ xs: 12, sm: 6, lg: 4 }} key={subscription.id}>
                   <SubscriptionCard
                     subscription={subscription}
                     memberName={getMemberName(subscription.memberId)}
@@ -489,7 +489,7 @@ const MembershipPackageManagement = ({
                 </Grid>
               ))
             ) : (
-              <Grid item xs={12}>
+              <Grid size={{ xs: 12 }}>
                 <Card>
                   <CardContent sx={{ textAlign: 'center', py: 6 }}>
                     <Typography

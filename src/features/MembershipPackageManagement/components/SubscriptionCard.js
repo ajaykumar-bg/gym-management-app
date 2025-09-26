@@ -310,7 +310,7 @@ const SubscriptionCard = ({
 
         <DialogContent>
           <Grid container spacing={2} sx={{ mt: 1 }}>
-            <Grid item xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography variant='subtitle1' gutterBottom>
                 {memberName || `Member ${subscription.memberId}`}
               </Typography>
@@ -319,7 +319,7 @@ const SubscriptionCard = ({
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <FormControl fullWidth>
                 <InputLabel>Subscription Status</InputLabel>
                 <Select
@@ -336,7 +336,7 @@ const SubscriptionCard = ({
               </FormControl>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <FormControl fullWidth>
                 <InputLabel>Payment Status</InputLabel>
                 <Select
