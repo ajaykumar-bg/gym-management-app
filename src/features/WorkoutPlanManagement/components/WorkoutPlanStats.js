@@ -6,7 +6,7 @@ import {
   TrendingUp,
   LocalFireDepartment,
 } from '@mui/icons-material';
-import { getWorkoutPlanStats } from '../utils';
+import { getWorkoutPlanStats } from '../workoutPlan.utils';
 
 const WorkoutPlanStats = ({ plans }) => {
   const stats = getWorkoutPlanStats(plans);

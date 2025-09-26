@@ -10,7 +10,11 @@ import {
   InputAdornment,
 } from '@mui/material';
 import { Search, Clear } from '@mui/icons-material';
-import { WORKOUT_TYPES, DIFFICULTY_LEVELS, PLAN_STATUS } from '../constants';
+import {
+  WORKOUT_TYPES,
+  DIFFICULTY_LEVELS,
+  PLAN_STATUS,
+} from '../workoutPlan.constants';
 
 const WorkoutPlanFilters = ({
   searchTerm,

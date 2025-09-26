@@ -36,8 +36,8 @@ import {
   getMembershipTypeColor,
   formatMemberForTable,
   filterMembers,
-} from '../utils';
-import { MEMBER_STATUS, MEMBERSHIP_TYPES } from '../constants';
+} from '../member.utils';
+import { MEMBER_STATUS, MEMBERSHIP_TYPES } from '../member.constants';
 
 const MemberList = ({
   members,

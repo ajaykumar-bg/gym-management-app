@@ -1,6 +1,6 @@
 // Member Management utility functions
 
-import { MEMBER_STATUS, MEMBERSHIP_TYPES } from './constants';
+import { MEMBER_STATUS, MEMBERSHIP_TYPES } from './member.constants';
 
 /**
  * Get member status color for UI display

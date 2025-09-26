@@ -1,4 +1,4 @@
 export { default } from './TrainerManagement';
-export * from './constants';
-export * from './utils';
+export * from './trainer.constants';
+export * from './trainer.utils';
 export * from './components';

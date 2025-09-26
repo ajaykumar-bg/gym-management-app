@@ -4,7 +4,7 @@ import { useUser } from '../../context/UserContext';
 import TrainerList from './components/TrainerList';
 import TrainerProfile from './components/TrainerProfile';
 import TrainerForm from './components/TrainerForm';
-import { MOCK_TRAINERS } from './constants';
+import { MOCK_TRAINERS } from './trainer.constants';
 
 const TrainerManagement = () => {
   const { user, permissions } = useUser();

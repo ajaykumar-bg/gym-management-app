@@ -39,8 +39,8 @@ import {
   EQUIPMENT_CATEGORIES,
   EQUIPMENT_STATUS,
   MOCK_EQUIPMENT,
-} from './constants';
-import { getStatusColor } from './utils';
+} from './equipment.constants';
+import { getStatusColor } from './equipment.utils';
 
 const EquipmentManagement = () => {
   const [equipment, setEquipment] = useState(MOCK_EQUIPMENT);

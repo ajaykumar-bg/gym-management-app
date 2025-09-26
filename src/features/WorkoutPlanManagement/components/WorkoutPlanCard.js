@@ -17,12 +17,16 @@ import {
   LocalFireDepartment,
   Assignment,
 } from '@mui/icons-material';
-import { WORKOUT_TYPES, DIFFICULTY_LEVELS, PLAN_STATUS } from '../constants';
+import {
+  WORKOUT_TYPES,
+  DIFFICULTY_LEVELS,
+  PLAN_STATUS,
+} from '../workoutPlan.constants';
 import {
   getDifficultyColor,
   getStatusColor,
   getEstimatedCalories,
-} from '../utils';
+} from '../workoutPlan.utils';
 
 const WorkoutPlanCard = ({
   plan,

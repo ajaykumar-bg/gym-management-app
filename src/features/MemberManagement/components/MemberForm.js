@@ -16,7 +16,7 @@ import {
   FormControlLabel,
   Switch,
 } from '@mui/material';
-import { MEMBER_STATUS, MEMBERSHIP_TYPES } from '../constants';
+import { MEMBER_STATUS, MEMBERSHIP_TYPES } from '../member.constants';
 
 const MemberForm = ({ open, onClose, member = null, onSave }) => {
   const [formData, setFormData] = useState({

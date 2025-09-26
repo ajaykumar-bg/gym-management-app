@@ -45,7 +45,7 @@ import {
   formatWorkSchedule,
   getCertificationStatusColor,
   generatePerformanceSummary,
-} from '../utils';
+} from '../trainer.utils';
 
 const TrainerProfile = ({ trainer, onEdit, onClose }) => {
   const [activeTab, setActiveTab] = useState(0);

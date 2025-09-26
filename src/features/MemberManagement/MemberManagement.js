@@ -4,7 +4,7 @@ import { useUser } from '../../context/UserContext';
 import MemberList from './components/MemberList';
 import MemberProfile from './components/MemberProfile';
 import MemberForm from './components/MemberForm';
-import { MOCK_MEMBERS } from './constants';
+import { MOCK_MEMBERS } from './member.constants';
 
 const MemberManagement = () => {
   const { user, permissions } = useUser();

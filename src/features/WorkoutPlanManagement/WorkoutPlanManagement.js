@@ -18,14 +18,14 @@ import {
   WorkoutPlanFilters,
   WorkoutPlanStats,
 } from './components';
-import { MOCK_WORKOUT_PLANS } from './constants';
+import { MOCK_WORKOUT_PLANS } from './workoutPlan.constants';
 import {
   filterPlansByType,
   filterPlansByDifficulty,
   filterPlansByStatus,
   searchWorkoutPlans,
   sortWorkoutPlans,
-} from './utils';
+} from './workoutPlan.utils';
 
 const WorkoutPlanManagement = () => {
   const theme = useTheme();

@@ -27,7 +27,7 @@ import {
   calculateBMI,
   getBMICategory,
   getLatestMeasurements,
-} from '../utils';
+} from '../member.utils';
 
 const MemberProfile = ({ member, onEdit, onClose, isOwnProfile = false }) => {
   const [activeTab, setActiveTab] = useState(0);

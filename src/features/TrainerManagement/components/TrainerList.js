@@ -40,12 +40,12 @@ import {
   getCapacityColor,
   filterTrainers,
   sortTrainers,
-} from '../utils';
+} from '../trainer.utils';
 import {
   TRAINER_SPECIALIZATIONS,
   TRAINER_STATUS,
   EXPERIENCE_LEVELS,
-} from '../constants';
+} from '../trainer.constants';
 
 const TrainerList = ({
   trainers,

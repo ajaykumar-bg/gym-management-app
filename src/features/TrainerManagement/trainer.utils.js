@@ -1,6 +1,6 @@
 // Trainer Management Utilities
 
-import { TRAINER_SPECIALIZATIONS } from './constants';
+import { TRAINER_SPECIALIZATIONS } from './trainer.constants';
 
 /**
  * Calculate trainer's age from date of birth

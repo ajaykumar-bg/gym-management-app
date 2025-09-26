@@ -15,8 +15,12 @@ import {
   Typography,
   FormHelperText,
 } from '@mui/material';
-import { WORKOUT_TYPES, DIFFICULTY_LEVELS, PLAN_STATUS } from '../constants';
-import { validateWorkoutPlan, generatePlanId } from '../utils';
+import {
+  WORKOUT_TYPES,
+  DIFFICULTY_LEVELS,
+  PLAN_STATUS,
+} from '../workoutPlan.constants';
+import { validateWorkoutPlan, generatePlanId } from '../workoutPlan.utils';
 
 const WorkoutPlanForm = ({
   open,

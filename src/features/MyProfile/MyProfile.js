@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import { useUser } from '../../context/UserContext';
 import MemberProfile from '../MemberManagement/components/MemberProfile';
-import { MOCK_MEMBERS } from '../MemberManagement/constants';
+import { MOCK_MEMBERS } from '../MemberManagement/member.constants';
 
 const MyProfile = () => {
   const { user } = useUser();

@@ -23,8 +23,8 @@ import {
   TRAINER_STATUS,
   EXPERIENCE_LEVELS,
   AVAILABILITY_SLOTS,
-} from '../constants';
-import { validateTrainerData } from '../utils';
+} from '../trainer.constants';
+import { validateTrainerData } from '../trainer.utils';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
