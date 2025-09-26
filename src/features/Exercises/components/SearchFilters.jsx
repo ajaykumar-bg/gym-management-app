@@ -1,3 +1,14 @@
+/**
+ * SearchFilters Component
+ * Provides comprehensive filtering interface for exercises with active filter display
+ * 
+ * Features:
+ * - Multi-criteria filtering (search, muscle, equipment, category, force, difficulty)
+ * - Active filter chips with individual removal
+ * - Filter count indicator
+ * - Responsive grid layout
+ */
+
 import React, { useMemo } from 'react';
 import {
 	Grid,
@@ -21,61 +32,55 @@ import {
 	forceTypes,
 	muscleTypes,
 } from '../constants/exercises.constant';
+import { countActiveFilters, getActiveFilterDetails } from '../utils/filterUtils';
+import { SEARCH_CONFIG, FILTER_CONFIG } from '../constants/ui.constants';
 
+/**
+ * SearchFilters Component
+ * @param {Object} props - Component props
+ * @param {Object} props.filters - Current filter state
+ * @param {Function} props.handleSearch - Search query change handler
+ * @param {Function} props.handleFilterChange - Filter dropdown change handler
+ * @param {Function} props.clearFilters - Clear all filters handler
+ * @param {Function} props.onClearSpecificFilter - Clear specific filter handler (optional)
+ * @returns {JSX.Element} SearchFilters component
+ */
 function SearchFilters(props) {
 	const {
 		filters,
 		handleSearch,
 		handleFilterChange,
 		clearFilters,
+		onClearSpecificFilter,
 	} = props;
 
-	// Count active filters
+	// Count active filters using utility function
 	const activeFiltersCount = useMemo(() => {
-		let count = 0;
-		if (filters.searchQuery) count++;
-		if (filters.muscle !== 'All') count++;
-		if (filters.equipment !== 'All') count++;
-		if (filters.category !== 'All') count++;
-		if (filters.force !== 'All') count++;
-		if (filters.difficulty !== 'All') count++;
-		return count;
+		return countActiveFilters(filters);
 	}, [filters]);
 
-	// Get active filter labels
-	const getActiveFilters = useMemo(() => {
-		const active = [];
-		if (filters.searchQuery) active.push({ key: 'search', label: `"${filters.searchQuery}"` });
-		if (filters.muscle !== 'All') {
-			const muscle = muscleTypes.find(m => m.value === filters.muscle);
-			active.push({ key: 'muscle', label: muscle?.label || filters.muscle });
-		}
-		if (filters.equipment !== 'All') {
-			const equipment = equipmentTypes.find(e => e.value === filters.equipment);
-			active.push({ key: 'equipment', label: equipment?.label || filters.equipment });
-		}
-		if (filters.category !== 'All') {
-			const category = categoryTypes.find(c => c.value === filters.category);
-			active.push({ key: 'category', label: category?.label || filters.category });
-		}
-		if (filters.force !== 'All') {
-			const force = forceTypes.find(f => f.value === filters.force);
-			active.push({ key: 'force', label: force?.label || filters.force });
-		}
-		if (filters.difficulty !== 'All') {
-			const difficulty = difficultyLevels.find(d => d.value === filters.difficulty);
-			active.push({ key: 'difficulty', label: difficulty?.label || filters.difficulty });
-		}
-		return active;
+	// Get active filter details using utility function
+	const activeFilterDetails = useMemo(() => {
+		return getActiveFilterDetails(filters);
 	}, [filters]);
 
+	/**
+	 * Handles clearing a specific filter
+	 */
 	const handleClearSpecificFilter = (filterKey) => {
+		if (onClearSpecificFilter && typeof onClearSpecificFilter === 'function') {
+			onClearSpecificFilter(filterKey);
+			return;
+		}
+
+		// Fallback implementation
 		const event = {
 			target: {
 				name: filterKey,
-				value: filterKey === 'searchQuery' ? '' : 'All'
+				value: filterKey === 'searchQuery' ? '' : FILTER_CONFIG.DEFAULT_VALUE
 			}
 		};
+		
 		if (filterKey === 'searchQuery') {
 			handleSearch(event);
 		} else {
@@ -83,10 +88,34 @@ function SearchFilters(props) {
 		}
 	};
 
+	/**
+	 * Renders filter dropdown component
+	 */
+	const FilterDropdown = ({ name, label, options, value }) => (
+		<FormControl fullWidth>
+			<InputLabel id={`${name}-label`}>{label}</InputLabel>
+			<Select
+				labelId={`${name}-label`}
+				id={`${name}-select`}
+				name={name}
+				value={value}
+				label={label}
+				onChange={handleFilterChange}
+			>
+				{options.map((item) => (
+					<MenuItem key={item.value} value={item.value}>
+						{item.label}
+					</MenuItem>
+				))}
+			</Select>
+		</FormControl>
+	);
+
 	return (
 		<Paper elevation={3} sx={{ p: 3, mb: 4 }}>
+			{/* Header Section */}
 			<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-				<Typography variant='h5' component='h2'>
+				<Typography variant='h5' component='h2' sx={{ fontWeight: 600 }}>
 					Filters
 				</Typography>
 				{activeFiltersCount > 0 && (
@@ -94,33 +123,41 @@ function SearchFilters(props) {
 						label={`${activeFiltersCount} active filter${activeFiltersCount > 1 ? 's' : ''}`} 
 						color="primary" 
 						size="small"
+						variant="filled"
 					/>
 				)}
 			</Box>
 
 			{/* Active Filters Display */}
 			{activeFiltersCount > 0 && (
-				<Box sx={{ mb: 2 }}>
+				<Box sx={{ mb: 3 }}>
 					<Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
 						Active filters:
 					</Typography>
 					<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
-						{getActiveFilters.map((filter) => (
+						{activeFilterDetails.map((filter) => (
 							<Chip
 								key={filter.key}
 								label={filter.label}
-								onDelete={() => handleClearSpecificFilter(filter.key === 'search' ? 'searchQuery' : filter.key)}
+								onDelete={() => handleClearSpecificFilter(filter.key)}
 								size="small"
 								variant="outlined"
 								color="primary"
+								sx={{ 
+									'& .MuiChip-deleteIcon': {
+										fontSize: '18px',
+									}
+								}}
 							/>
 						))}
 					</Box>
 				</Box>
 			)}
 
+			{/* Filter Controls Grid */}
 			<Grid container spacing={3}>
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
+				{/* Search Field */}
+				<Grid size={{ xs: 12, sm: 6, md: 4 }}>
 					<TextField
 						fullWidth
 						label='Search Exercises'
@@ -128,120 +165,82 @@ function SearchFilters(props) {
 						name='searchQuery'
 						value={filters.searchQuery}
 						onChange={handleSearch}
-						placeholder="Search by name, muscle, equipment..."
+						placeholder={SEARCH_CONFIG.PLACEHOLDER_TEXT}
 						InputProps={{
-							endAdornment: <SearchIcon position='end' />,
+							endAdornment: <SearchIcon sx={{ color: 'action.active' }} />,
+						}}
+						sx={{
+							'& .MuiOutlinedInput-root': {
+								'&:hover fieldset': {
+									borderColor: 'primary.main',
+								},
+							}
 						}}
 					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<FormControl fullWidth>
-						<InputLabel id='muscle-label'>Muscle Group</InputLabel>
-						<Select
-							labelId='muscle-label'
-							id='muscle-select'
-							name='muscle'
-							value={filters.muscle}
-							label='Muscle Group'
-							onChange={handleFilterChange}
-						>
-							{muscleTypes.map((muscle) => (
-								<MenuItem key={muscle.value} value={muscle.value}>
-									{muscle.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+				{/* Muscle Group Filter */}
+				<Grid size={{ xs: 12, sm: 6, md: 2 }}>
+					<FilterDropdown
+						name="muscle"
+						label="Muscle Group"
+						options={muscleTypes}
+						value={filters.muscle}
+					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<FormControl fullWidth>
-						<InputLabel id='equipment-label'>Equipment</InputLabel>
-						<Select
-							labelId='equipment-label'
-							id='equipment-select'
-							name='equipment'
-							value={filters.equipment}
-							label='Equipment'
-							onChange={handleFilterChange}
-						>
-							{equipmentTypes.map((item) => (
-								<MenuItem key={item.value} value={item.value}>
-									{item.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+				{/* Equipment Filter */}
+				<Grid size={{ xs: 12, sm: 6, md: 2 }}>
+					<FilterDropdown
+						name="equipment"
+						label="Equipment"
+						options={equipmentTypes}
+						value={filters.equipment}
+					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<FormControl fullWidth>
-						<InputLabel id='category-label'>Category</InputLabel>
-						<Select
-							labelId='category-label'
-							id='category-select'
-							name='category'
-							value={filters.category}
-							label='Category'
-							onChange={handleFilterChange}
-						>
-							{categoryTypes.map((item) => (
-								<MenuItem key={item.value} value={item.value}>
-									{item.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+				{/* Category Filter */}
+				<Grid size={{ xs: 12, sm: 6, md: 2 }}>
+					<FilterDropdown
+						name="category"
+						label="Category"
+						options={categoryTypes}
+						value={filters.category}
+					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<FormControl fullWidth>
-						<InputLabel id='force-label'>Force</InputLabel>
-						<Select
-							labelId='force-label'
-							id='force-select'
-							name='force'
-							value={filters.force}
-							label='Force'
-							onChange={handleFilterChange}
-						>
-							{forceTypes.map((item) => (
-								<MenuItem key={item.value} value={item.value}>
-									{item.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+				{/* Force Filter */}
+				<Grid size={{ xs: 12, sm: 6, md: 1 }}>
+					<FilterDropdown
+						name="force"
+						label="Force"
+						options={forceTypes}
+						value={filters.force}
+					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<FormControl fullWidth>
-						<InputLabel id='difficulty-label'>Difficulty</InputLabel>
-						<Select
-							labelId='difficulty-label'
-							id='difficulty-select'
-							name='difficulty'
-							value={filters.difficulty}
-							label='Difficulty'
-							onChange={handleFilterChange}
-						>
-							{difficultyLevels.map((difficulty) => (
-								<MenuItem key={difficulty.value} value={difficulty.value}>
-									{difficulty.label}
-								</MenuItem>
-							))}
-						</Select>
-					</FormControl>
+				{/* Difficulty Filter */}
+				<Grid size={{ xs: 12, sm: 6, md: 1 }}>
+					<FilterDropdown
+						name="difficulty"
+						label="Difficulty"
+						options={difficultyLevels}
+						value={filters.difficulty}
+					/>
 				</Grid>
 
-				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<Stack spacing={2} direction='row' sx={{ height: '56px', alignItems: 'center' }}>
+				{/* Clear Filters Button */}
+				<Grid size={{ xs: 12, md: 12 }}>
+					<Stack direction="row" justifyContent="flex-end" sx={{ mt: 1 }}>
 						<Button 
-							variant='outlined' 
+							variant="outlined" 
 							onClick={clearFilters}
-							sx={{ height: 'fit-content' }}
 							disabled={activeFiltersCount === 0}
+							sx={{
+								minWidth: '120px',
+								textTransform: 'none',
+								fontWeight: 500,
+							}}
 						>
 							Clear All Filters
 						</Button>
