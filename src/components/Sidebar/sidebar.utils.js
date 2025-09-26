@@ -71,12 +71,20 @@ const ADMIN_ONLY_ITEMS = [
   },
 ];
 
+const EXERCISES_ITEM = {
+  label: 'Exercises',
+  path: '/exercises',
+  icon: <FitnessCenterIcon />,
+};
+
 // Settings available to all users
 const SETTINGS_ITEM = {
   label: 'Settings',
   path: '/settings',
   icon: <SettingsIcon />,
 };
+
+const ALL_USER_ITEMS = [EXERCISES_ITEM, SETTINGS_ITEM];
 
 /**
  * Generate navigation items based on user role
@@ -107,5 +115,5 @@ export const getNavigationItems = (role) => {
   }
 
   // Return new array with all items using spread operator
-  return [...BASE_NAVIGATION_ITEMS, ...roleSpecificItems, SETTINGS_ITEM];
+  return [...BASE_NAVIGATION_ITEMS, ...roleSpecificItems, ...ALL_USER_ITEMS];
 };

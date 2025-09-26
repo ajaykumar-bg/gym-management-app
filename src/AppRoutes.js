@@ -31,6 +31,9 @@ const MyProfile = React.lazy(() => import('./features/MyProfile'));
 const RoleConfiguration = React.lazy(() =>
   import('./features/RoleConfiguration')
 );
+
+const Exercises = React.lazy(() => import('./features/Exercises'));
+
 const Settings = React.lazy(() => import('./features/Settings'));
 
 // Loading fallback component
@@ -80,6 +83,7 @@ function AppRoutes() {
                         element={<RoleConfiguration />}
                       />
                       <Route path='/settings' element={<Settings />} />
+                      <Route path='/exercises' element={<Exercises />} />
                       <Route path='*' element={<Navigate to='/' replace />} />
                     </Routes>
                   </Suspense>
