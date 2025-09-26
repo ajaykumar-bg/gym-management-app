@@ -1,6 +1,8 @@
 export const permissionLabels = {
   canViewDashboard: 'View Dashboard',
+  canViewMembers: 'View Members',
   canManageMembers: 'Manage Members',
+  canViewTrainers: 'View Trainers',
   canManageTrainers: 'Manage Trainers',
   canManageClasses: 'Manage Classes',
   canManageEquipment: 'Manage Equipment',
@@ -51,9 +53,10 @@ export const roleAccessDetails = [
     features: [
       'Full gym management',
       'Member & trainer management',
-      'Financial oversight',
-      'System configuration',
-      'All reports & analytics',
+      'Financial oversight & billing',
+      'System & role configuration',
+      'Complete reports & analytics',
+      'Equipment & facility management',
     ],
   },
   {
@@ -63,11 +66,12 @@ export const roleAccessDetails = [
     borderColor: 'warning.main',
     textColor: 'warning.dark',
     features: [
-      'Member management',
-      'Class scheduling',
-      'Equipment tracking',
-      'Training analytics',
-      'Member progress reports',
+      'Assigned member management',
+      'View all trainer profiles',
+      'Class & session scheduling',
+      'Equipment status tracking',
+      'Training analytics & progress',
+      'Member fitness assessments',
     ],
   },
   {
@@ -77,11 +81,12 @@ export const roleAccessDetails = [
     borderColor: 'primary.main',
     textColor: 'primary.dark',
     features: [
-      'Personal dashboard',
-      'Class booking',
-      'Workout tracking',
-      'Personal profile',
-      'Payment history',
+      'Personal dashboard & profile',
+      'View trainer profiles',
+      'Class booking & scheduling',
+      'Personal workout tracking',
+      'Membership & payment history',
+      'Equipment availability check',
     ],
   },
 ];

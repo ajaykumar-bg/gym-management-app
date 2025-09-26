@@ -12,6 +12,13 @@ import Navbar from './components/Navbar';
 
 // Lazy load feature components
 const Dashboard = React.lazy(() => import('./features/Dashboard'));
+const MemberManagement = React.lazy(() =>
+  import('./features/MemberManagement')
+);
+const TrainerManagement = React.lazy(() =>
+  import('./features/TrainerManagement')
+);
+const MyProfile = React.lazy(() => import('./features/MyProfile'));
 const RoleConfiguration = React.lazy(() =>
   import('./features/RoleConfiguration')
 );
@@ -44,6 +51,9 @@ function AppRoutes() {
                   <Suspense fallback={<LoadingFallback />}>
                     <Routes>
                       <Route path='/' element={<Dashboard />} />
+                      <Route path='/members' element={<MemberManagement />} />
+                      <Route path='/trainers' element={<TrainerManagement />} />
+                      <Route path='/my-profile' element={<MyProfile />} />
                       <Route
                         path='/role-configuration'
                         element={<RoleConfiguration />}

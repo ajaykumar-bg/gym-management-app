@@ -23,7 +23,9 @@ export const UserProvider = ({ children }) => {
   const permissions = {
     admin: {
       canViewDashboard: true,
+      canViewMembers: true,
       canManageMembers: true,
+      canViewTrainers: true,
       canManageTrainers: true,
       canManageClasses: true,
       canManageEquipment: true,
@@ -37,7 +39,9 @@ export const UserProvider = ({ children }) => {
     },
     trainer: {
       canViewDashboard: true,
-      canManageMembers: true,
+      canViewMembers: true, // Can view assigned members
+      canManageMembers: true, // Can manage basic info of assigned members
+      canViewTrainers: true, // Can view other trainers
       canManageTrainers: false,
       canManageClasses: true,
       canManageEquipment: true,
@@ -51,8 +55,10 @@ export const UserProvider = ({ children }) => {
     },
     member: {
       canViewDashboard: true,
-      canManageMembers: false, // Can only view their own profile
-      canManageTrainers: false, // Can only view trainer profiles
+      canViewMembers: false, // Can only view their own profile
+      canManageMembers: false,
+      canViewTrainers: true, // Can view trainer profiles for selection
+      canManageTrainers: false,
       canManageClasses: false, // Can only book/view classes
       canManageEquipment: false, // Can only view equipment availability
       canManageMemberships: false, // Can only view their own membership

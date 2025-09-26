@@ -3,6 +3,8 @@ import {
   Dashboard as DashboardIcon,
   Settings as SettingsIcon,
   Tune as TuneIcon,
+  People as PeopleIcon,
+  FitnessCenter as FitnessCenterIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -11,10 +13,32 @@ const BASE_NAVIGATION_ITEMS = [
 ];
 
 // Business module navigation items for admin and trainer
-const BUSINESS_MODULE_ITEMS = [];
+const BUSINESS_MODULE_ITEMS = [
+  {
+    label: 'Member Management',
+    path: '/members',
+    icon: <PeopleIcon />,
+  },
+  {
+    label: 'Trainer Management',
+    path: '/trainers',
+    icon: <FitnessCenterIcon />,
+  },
+];
 
 // Member-specific navigation items
-const MEMBER_NAVIGATION_ITEMS = [];
+const MEMBER_NAVIGATION_ITEMS = [
+  {
+    label: 'My Profile',
+    path: '/my-profile',
+    icon: <PeopleIcon />,
+  },
+  {
+    label: 'Trainers',
+    path: '/trainers',
+    icon: <FitnessCenterIcon />,
+  },
+];
 
 // Admin-only navigation items
 const ADMIN_ONLY_ITEMS = [
