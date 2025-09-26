@@ -1,12 +1,11 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { AppBar, Box, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import exercisesData from '../constants/exercises.json';
 
 import ExerciseDetail from './ExerciseDetail';
 import SearchFilters from './SearchFilters';
 import ExerciseList from './ExerciseList';
-import SelectedFilters from './SelectedFilters';
 
 // Main App Component
 const ExerciseApp = () => {
@@ -22,7 +21,6 @@ const ExerciseApp = () => {
 	const [selectedExercise, setSelectedExercise] = useState(null);
 	const [detailsOpen, setDetailsOpen] = useState(false);
 	const [activeStep, setActiveStep] = useState(0);
-	const [isFiltering, setIsFiltering] = useState(false);
 
 	// Memoized filtered exercises to avoid recalculating on every render
 	const filteredExercises = useMemo(() => {
@@ -80,31 +78,22 @@ const ExerciseApp = () => {
 	// Handle filter changes
 	const handleFilterChange = useCallback((event) => {
 		const { name, value } = event.target;
-		setIsFiltering(true);
 		setFilters(prev => ({
 			...prev,
 			[name]: value,
 		}));
-		// Simulate brief filtering delay for UX feedback
-		setTimeout(() => setIsFiltering(false), 300);
 	}, []);
 
 	// Handle search
 	const handleSearch = useCallback((event) => {
 		const value = event.target.value;
-		setIsFiltering(value.length > 0);
 		setFilters(prev => ({
 			...prev,
 			searchQuery: value,
 		}));
-		// Clear filtering state after search
-		if (value.length > 0) {
-			setTimeout(() => setIsFiltering(false), 500);
-		}
 	}, []);
 
 	const clearFilters = useCallback(() => {
-		setIsFiltering(true);
 		setFilters({
 			searchQuery: '',
 			muscle: 'All',
@@ -113,18 +102,15 @@ const ExerciseApp = () => {
 			force: 'All',
 			difficulty: 'All',
 		});
-		setTimeout(() => setIsFiltering(false), 200);
 	}, []);
 
 	// Clear specific filter
 	const handleClearSpecificFilter = useCallback((filterKey) => {
-		setIsFiltering(true);
 		if (filterKey === 'searchQuery') {
 			setFilters(prev => ({ ...prev, searchQuery: '' }));
 		} else {
 			setFilters(prev => ({ ...prev, [filterKey]: 'All' }));
 		}
-		setTimeout(() => setIsFiltering(false), 200);
 	}, []);
 
 	// Apply filters is now handled by useMemo, so we can remove this function
@@ -165,16 +151,6 @@ const ExerciseApp = () => {
 				applyFilters={() => {}} // No longer needed with useMemo
 				clearFilters={clearFilters}
 			/>
-
-			<Box sx={{ flexGrow: 1, marginBottom: 3 }}>
-				<AppBar position='static' sx={{ py: 1 }}>
-					<SelectedFilters
-						filteredExercises={filteredExercises}
-						exercisesData={exercisesData}
-						isFiltering={isFiltering}
-					/>
-				</AppBar>
-			</Box>
 
 			<ExerciseList
 				exercises={filteredExercises}

@@ -15,7 +15,7 @@ import Exercise from './Exercise';
 import ExerciseListInfo from './ExerciseListInfo';
 
 function ExerciseList(props) {
-	const { exercises, openExerciseDetails, clearFilters, filters, onClearSpecificFilter, totalUnfilteredCount } = props;
+	const { exercises, openExerciseDetails, clearFilters, totalUnfilteredCount } = props;
 	
 	// Pagination state
 	const [page, setPage] = useState(1);
@@ -69,8 +69,6 @@ function ExerciseList(props) {
 						totalExercises={totalExercises} 
 						page={page} 
 						pageSize={exercisesPerPage}
-						filters={filters}
-						onClearFilter={onClearSpecificFilter}
 						totalUnfilteredCount={totalUnfilteredCount}
 					/>
 
