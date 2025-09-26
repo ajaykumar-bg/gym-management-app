@@ -22,7 +22,7 @@ const EquipmentManagement = React.lazy(() =>
   import('./features/EquipmentManagement')
 );
 const WorkoutPlanManagement = React.lazy(() =>
-  import('./features/WorkoutPlanManagement/WorkoutPlanManagement')
+  import('./features/WorkoutPlanManagement')
 );
 const MyProfile = React.lazy(() => import('./features/MyProfile'));
 const RoleConfiguration = React.lazy(() =>
