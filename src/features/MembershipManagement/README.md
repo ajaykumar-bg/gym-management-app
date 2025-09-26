@@ -43,7 +43,7 @@ A comprehensive module for managing gym membership packages and member subscript
 
 ### Main Components
 
-#### `MembershipPackageManagement.js`
+#### `MembershipManagement.js`
 
 The main orchestrating component that provides:
 
@@ -161,10 +161,10 @@ Advanced analytics dashboard:
 ### Basic Implementation
 
 ```javascript
-import MembershipPackageManagement from './features/MembershipPackageManagement';
+import MembershipManagement from './features/MembershipManagement';
 
 function App() {
-  return <MembershipPackageManagement userRole={currentUser.permissions} />;
+  return <MembershipManagement userRole={currentUser.permissions} />;
 }
 ```
 

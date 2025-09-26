@@ -39,7 +39,7 @@ import {
   MEMBERSHIP_TYPES,
   SUBSCRIPTION_STATUS,
   PACKAGE_STATUS,
-} from './membershipPackage.constants';
+} from './membership.constants';
 import {
   filterPackagesByType,
   filterPackagesByStatus,
@@ -47,11 +47,9 @@ import {
   searchPackages,
   searchSubscriptions,
   sortPackages,
-} from './membershipPackage.utils';
+} from './membership.utils';
 
-const MembershipPackageManagement = ({
-  userRole = { canManagePackages: true },
-}) => {
+const MembershipManagement = ({ userRole = { canManagePackages: true } }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -591,4 +589,4 @@ const MembershipPackageManagement = ({
   );
 };
 
-export default MembershipPackageManagement;
+export default MembershipManagement;

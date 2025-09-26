@@ -23,8 +23,8 @@ import {
 import {
   MEMBERSHIP_TYPES,
   MEMBERSHIP_DURATIONS,
-} from '../membershipPackage.constants';
-import { formatCurrency } from '../membershipPackage.utils';
+} from '../membership.constants';
+import { formatCurrency } from '../membership.utils';
 
 const PackageCard = ({
   package: pkg,
