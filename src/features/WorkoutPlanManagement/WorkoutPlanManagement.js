@@ -182,7 +182,7 @@ const WorkoutPlanManagement = () => {
 
       <Grid container spacing={3}>
         {workoutPlans.map((plan) => (
-          <Grid key={plan.id} xs={12} md={6} lg={4}>
+          <Grid size={{ xs: 12, md: 6, lg: 4 }} key={plan.id}>
             <Card sx={{ height: '100%' }}>
               <CardHeader
                 title={plan.name}

@@ -6,6 +6,7 @@ import {
   People as PeopleIcon,
   FitnessCenter as FitnessCenterIcon,
   Build as BuildIcon,
+  Assignment as AssignmentIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -29,6 +30,15 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Equipment Management',
     path: '/equipment',
     icon: <BuildIcon />,
+  },
+];
+
+// Trainer-specific additional items
+const TRAINER_SPECIFIC_ITEMS = [
+  {
+    label: 'Workout Plans',
+    path: '/workout-plans',
+    icon: <AssignmentIcon />,
   },
 ];
 
@@ -77,7 +87,7 @@ export const getNavigationItems = (role) => {
       break;
 
     case 'trainer':
-      roleSpecificItems = [...BUSINESS_MODULE_ITEMS];
+      roleSpecificItems = [...BUSINESS_MODULE_ITEMS, ...TRAINER_SPECIFIC_ITEMS];
       break;
 
     case 'member':
