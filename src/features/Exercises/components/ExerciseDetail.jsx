@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Typography,
 	Box,
@@ -10,6 +10,7 @@ import {
 	Toolbar,
 	Divider,
 	MobileStepper,
+	Skeleton,
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import Tooltip, { tooltipClasses } from '@mui/material/Tooltip';
@@ -35,6 +36,64 @@ function ExerciseDetail(props) {
 		handleNext,
 		handleBack,
 	} = props;
+
+	// Component for handling exercise image with error state
+	const ExerciseImageSlider = ({ src, alt }) => {
+		const [imageError, setImageError] = useState(false);
+		const [imageLoading, setImageLoading] = useState(true);
+
+		const handleImageLoad = () => {
+			setImageLoading(false);
+		};
+
+		const handleImageError = () => {
+			setImageLoading(false);
+			setImageError(true);
+		};
+
+		if (imageError || !src) {
+			return (
+				<Skeleton
+					variant="rectangular"
+					width="100%"
+					height={300}
+				/>
+			);
+		}
+
+		return (
+			<Box sx={{ position: 'relative' }}>
+				{imageLoading && (
+					<Skeleton
+						variant="rectangular"
+						width="100%"
+						height={300}
+						sx={{
+							position: 'absolute',
+							top: 0,
+							left: 0,
+						}}
+					/>
+				)}
+				<Box
+					component="img"
+					loading="lazy"
+					sx={{
+						height: 300,
+						display: 'block',
+						width: '100%',
+						objectFit: 'cover',
+						opacity: imageLoading ? 0 : 1,
+						transition: 'opacity 0.3s ease-in-out',
+					}}
+					src={src}
+					alt={alt}
+					onLoad={handleImageLoad}
+					onError={handleImageError}
+				/>
+			</Box>
+		);
+	};
 	return (
 		<Drawer
 			anchor='right'
@@ -68,21 +127,13 @@ function ExerciseDetail(props) {
 
 					<Box sx={{ position: 'relative', width: '100%' }}>
 						<Box sx={{ maxWidth: '100%', flexGrow: 1 }}>
-							<Box
-								component='img'
-								loading='lazy'
-								sx={{
-									height: '100%',
-									display: 'block',
-									width: '100%',
-									objectFit: 'cover',
-								}}
-								src={selectedExercise?.images[activeStep]}
+							<ExerciseImageSlider
+								src={selectedExercise?.images?.[activeStep]}
 								alt={`${selectedExercise.name} - image ${activeStep + 1}`}
 							/>
 							<MobileStepper
 								variant='dots'
-								steps={selectedExercise?.images.length}
+								steps={selectedExercise?.images?.length || 0}
 								position='static'
 								activeStep={activeStep}
 								sx={{ flexGrow: 1 }}
@@ -91,7 +142,8 @@ function ExerciseDetail(props) {
 										size='small'
 										onClick={handleNext}
 										disabled={
-											activeStep === selectedExercise?.images.length - 1
+											activeStep === (selectedExercise?.images?.length || 1) - 1 ||
+											!selectedExercise?.images?.length
 										}
 									>
 										Next
@@ -102,7 +154,7 @@ function ExerciseDetail(props) {
 									<Button
 										size='small'
 										onClick={handleBack}
-										disabled={activeStep === 0}
+										disabled={activeStep === 0 || !selectedExercise?.images?.length}
 									>
 										<KeyboardArrowLeft />
 										Back
