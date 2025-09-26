@@ -5,17 +5,17 @@
 export const getRoleIcon = (role) => {
   const iconMap = {
     admin: 'AdminPanelSettings',
-    staff: 'Support',
-    customer: 'StorefrontOutlined',
+    trainer: 'FitnessCenter',
+    member: 'Person',
   };
-  return iconMap[role] || 'StorefrontOutlined';
+  return iconMap[role] || 'Person';
 };
 
 export const getRoleColor = (role) => {
   const colorMap = {
     admin: 'error',
-    staff: 'warning',
-    customer: 'primary',
+    trainer: 'warning',
+    member: 'primary',
   };
   return colorMap[role] || 'primary';
 };
@@ -32,13 +32,21 @@ export const getPermissionLevel = (permission, role, adminOnlyPermissions) => {
   switch (role) {
     case 'admin':
       return 'full';
-    case 'staff':
+    case 'trainer':
       return isAdminOnlyPermission(permission, adminOnlyPermissions)
         ? 'none'
         : 'full';
-    case 'customer':
+    case 'member':
       if (permission === 'canViewDashboard') return 'full';
-      if (['canManageInventory', 'canManageSales'].includes(permission))
+      if (
+        [
+          'canManageMembers',
+          'canManageClasses',
+          'canManageEquipment',
+          'canManageMemberships',
+          'canManagePayments',
+        ].includes(permission)
+      )
         return 'view';
       return 'none';
     default:

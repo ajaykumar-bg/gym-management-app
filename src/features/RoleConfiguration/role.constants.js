@@ -1,11 +1,11 @@
 export const permissionLabels = {
   canViewDashboard: 'View Dashboard',
-  canManageInventory: 'Manage Inventory',
-  canManageSales: 'Manage Sales',
-  canManagePurchase: 'Manage Purchase',
-  canManageProduction: 'Manage Production',
-  canManageDesign: 'Manage Design',
-  canManageAccounting: 'Manage Accounting',
+  canManageMembers: 'Manage Members',
+  canManageTrainers: 'Manage Trainers',
+  canManageClasses: 'Manage Classes',
+  canManageEquipment: 'Manage Equipment',
+  canManageMemberships: 'Manage Memberships',
+  canManagePayments: 'Manage Payments',
   canAccessRoleConfiguration: 'Access Role Configuration',
   canManageUsers: 'Manage Users',
   canViewAllReports: 'View All Reports',
@@ -14,7 +14,9 @@ export const permissionLabels = {
 };
 
 export const adminOnlyPermissions = [
-  'canManageAccounting',
+  'canManageTrainers',
+  'canManageMemberships',
+  'canManagePayments',
   'canAccessRoleConfiguration',
   'canManageUsers',
   'canViewAllReports',
@@ -24,16 +26,18 @@ export const adminOnlyPermissions = [
 export const roleDescriptions = [
   {
     name: 'Admin',
-    description: 'Full access to all modules including financial management',
-  },
-  {
-    name: 'Staff',
     description:
-      'Operational access to inventory, sales, purchase, production, and design',
+      'Full gym management access including financials and user management',
   },
   {
-    name: 'Customer',
-    description: 'Can view products and manage their own orders',
+    name: 'Trainer',
+    description:
+      'Manage members, classes, and equipment with access to training analytics',
+  },
+  {
+    name: 'Member',
+    description:
+      'View personal profile, book classes, and track workout progress',
   },
 ];
 
@@ -45,39 +49,39 @@ export const roleAccessDetails = [
     borderColor: 'error.main',
     textColor: 'error.dark',
     features: [
-      'Full system access',
-      'All business modules',
-      'Financial management',
-      'User & role management',
+      'Full gym management',
+      'Member & trainer management',
+      'Financial oversight',
       'System configuration',
+      'All reports & analytics',
     ],
   },
   {
-    name: 'staff',
-    title: 'Staff Access',
+    name: 'trainer',
+    title: 'Trainer Access',
     bgColor: 'warning.lighter',
     borderColor: 'warning.main',
     textColor: 'warning.dark',
     features: [
-      'Operational modules',
-      'Inventory management',
-      'Sales & purchase',
-      'Production & design',
-      'Analytics (limited)',
+      'Member management',
+      'Class scheduling',
+      'Equipment tracking',
+      'Training analytics',
+      'Member progress reports',
     ],
   },
   {
-    name: 'customer',
-    title: 'Customer Access',
+    name: 'member',
+    title: 'Member Access',
     bgColor: 'primary.lighter',
     borderColor: 'primary.main',
     textColor: 'primary.dark',
     features: [
-      'View products (inventory)',
-      'Manage own orders',
-      'Order history',
-      'Basic dashboard',
-      'Limited to self-service',
+      'Personal dashboard',
+      'Class booking',
+      'Workout tracking',
+      'Personal profile',
+      'Payment history',
     ],
   },
 ];

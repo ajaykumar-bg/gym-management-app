@@ -2,8 +2,8 @@ import React from 'react';
 import { Card, CardContent, Typography, Box, Chip } from '@mui/material';
 import {
   AdminPanelSettings as AdminIcon,
-  Support as StaffIcon,
-  StorefrontOutlined as CustomerIcon,
+  FitnessCenter as TrainerIcon,
+  Person as MemberIcon,
 } from '@mui/icons-material';
 import { useUser } from '../../context/UserContext';
 
@@ -14,10 +14,10 @@ const UserInformation = () => {
     switch (role) {
       case 'admin':
         return <AdminIcon />;
-      case 'staff':
-        return <StaffIcon />;
+      case 'trainer':
+        return <TrainerIcon />;
       default:
-        return <CustomerIcon />;
+        return <MemberIcon />;
     }
   };
 
@@ -25,7 +25,7 @@ const UserInformation = () => {
     switch (role) {
       case 'admin':
         return 'error';
-      case 'staff':
+      case 'trainer':
         return 'warning';
       default:
         return 'primary';

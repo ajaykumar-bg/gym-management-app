@@ -1,6 +1,6 @@
 # RoleConfiguration Component
 
-The RoleConfiguration component has been refactored into smaller, focused components following the established patterns in the navbar management application.
+The RoleConfiguration component manages role-based access control for the gym management application, providing a comprehensive interface for testing and understanding different permission levels.
 
 ## Component Structure
 
@@ -21,7 +21,7 @@ RoleConfiguration/
 
 ### RoleConfiguration (Main Container)
 
-- **Purpose**: Main container that orchestrates the role configuration layout
+- **Purpose**: Main container that orchestrates the role configuration layout for gym management
 - **Layout**: Uses Grid system to arrange all role management components
 - **Responsive**: Adapts layout for different screen sizes
 
@@ -30,23 +30,23 @@ RoleConfiguration/
 - **Purpose**: Displays current user information and role
 - **Features**:
   - User name, email, and current role
-  - Role-specific icons and colors
+  - Role-specific icons (Admin: AdminPanel, Trainer: FitnessCenter, Member: Person)
   - Dynamic role chip styling
 - **Integration**: Uses `useUser` hook from UserContext
 
 ### RoleManagement
 
-- **Purpose**: Handles role switching functionality
+- **Purpose**: Handles role switching functionality for testing permissions
 - **Features**:
   - Interactive role switching buttons
-  - Role descriptions and explanations
+  - Gym-specific role descriptions and explanations
   - Visual feedback for current role
   - Alert for immediate role change effects
 - **State Management**: Uses `switchRole` function from UserContext
 
 ### CurrentPermissions
 
-- **Purpose**: Displays current user's permissions in a visual grid
+- **Purpose**: Displays current user's gym-specific permissions in a visual grid
 - **Features**:
   - Permission cards with enabled/disabled states
   - Color-coded permission status
@@ -55,92 +55,117 @@ RoleConfiguration/
 
 ### RoleComparison
 
-- **Purpose**: Compares permissions across all roles in a table format
+- **Purpose**: Compares gym management permissions across all roles in a table format
 - **Features**:
   - Interactive table with role comparison
   - Legend for permission levels
   - Visual indicators for access levels (Full/View/None)
   - Hover effects for better UX
-- **Logic**: Complex permission calculation for different roles
+- **Logic**: Complex permission calculation for gym-specific roles
 
 ### RoleDetails
 
-- **Purpose**: Shows detailed access information for each role
+- **Purpose**: Shows detailed access information for each gym role
 - **Features**:
   - Role-specific access cards
   - Color-coded role categories
   - Feature lists for each role
 - **Design**: Uses role-specific themes and colors
 
-## Constants
-
-### role.constants.js
-
-- **Purpose**: Centralized configuration for roles and permissions
-- **Contents**:
-  - `permissionLabels`: Human-readable permission names
-  - `adminOnlyPermissions`: Permissions exclusive to admin role
-  - `roleDescriptions`: Role descriptions for UI
-  - `roleAccessDetails`: Detailed role access information with styling
-
-## Key Features
-
-✅ **Modular Architecture**: Components are small, focused, and reusable
-✅ **Role-Based Security**: Comprehensive permission management system
-✅ **Interactive UI**: Real-time role switching and permission updates
-✅ **Visual Feedback**: Color-coded permissions and role states
-✅ **Responsive Design**: Adapts to different screen sizes
-✅ **Centralized Configuration**: All role data stored in constants
-✅ **User Context Integration**: Seamless integration with authentication system
-
-## Permission System
+## Gym Management Permission System
 
 ### Admin Role
 
-- **Access**: Full system access
-- **Permissions**: All modules including financial management
+- **Access**: Full gym management access
+- **Permissions**: All modules including member management, trainer oversight, financial management
+- **Capabilities**:
+  - Manage all members and trainers
+  - Access financial reports and payments
+  - Configure gym settings and equipment
+  - View comprehensive analytics
 - **Color Theme**: Red (error color)
 - **Icon**: AdminPanelSettings
 
-### Staff Role
+### Trainer Role
 
-- **Access**: Operational modules
-- **Permissions**: Inventory, Sales, Purchase, Production, Design
-- **Restrictions**: No accounting, user management, or financial access
+- **Access**: Training and member management focus
+- **Permissions**: Member management, class scheduling, equipment tracking, analytics
+- **Capabilities**:
+  - Manage assigned members
+  - Schedule and conduct classes
+  - Track equipment usage
+  - View training analytics
+- **Restrictions**: No financial access, user management, or trainer oversight
 - **Color Theme**: Orange (warning color)
-- **Icon**: Support
+- **Icon**: FitnessCenter
 
-### Customer Role
+### Member Role
 
-- **Access**: Limited self-service
-- **Permissions**: Dashboard view, order management (view-only for some modules)
-- **Restrictions**: No operational or administrative access
+- **Access**: Self-service gym experience
+- **Permissions**: Personal dashboard, class booking, workout tracking
+- **Capabilities**:
+  - View personal profile and membership
+  - Book available classes
+  - Track workout progress
+  - View payment history
+- **Restrictions**: No management access to other members, trainers, or gym operations
 - **Color Theme**: Blue (primary color)
-- **Icon**: StorefrontOutlined
+- **Icon**: Person
+
+## Gym-Specific Permissions
+
+### Core Permissions
+
+- **canViewDashboard**: Access to personal/role-specific dashboard
+- **canManageMembers**: Create, edit, and manage gym member profiles
+- **canManageTrainers**: Oversee trainer profiles and assignments (Admin only)
+- **canManageClasses**: Schedule, modify, and manage fitness classes
+- **canManageEquipment**: Track and manage gym equipment
+- **canManageMemberships**: Handle membership plans and renewals
+- **canManagePayments**: Process payments and handle billing
+- **canAccessRoleConfiguration**: Access role management system
+- **canManageUsers**: System user management
+- **canViewAllReports**: Access comprehensive gym reports
+- **canViewAnalytics**: View gym performance and member analytics
+- **canViewFinancials**: Access financial reports and data
+
+### Permission Levels
+
+- **Full Access (✓)**: Complete read/write permissions
+- **View Only (◐)**: Read-only access with limited interaction
+- **No Access (✗)**: No access to the module or feature
 
 ## Usage
 
 ```javascript
-import RoleConfiguration from './components/RoleConfiguration';
+import RoleConfiguration from './features/RoleConfiguration';
 
-// The RoleConfiguration component is fully self-contained
+// The RoleConfiguration component is fully self-contained for gym management
 <RoleConfiguration />;
 ```
 
 ## UserContext Integration
 
-The RoleConfiguration component integrates with the application's UserContext:
+The RoleConfiguration component integrates with the gym management application's UserContext:
 
-- Uses `useUser` hook to get current user and permissions
+- Uses `useUser` hook to get current user and gym-specific permissions
 - Supports real-time role switching with `switchRole` function
-- Changes are applied globally across the application
+- Changes are applied globally across the gym management application
 - Permission updates are reflected immediately in the UI
 
-## Testing Role Changes
+## Testing Gym Role Changes
 
-The component provides an interactive way to test different permission levels:
+The component provides an interactive way to test different gym permission levels:
 
-1. Switch between Admin, Staff, and Customer roles
-2. View real-time permission changes
-3. See how different roles affect dashboard visibility
-4. Compare access levels across all roles in the comparison table
+1. Switch between Admin, Trainer, and Member roles
+2. View real-time permission changes for gym operations
+3. See how different roles affect gym dashboard visibility
+4. Compare access levels across all roles in the gym management system
+5. Test member booking capabilities vs trainer class management vs admin oversight
+
+## Development Notes
+
+- All permission constants are centralized in `role.constants.js`
+- Icons are gym-appropriate (FitnessCenter for trainers, Person for members)
+- Permission logic handles gym-specific workflows (class booking, member management, etc.)
+- Components are designed to be easily extensible for additional gym features

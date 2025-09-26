@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-  AdminPanelSettings,
-  Support,
-  StorefrontOutlined,
-} from '@mui/icons-material';
+import { AdminPanelSettings, FitnessCenter, Person } from '@mui/icons-material';
 
 // Role configuration with icons and labels
 export const ROLE_CONFIG = {
@@ -11,12 +7,12 @@ export const ROLE_CONFIG = {
     label: 'Switch to Admin',
     icon: <AdminPanelSettings fontSize='small' />,
   },
-  staff: {
-    label: 'Switch to Staff',
-    icon: <Support fontSize='small' />,
+  trainer: {
+    label: 'Switch to Trainer',
+    icon: <FitnessCenter fontSize='small' />,
   },
-  customer: {
-    label: 'Switch to Customer',
-    icon: <StorefrontOutlined fontSize='small' />,
+  member: {
+    label: 'Switch to Member',
+    icon: <Person fontSize='small' />,
   },
 };

@@ -3,12 +3,6 @@ import {
   Dashboard as DashboardIcon,
   Settings as SettingsIcon,
   Tune as TuneIcon,
-  Inventory as InventoryIcon,
-  ShoppingCart as SalesIcon,
-  LocalShipping as PurchaseIcon,
-  Factory as ProductionIcon,
-  Palette as DesignIcon,
-  AccountBalance as AccountingIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -16,11 +10,11 @@ const BASE_NAVIGATION_ITEMS = [
   { label: 'Dashboard', path: '/', icon: <DashboardIcon /> },
 ];
 
-// Business module navigation items for admin and staff
+// Business module navigation items for admin and trainer
 const BUSINESS_MODULE_ITEMS = [];
 
-// Customer-specific navigation items
-const CUSTOMER_NAVIGATION_ITEMS = [];
+// Member-specific navigation items
+const MEMBER_NAVIGATION_ITEMS = [];
 
 // Admin-only navigation items
 const ADMIN_ONLY_ITEMS = [
@@ -40,7 +34,7 @@ const SETTINGS_ITEM = {
 
 /**
  * Generate navigation items based on user role
- * @param {string} role - User role (admin, staff, customer)
+ * @param {string} role - User role (admin, trainer, member)
  * @returns {Array} Array of navigation items
  */
 export const getNavigationItems = (role) => {
@@ -52,12 +46,12 @@ export const getNavigationItems = (role) => {
       roleSpecificItems = [...BUSINESS_MODULE_ITEMS, ...ADMIN_ONLY_ITEMS];
       break;
 
-    case 'staff':
+    case 'trainer':
       roleSpecificItems = [...BUSINESS_MODULE_ITEMS];
       break;
 
-    case 'customer':
-      roleSpecificItems = [...CUSTOMER_NAVIGATION_ITEMS];
+    case 'member':
+      roleSpecificItems = [...MEMBER_NAVIGATION_ITEMS];
       break;
 
     default:

@@ -46,16 +46,20 @@ const RoleComparison = () => {
     switch (role) {
       case 'admin':
         return { hasPermission: true, level: 'full' };
-      case 'staff':
+      case 'trainer':
         return {
           hasPermission: !adminOnlyPermissions.includes(key),
           level: 'full',
         };
-      case 'customer':
+      case 'member':
         const hasPermission = key === 'canViewDashboard';
-        const isViewOnly = ['canManageInventory', 'canManageSales'].includes(
-          key
-        );
+        const isViewOnly = [
+          'canManageMembers',
+          'canManageClasses',
+          'canManageEquipment',
+          'canManageMemberships',
+          'canManagePayments',
+        ].includes(key);
         return {
           hasPermission: hasPermission || isViewOnly,
           level: hasPermission ? 'full' : isViewOnly ? 'view' : 'none',
@@ -83,7 +87,7 @@ const RoleComparison = () => {
           Role Comparison
         </Typography>
         <Typography variant='body2' color='text.secondary' sx={{ mb: 2 }}>
-          Compare module access permissions between admin, staff, and customer
+          Compare module access permissions between admin, trainer, and member
           roles
         </Typography>
 
@@ -112,24 +116,21 @@ const RoleComparison = () => {
                   align='center'
                   sx={{ fontWeight: 600, fontSize: '0.875rem' }}
                 >
-                  Staff
+                  Trainer
                 </TableCell>
                 <TableCell
                   align='center'
                   sx={{ fontWeight: 600, fontSize: '0.875rem' }}
                 >
-                  Customer
+                  Member
                 </TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {sortedPermissions.map((key) => {
                 const adminPermission = getPermissionForRole(key, 'admin');
-                const staffPermission = getPermissionForRole(key, 'staff');
-                const customerPermission = getPermissionForRole(
-                  key,
-                  'customer'
-                );
+                const trainerPermission = getPermissionForRole(key, 'trainer');
+                const memberPermission = getPermissionForRole(key, 'member');
 
                 return (
                   <TableRow key={key} hover>
@@ -145,14 +146,14 @@ const RoleComparison = () => {
                     </TableCell>
                     <TableCell align='center'>
                       <Chip
-                        {...getChipProps(staffPermission)}
+                        {...getChipProps(trainerPermission)}
                         size='small'
                         variant='filled'
                       />
                     </TableCell>
                     <TableCell align='center'>
                       <Chip
-                        {...getChipProps(customerPermission)}
+                        {...getChipProps(memberPermission)}
                         size='small'
                         variant='filled'
                       />

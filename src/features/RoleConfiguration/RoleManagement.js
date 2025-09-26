@@ -9,8 +9,8 @@ import {
 } from '@mui/material';
 import {
   AdminPanelSettings as AdminIcon,
-  Support as StaffIcon,
-  StorefrontOutlined as CustomerIcon,
+  FitnessCenter as TrainerIcon,
+  Person as MemberIcon,
 } from '@mui/icons-material';
 import { useUser } from '../../context/UserContext';
 import { roleDescriptions } from './role.constants';
@@ -48,24 +48,24 @@ const RoleManagement = () => {
             Admin
           </Button>
           <Button
-            variant={user.role === 'staff' ? 'contained' : 'outlined'}
+            variant={user.role === 'trainer' ? 'contained' : 'outlined'}
             color='warning'
-            startIcon={<StaffIcon />}
-            onClick={() => handleRoleSwitch('staff')}
-            disabled={user.role === 'staff'}
+            startIcon={<TrainerIcon />}
+            onClick={() => handleRoleSwitch('trainer')}
+            disabled={user.role === 'trainer'}
             sx={{ mt: { xs: 1, sm: 0 } }}
           >
-            Staff
+            Trainer
           </Button>
           <Button
-            variant={user.role === 'customer' ? 'contained' : 'outlined'}
+            variant={user.role === 'member' ? 'contained' : 'outlined'}
             color='primary'
-            startIcon={<CustomerIcon />}
-            onClick={() => handleRoleSwitch('customer')}
-            disabled={user.role === 'customer'}
+            startIcon={<MemberIcon />}
+            onClick={() => handleRoleSwitch('member')}
+            disabled={user.role === 'member'}
             sx={{ mt: { xs: 1, sm: 0 } }}
           >
-            Customer
+            Member
           </Button>
         </Stack>
 

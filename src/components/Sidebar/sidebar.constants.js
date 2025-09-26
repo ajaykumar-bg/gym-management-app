@@ -1,8 +1,8 @@
 // Role-based navigation configuration
 export const ROLES = {
   ADMIN: 'admin',
-  STAFF: 'staff',
-  CUSTOMER: 'customer',
+  TRAINER: 'trainer',
+  MEMBER: 'member',
 };
 
 // Navigation paths

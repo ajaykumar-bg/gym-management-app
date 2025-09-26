@@ -16,47 +16,47 @@ export const UserProvider = ({ children }) => {
     id: '1',
     name: 'Ajay Girija',
     email: 'ajay.girija@company.com',
-    role: 'admin', // 'admin', 'staff', or 'customer'
+    role: 'admin', // 'admin', 'trainer', or 'member'
   });
 
   // Define permissions based on role
   const permissions = {
     admin: {
       canViewDashboard: true,
-      canManageInventory: true,
-      canManageSales: true,
-      canManagePurchase: true,
-      canManageProduction: true,
-      canManageDesign: true,
-      canManageAccounting: true,
+      canManageMembers: true,
+      canManageTrainers: true,
+      canManageClasses: true,
+      canManageEquipment: true,
+      canManageMemberships: true,
+      canManagePayments: true,
       canAccessRoleConfiguration: true,
       canManageUsers: true,
       canViewAllReports: true,
       canViewAnalytics: true,
       canViewFinancials: true,
     },
-    staff: {
+    trainer: {
       canViewDashboard: true,
-      canManageInventory: true,
-      canManageSales: true,
-      canManagePurchase: true,
-      canManageProduction: true,
-      canManageDesign: true,
-      canManageAccounting: false,
+      canManageMembers: true,
+      canManageTrainers: false,
+      canManageClasses: true,
+      canManageEquipment: true,
+      canManageMemberships: false,
+      canManagePayments: false,
       canAccessRoleConfiguration: false,
       canManageUsers: false,
       canViewAllReports: false,
       canViewAnalytics: true,
       canViewFinancials: false,
     },
-    customer: {
+    member: {
       canViewDashboard: true,
-      canManageInventory: false, // Can only view products
-      canManageSales: false, // Can only view/manage their orders
-      canManagePurchase: false,
-      canManageProduction: false,
-      canManageDesign: false,
-      canManageAccounting: false,
+      canManageMembers: false, // Can only view their own profile
+      canManageTrainers: false, // Can only view trainer profiles
+      canManageClasses: false, // Can only book/view classes
+      canManageEquipment: false, // Can only view equipment availability
+      canManageMemberships: false, // Can only view their own membership
+      canManagePayments: false, // Can only view their own payment history
       canAccessRoleConfiguration: false,
       canManageUsers: false,
       canViewAllReports: false,
@@ -65,7 +65,7 @@ export const UserProvider = ({ children }) => {
     },
   };
 
-  const userPermissions = permissions[user.role] || permissions.customer;
+  const userPermissions = permissions[user.role] || permissions.member;
 
   const switchRole = (newRole) => {
     setUser((prev) => ({ ...prev, role: newRole }));

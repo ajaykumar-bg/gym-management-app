@@ -13,8 +13,8 @@ const RoleConfiguration = () => {
         Role Configuration
       </Typography>
       <Typography variant='body1' color='text.secondary' sx={{ mb: 3 }}>
-        Manage role-based authentication and permissions for admin, staff, and
-        customer users
+        Manage role-based authentication and permissions for admin, trainer, and
+        member users
       </Typography>
 
       <Grid container spacing={3}>
