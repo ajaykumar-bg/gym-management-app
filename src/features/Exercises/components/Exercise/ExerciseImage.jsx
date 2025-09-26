@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { CardMedia, Box, CircularProgress } from '@mui/material';
+import { CardMedia, Box, CircularProgress, Skeleton } from '@mui/material';
 import { CARD_CONFIG } from '../../constants/ui.constants';
 import { getPrimaryImage } from '../../utils/exerciseUtils';
 
@@ -34,18 +34,11 @@ const ExerciseImage = ({ exercise, alt, height = CARD_CONFIG.IMAGE_HEIGHT }) => 
 
   if (error) {
     return (
-      <Box
-        sx={{
-          height,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: 'grey.100',
-          color: 'text.secondary',
-        }}
-      >
-        No image available
-      </Box>
+      <Skeleton
+        variant="rectangular"
+        width="100%"
+        height={height}
+      />
     );
   }
 
