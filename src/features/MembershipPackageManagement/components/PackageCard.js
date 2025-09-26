@@ -20,8 +20,11 @@ import {
   People,
   AttachMoney,
 } from '@mui/icons-material';
-import { MEMBERSHIP_TYPES, MEMBERSHIP_DURATIONS } from '../constants';
-import { formatCurrency } from '../utils';
+import {
+  MEMBERSHIP_TYPES,
+  MEMBERSHIP_DURATIONS,
+} from '../membershipPackage.constants';
+import { formatCurrency } from '../membershipPackage.utils';
 
 const PackageCard = ({
   package: pkg,

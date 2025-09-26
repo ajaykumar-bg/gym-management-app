@@ -27,11 +27,11 @@ import {
   formatCurrency,
   calculateRevenueStats,
   getMembershipStats,
-} from '../utils';
+} from '../membershipPackage.utils';
 import {
   MOCK_MEMBERSHIP_PACKAGES,
   MOCK_MEMBER_SUBSCRIPTIONS,
-} from '../constants';
+} from '../membershipPackage.constants';
 
 const MembershipStats = ({
   packages = MOCK_MEMBERSHIP_PACKAGES,

@@ -39,7 +39,7 @@ import {
   MEMBERSHIP_TYPES,
   SUBSCRIPTION_STATUS,
   PACKAGE_STATUS,
-} from './constants';
+} from './membershipPackage.constants';
 import {
   filterPackagesByType,
   filterPackagesByStatus,
@@ -47,7 +47,7 @@ import {
   searchPackages,
   searchSubscriptions,
   sortPackages,
-} from './utils';
+} from './membershipPackage.utils';
 
 const MembershipPackageManagement = ({
   userRole = { canManagePackages: true },

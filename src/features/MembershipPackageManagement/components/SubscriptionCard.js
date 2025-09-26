@@ -39,7 +39,7 @@ import {
   SUBSCRIPTION_STATUS,
   PAYMENT_STATUS,
   MOCK_MEMBERSHIP_PACKAGES,
-} from '../constants';
+} from '../membershipPackage.constants';
 import {
   getSubscriptionStatusColor,
   getPaymentStatusColor,
@@ -47,7 +47,7 @@ import {
   getDaysUntilExpiry,
   isExpiringSoon,
   isExpired,
-} from '../utils';
+} from '../membershipPackage.utils';
 
 const SubscriptionCard = ({
   subscription,

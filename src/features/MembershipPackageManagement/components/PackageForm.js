@@ -29,8 +29,11 @@ import {
   MEMBERSHIP_TYPES,
   MEMBERSHIP_DURATIONS,
   PACKAGE_STATUS,
-} from '../constants';
-import { validatePackageData, generatePackageId } from '../utils';
+} from '../membershipPackage.constants';
+import {
+  validatePackageData,
+  generatePackageId,
+} from '../membershipPackage.utils';
 
 const PackageForm = ({
   open,
