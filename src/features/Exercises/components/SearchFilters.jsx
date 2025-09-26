@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import {
 	Grid,
 	Typography,
@@ -10,6 +10,8 @@ import {
 	MenuItem,
 	TextField,
 	Paper,
+	Chip,
+	Box,
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import {
@@ -25,14 +27,97 @@ function SearchFilters(props) {
 		filters,
 		handleSearch,
 		handleFilterChange,
-		applyFilters,
 		clearFilters,
 	} = props;
+
+	// Count active filters
+	const activeFiltersCount = useMemo(() => {
+		let count = 0;
+		if (filters.searchQuery) count++;
+		if (filters.muscle !== 'All') count++;
+		if (filters.equipment !== 'All') count++;
+		if (filters.category !== 'All') count++;
+		if (filters.force !== 'All') count++;
+		if (filters.difficulty !== 'All') count++;
+		return count;
+	}, [filters]);
+
+	// Get active filter labels
+	const getActiveFilters = useMemo(() => {
+		const active = [];
+		if (filters.searchQuery) active.push({ key: 'search', label: `"${filters.searchQuery}"` });
+		if (filters.muscle !== 'All') {
+			const muscle = muscleTypes.find(m => m.value === filters.muscle);
+			active.push({ key: 'muscle', label: muscle?.label || filters.muscle });
+		}
+		if (filters.equipment !== 'All') {
+			const equipment = equipmentTypes.find(e => e.value === filters.equipment);
+			active.push({ key: 'equipment', label: equipment?.label || filters.equipment });
+		}
+		if (filters.category !== 'All') {
+			const category = categoryTypes.find(c => c.value === filters.category);
+			active.push({ key: 'category', label: category?.label || filters.category });
+		}
+		if (filters.force !== 'All') {
+			const force = forceTypes.find(f => f.value === filters.force);
+			active.push({ key: 'force', label: force?.label || filters.force });
+		}
+		if (filters.difficulty !== 'All') {
+			const difficulty = difficultyLevels.find(d => d.value === filters.difficulty);
+			active.push({ key: 'difficulty', label: difficulty?.label || filters.difficulty });
+		}
+		return active;
+	}, [filters]);
+
+	const handleClearSpecificFilter = (filterKey) => {
+		const event = {
+			target: {
+				name: filterKey,
+				value: filterKey === 'searchQuery' ? '' : 'All'
+			}
+		};
+		if (filterKey === 'searchQuery') {
+			handleSearch(event);
+		} else {
+			handleFilterChange(event);
+		}
+	};
+
 	return (
 		<Paper elevation={3} sx={{ p: 3, mb: 4 }}>
-			<Typography variant='h5' component='h2' gutterBottom>
-				Filters
-			</Typography>
+			<Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+				<Typography variant='h5' component='h2'>
+					Filters
+				</Typography>
+				{activeFiltersCount > 0 && (
+					<Chip 
+						label={`${activeFiltersCount} active filter${activeFiltersCount > 1 ? 's' : ''}`} 
+						color="primary" 
+						size="small"
+					/>
+				)}
+			</Box>
+
+			{/* Active Filters Display */}
+			{activeFiltersCount > 0 && (
+				<Box sx={{ mb: 2 }}>
+					<Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+						Active filters:
+					</Typography>
+					<Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+						{getActiveFilters.map((filter) => (
+							<Chip
+								key={filter.key}
+								label={filter.label}
+								onDelete={() => handleClearSpecificFilter(filter.key === 'search' ? 'searchQuery' : filter.key)}
+								size="small"
+								variant="outlined"
+								color="primary"
+							/>
+						))}
+					</Box>
+				</Box>
+			)}
 
 			<Grid container spacing={3}>
 				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
@@ -43,6 +128,7 @@ function SearchFilters(props) {
 						name='searchQuery'
 						value={filters.searchQuery}
 						onChange={handleSearch}
+						placeholder="Search by name, muscle, equipment..."
 						InputProps={{
 							endAdornment: <SearchIcon position='end' />,
 						}}
@@ -150,12 +236,14 @@ function SearchFilters(props) {
 				</Grid>
 
 				<Grid size={{ xs: 12, sm: 6, md: 3 }}>
-					<Stack spacing={2} direction='row'>
-						<Button variant='contained' onClick={applyFilters}>
-							Search
-						</Button>
-						<Button variant='outlined' onClick={clearFilters}>
-							Clear
+					<Stack spacing={2} direction='row' sx={{ height: '56px', alignItems: 'center' }}>
+						<Button 
+							variant='outlined' 
+							onClick={clearFilters}
+							sx={{ height: 'fit-content' }}
+							disabled={activeFiltersCount === 0}
+						>
+							Clear All Filters
 						</Button>
 					</Stack>
 				</Grid>
