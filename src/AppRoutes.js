@@ -18,6 +18,9 @@ const MemberManagement = React.lazy(() =>
 const TrainerManagement = React.lazy(() =>
   import('./features/TrainerManagement')
 );
+const EquipmentManagement = React.lazy(() =>
+  import('./features/EquipmentManagement')
+);
 const MyProfile = React.lazy(() => import('./features/MyProfile'));
 const RoleConfiguration = React.lazy(() =>
   import('./features/RoleConfiguration')
@@ -53,6 +56,10 @@ function AppRoutes() {
                       <Route path='/' element={<Dashboard />} />
                       <Route path='/members' element={<MemberManagement />} />
                       <Route path='/trainers' element={<TrainerManagement />} />
+                      <Route
+                        path='/equipment'
+                        element={<EquipmentManagement />}
+                      />
                       <Route path='/my-profile' element={<MyProfile />} />
                       <Route
                         path='/role-configuration'

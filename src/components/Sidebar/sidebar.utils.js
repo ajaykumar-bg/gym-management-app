@@ -5,6 +5,7 @@ import {
   Tune as TuneIcon,
   People as PeopleIcon,
   FitnessCenter as FitnessCenterIcon,
+  Build as BuildIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -23,6 +24,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Trainer Management',
     path: '/trainers',
     icon: <FitnessCenterIcon />,
+  },
+  {
+    label: 'Equipment Management',
+    path: '/equipment',
+    icon: <BuildIcon />,
   },
 ];
 

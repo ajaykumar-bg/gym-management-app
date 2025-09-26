@@ -133,13 +133,13 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
         <Box sx={{ pt: 1 }}>
           <Grid container spacing={2}>
             {/* Basic Information */}
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography variant='h6' color='primary' gutterBottom>
                 Basic Information
               </Typography>
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Full Name'
@@ -151,7 +151,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Email'
@@ -164,7 +164,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Phone'
@@ -176,7 +176,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Date of Birth'
@@ -190,7 +190,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 label='Address'
@@ -202,7 +202,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
             </Grid>
 
             {/* Emergency Contact */}
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography
                 variant='h6'
                 color='primary'
@@ -213,7 +213,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </Typography>
             </Grid>
 
-            <Grid xs={12} sm={4}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <TextField
                 fullWidth
                 label='Contact Name'
@@ -224,7 +224,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={4}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <TextField
                 fullWidth
                 label='Contact Phone'
@@ -235,7 +235,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={4}>
+            <Grid size={{ xs: 12, sm: 4 }}>
               <TextField
                 fullWidth
                 label='Relationship'
@@ -251,7 +251,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
             </Grid>
 
             {/* Membership Information */}
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography
                 variant='h6'
                 color='primary'
@@ -262,7 +262,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </Typography>
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <FormControl fullWidth>
                 <InputLabel>Membership Type</InputLabel>
                 <Select
@@ -281,7 +281,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </FormControl>
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <FormControl fullWidth>
                 <InputLabel>Status</InputLabel>
                 <Select
@@ -299,7 +299,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
             </Grid>
 
             {/* Physical Information */}
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography
                 variant='h6'
                 color='primary'
@@ -310,7 +310,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </Typography>
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Weight (kg)'
@@ -320,7 +320,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
                 label='Height (cm)'
@@ -331,7 +331,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
             </Grid>
 
             {/* Additional Information */}
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <Typography
                 variant='h6'
                 color='primary'
@@ -342,7 +342,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </Typography>
             </Grid>
 
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 label='Medical Conditions'
@@ -356,7 +356,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12}>
+            <Grid size={{ xs: 12 }}>
               <TextField
                 fullWidth
                 label='Fitness Goals'
@@ -368,7 +368,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               />
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <FormControl fullWidth>
                 <InputLabel>Preferred Workout Time</InputLabel>
                 <Select
@@ -385,7 +385,7 @@ const MemberForm = ({ open, onClose, member = null, onSave }) => {
               </FormControl>
             </Grid>
 
-            <Grid xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <FormControlLabel
                 control={
                   <Switch
