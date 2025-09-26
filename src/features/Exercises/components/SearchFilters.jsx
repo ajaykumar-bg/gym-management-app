@@ -20,7 +20,7 @@ import {
 	categoryTypes,
 	forceTypes,
 	muscleTypes,
-} from '../constants/exercisesApp.mock';
+} from '../constants/exercises.constant';
 
 function SearchFilters(props) {
 	const {
