@@ -52,7 +52,6 @@ function Exercise(props) {
 
 	const defaultGridProps = {
 		size: { xs: 12, sm: 6, md: 4 },
-		key: exercise.name || exercise.id,
 	};
 
 	const defaultCardProps = {
@@ -71,7 +70,8 @@ function Exercise(props) {
 	};
 
 	return (
-		<Grid {...defaultGridProps} {...gridProps}>
+		<Grid {...defaultGridProps} {...gridProps} 
+		key={exercise.name || exercise.id}>
 			<Card {...defaultCardProps} {...cardProps}>
 				{/* Exercise Image */}
 				<ExerciseImage 

@@ -159,6 +159,27 @@ export const getPrimaryImage = (exercise) => {
   return exercise.images[0] || '/api/placeholder/500/300';
 };
 
+export const getPrepopulatedImage = (exercise) => {
+  // Process images to include PUBLIC_URL
+  const processedImages = Array.isArray(exercise.images)
+    ? exercise.images.map((image) => {
+        if (!image) return image;
+        // Only prepend PUBLIC_URL if the image doesn't already have a protocol (http/https)
+        if (
+          image.startsWith('http://') ||
+          image.startsWith('https://') ||
+          image.startsWith('/api/')
+        ) {
+          return image;
+        }
+        return `${process.env.PUBLIC_URL || ''}${
+          image.startsWith('/') ? image : `/${image}`
+        }`;
+      })
+    : [];
+  return processedImages;
+};
+
 /**
  * Sanitizes exercise data for safe display
  * @param {Object} exercise - Exercise object
@@ -177,7 +198,7 @@ export const sanitizeExercise = (exercise) => {
     secondaryMuscles: Array.isArray(exercise.secondaryMuscles)
       ? exercise.secondaryMuscles
       : [],
-    images: Array.isArray(exercise.images) ? exercise.images : [],
+    images: getPrepopulatedImage(exercise),
     instructions: Array.isArray(exercise.instructions)
       ? exercise.instructions
       : [],
