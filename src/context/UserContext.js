@@ -27,8 +27,11 @@ export const UserProvider = ({ children }) => {
       canManageMembers: true,
       canViewTrainers: true,
       canManageTrainers: true,
-      canManageClasses: true,
+      canViewEquipment: true,
       canManageEquipment: true,
+      canViewPackages: true,
+      canManagePackages: true,
+      canManageClasses: true,
       canManageMemberships: true,
       canManagePayments: true,
       canAccessRoleConfiguration: true,
@@ -43,8 +46,11 @@ export const UserProvider = ({ children }) => {
       canManageMembers: true, // Can manage basic info of assigned members
       canViewTrainers: true, // Can view other trainers
       canManageTrainers: false,
-      canManageClasses: true,
+      canViewEquipment: true,
       canManageEquipment: true,
+      canViewPackages: true, // Can view membership packages for member enrollment
+      canManagePackages: false,
+      canManageClasses: true,
       canManageMemberships: false,
       canManagePayments: false,
       canAccessRoleConfiguration: false,
@@ -59,8 +65,11 @@ export const UserProvider = ({ children }) => {
       canManageMembers: false,
       canViewTrainers: true, // Can view trainer profiles for selection
       canManageTrainers: false,
-      canManageClasses: false, // Can only book/view classes
+      canViewEquipment: false, // Can only view equipment availability
       canManageEquipment: false, // Can only view equipment availability
+      canViewPackages: true, // Can view available membership packages
+      canManagePackages: false,
+      canManageClasses: false, // Can only book/view classes
       canManageMemberships: false, // Can only view their own membership
       canManagePayments: false, // Can only view their own payment history
       canAccessRoleConfiguration: false,

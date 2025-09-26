@@ -6,6 +6,8 @@ export const permissionLabels = {
   canManageTrainers: 'Manage Trainers',
   canViewEquipment: 'View Equipment',
   canManageEquipment: 'Manage Equipment',
+  canViewPackages: 'View Membership Packages',
+  canManagePackages: 'Manage Membership Packages',
   canManageClasses: 'Manage Classes',
   canManageMemberships: 'Manage Memberships',
   canManagePayments: 'Manage Payments',
@@ -18,6 +20,7 @@ export const permissionLabels = {
 
 export const adminOnlyPermissions = [
   'canManageTrainers',
+  'canManagePackages',
   'canManageMemberships',
   'canManagePayments',
   'canAccessRoleConfiguration',
@@ -54,6 +57,7 @@ export const roleAccessDetails = [
     features: [
       'Full gym management',
       'Member & trainer management',
+      'Membership packages & billing',
       'Financial oversight & billing',
       'System & role configuration',
       'Complete reports & analytics',
@@ -69,6 +73,7 @@ export const roleAccessDetails = [
     features: [
       'Assigned member management',
       'View all trainer profiles',
+      'View membership packages',
       'Class & session scheduling',
       'Equipment status tracking',
       'Training analytics & progress',

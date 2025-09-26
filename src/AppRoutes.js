@@ -24,6 +24,9 @@ const EquipmentManagement = React.lazy(() =>
 const WorkoutPlanManagement = React.lazy(() =>
   import('./features/WorkoutPlanManagement')
 );
+const MembershipPackageManagement = React.lazy(() =>
+  import('./features/MembershipPackageManagement')
+);
 const MyProfile = React.lazy(() => import('./features/MyProfile'));
 const RoleConfiguration = React.lazy(() =>
   import('./features/RoleConfiguration')
@@ -66,6 +69,10 @@ function AppRoutes() {
                       <Route
                         path='/workout-plans'
                         element={<WorkoutPlanManagement />}
+                      />
+                      <Route
+                        path='/membership-packages'
+                        element={<MembershipPackageManagement />}
                       />
                       <Route path='/my-profile' element={<MyProfile />} />
                       <Route

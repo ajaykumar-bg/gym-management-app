@@ -10,6 +10,11 @@ export const NAVIGATION_PATHS = {
   DASHBOARD: '/',
   ROLE_CONFIGURATION: '/role-configuration',
   SETTINGS: '/settings',
+  MEMBER_MANAGEMENT: '/members',
+  TRAINER_MANAGEMENT: '/trainers',
+  EQUIPMENT_MANAGEMENT: '/equipment',
+  WORKOUT_PLANS: '/workout-plans',
+  MEMBERSHIP_PACKAGES: '/membership-packages',
 };
 
 // Sidebar configuration

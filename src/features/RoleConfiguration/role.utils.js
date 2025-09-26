@@ -38,6 +38,7 @@ export const getPermissionLevel = (permission, role, adminOnlyPermissions) => {
         : 'full';
     case 'member':
       if (permission === 'canViewDashboard') return 'full';
+      if (permission === 'canViewPackages') return 'view';
       if (
         [
           'canManageMembers',

@@ -7,6 +7,7 @@ import {
   FitnessCenter as FitnessCenterIcon,
   Build as BuildIcon,
   Assignment as AssignmentIcon,
+  CardMembership as CardMembershipIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -30,6 +31,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Equipment Management',
     path: '/equipment',
     icon: <BuildIcon />,
+  },
+  {
+    label: 'Membership & Packages',
+    path: '/membership-packages',
+    icon: <CardMembershipIcon />,
   },
 ];
 
