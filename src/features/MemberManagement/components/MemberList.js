@@ -160,7 +160,7 @@ const MemberList = ({
 
         {/* Members Table */}
         <TableContainer component={Paper} elevation={0}>
-          <Table>
+          <Table size='small'>
             <TableHead>
               <TableRow>
                 <TableCell>Member</TableCell>

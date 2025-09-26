@@ -208,7 +208,7 @@ const TrainerList = ({
         </Box>
 
         <TableContainer>
-          <Table>
+          <Table size='small'>
             <TableHead>
               <TableRow>
                 <TableCell>Trainer</TableCell>

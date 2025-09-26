@@ -272,7 +272,7 @@ const EquipmentManagement = () => {
 
       {/* Equipment Table */}
       <TableContainer component={Paper}>
-        <Table>
+        <Table size='small'>
           <TableHead>
             <TableRow>
               <TableCell>Equipment</TableCell>
