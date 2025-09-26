@@ -1,8 +1,5 @@
-// Main Dashboard exports
+// Dashboard components exports
 export { default as Dashboard } from './Dashboard';
-export { default } from './Dashboard';
-
-// Components
 export { default as StatCard } from './components/StatCard';
 export { default as RecentActivity } from './components/RecentActivity';
 export { default as QuickActions } from './components/QuickActions';
@@ -15,3 +12,6 @@ export { default as TrainerScheduleChart } from './components/TrainerScheduleCha
 // Constants and utilities
 export * from './constants';
 export * from './dashboard.utils';
+
+// Default export
+export { default } from './Dashboard';
