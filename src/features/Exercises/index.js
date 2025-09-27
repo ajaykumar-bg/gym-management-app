@@ -1,5 +1,17 @@
-// Main Exercise App component
-export { default } from './components/ExerciseApp';
+import React from 'react';
+import { ExercisesProvider } from './context';
+import ExerciseApp from './components/ExerciseApp';
+
+// Main Exercise App component with context provider
+const ExercisesWithProvider = () => {
+  return (
+    <ExercisesProvider>
+      <ExerciseApp />
+    </ExercisesProvider>
+  );
+};
+
+export default ExercisesWithProvider;
 
 // Core components
 export { default as ExerciseList } from './components/ExerciseList';
@@ -19,3 +31,6 @@ export * from './hooks';
 
 // Constants
 export * from './constants';
+
+// Context
+export * from './context';

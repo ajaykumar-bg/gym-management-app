@@ -1,4 +1,9 @@
-import React, { useState, useCallback, useMemo } from 'react';
+/**
+ * Exercise App Component (Refactored with Context)
+ * Main container for the exercises feature using ExercisesContext for state management
+ */
+
+import React from 'react';
 import {
   Box,
   Typography,
@@ -7,8 +12,7 @@ import {
   useTheme,
 } from '@mui/material';
 
-import exercisesData from '../constants/exercises.json';
-
+import { useExercises } from '../context';
 import ExerciseDetail from './ExerciseDetail';
 import SearchFilters from './SearchFilters';
 import ExerciseList from './ExerciseList';
@@ -17,139 +21,38 @@ import ExerciseList from './ExerciseList';
 const ExerciseApp = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
 
-  const [filters, setFilters] = useState({
-    searchQuery: '',
-    muscle: 'All',
-    equipment: 'All',
-    category: 'All',
-    force: 'All',
-    difficulty: 'All',
-  });
+  // Get all state and functions from context
+  const {
+    // Filter state
+    filters,
+    filteredExercises,
 
-  const [selectedExercise, setSelectedExercise] = useState(null);
-  const [detailsOpen, setDetailsOpen] = useState(false);
-  const [activeStep, setActiveStep] = useState(0);
+    // Filter actions
+    handleFilterChange,
+    handleSearch,
+    clearFilters,
+    handleClearSpecificFilter,
 
-  // Memoized filtered exercises to avoid recalculating on every render
-  const filteredExercises = useMemo(() => {
-    let filtered = [...exercisesData];
+    // Exercise detail state
+    selectedExercise,
+    detailsOpen,
+    activeStep,
 
-    // Filter by muscle
-    if (filters.muscle && filters.muscle !== 'All') {
-      filtered = filtered.filter((exercise) =>
-        exercise.primaryMuscles.includes(filters.muscle)
-      );
-    }
+    // Exercise detail actions
+    openExerciseDetails,
+    closeExerciseDetails,
+    handleNext,
+    handleBack,
 
-    // Filter by equipment
-    if (filters.equipment && filters.equipment !== 'All') {
-      filtered = filtered.filter(
-        (exercise) => exercise.equipment === filters.equipment
-      );
-    }
+    // Mobile UI state
+    mobileFiltersOpen,
+    openMobileFilters,
+    closeMobileFilters,
 
-    // Filter by force
-    if (filters.force && filters.force !== 'All') {
-      filtered = filtered.filter(
-        (exercise) => exercise.force === filters.force
-      );
-    }
-
-    // Filter by difficulty
-    if (filters.difficulty && filters.difficulty !== 'All') {
-      filtered = filtered.filter(
-        (exercise) => exercise.level === filters.difficulty
-      );
-    }
-
-    // Filter by category
-    if (filters.category && filters.category !== 'All') {
-      filtered = filtered.filter(
-        (exercise) => exercise.category === filters.category
-      );
-    }
-
-    // Filter by search query
-    if (filters.searchQuery) {
-      const query = filters.searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (exercise) =>
-          exercise.name?.toLowerCase().includes(query) ||
-          exercise.primaryMuscles.some((muscle) =>
-            muscle?.toLowerCase().includes(query)
-          ) ||
-          exercise.equipment?.toLowerCase().includes(query) ||
-          exercise.category?.toLowerCase().includes(query)
-      );
-    }
-
-    return filtered;
-  }, [filters]);
-
-  // Handle filter changes
-  const handleFilterChange = useCallback((event) => {
-    const { name, value } = event.target;
-    setFilters((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  }, []);
-
-  // Handle search
-  const handleSearch = useCallback((event) => {
-    const value = event.target.value;
-    setFilters((prev) => ({
-      ...prev,
-      searchQuery: value,
-    }));
-  }, []);
-
-  const clearFilters = useCallback(() => {
-    setFilters({
-      searchQuery: '',
-      muscle: 'All',
-      equipment: 'All',
-      category: 'All',
-      force: 'All',
-      difficulty: 'All',
-    });
-  }, []);
-
-  // Clear specific filter
-  const handleClearSpecificFilter = useCallback((filterKey) => {
-    if (filterKey === 'searchQuery') {
-      setFilters((prev) => ({ ...prev, searchQuery: '' }));
-    } else {
-      setFilters((prev) => ({ ...prev, [filterKey]: 'All' }));
-    }
-  }, []);
-
-  // Apply filters is now handled by useMemo, so we can remove this function
-  // and just pass the memoized filteredExercises directly
-
-  // Open exercise details
-  const openExerciseDetails = useCallback((exercise) => {
-    setSelectedExercise(exercise);
-    setDetailsOpen(true);
-    setActiveStep(0);
-  }, []);
-
-  // Close exercise details
-  const closeExerciseDetails = useCallback(() => {
-    setDetailsOpen(false);
-    setSelectedExercise(null);
-  }, []);
-
-  // Handle image navigation
-  const handleNext = useCallback(() => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  }, []);
-
-  const handleBack = useCallback(() => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  }, []);
+    // Data
+    totalExercises,
+  } = useExercises();
 
   return (
     <Box sx={{ display: 'flex', width: '100%', height: '100vh' }}>
@@ -182,7 +85,7 @@ const ExerciseApp = () => {
       <Drawer
         variant='temporary'
         open={mobileFiltersOpen}
-        onClose={() => setMobileFiltersOpen(false)}
+        onClose={closeMobileFilters}
         ModalProps={{
           keepMounted: true, // Better open performance on mobile
         }}
@@ -238,7 +141,7 @@ const ExerciseApp = () => {
           {isMobile && (
             <Box
               component='button'
-              onClick={() => setMobileFiltersOpen(true)}
+              onClick={openMobileFilters}
               sx={{
                 display: { xs: 'flex', md: 'none' },
                 alignItems: 'center',
@@ -268,7 +171,7 @@ const ExerciseApp = () => {
             exercises={filteredExercises}
             openExerciseDetails={openExerciseDetails}
             clearFilters={clearFilters}
-            totalUnfilteredCount={exercisesData.length}
+            totalUnfilteredCount={totalExercises}
           />
         </Box>
       </Box>
