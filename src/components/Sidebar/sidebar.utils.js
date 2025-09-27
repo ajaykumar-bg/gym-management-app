@@ -8,6 +8,7 @@ import {
   Build as BuildIcon,
   Assignment as AssignmentIcon,
   CardMembership as CardMembershipIcon,
+  Restaurant as RestaurantIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -36,6 +37,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Membership & Packages',
     path: '/membership-packages',
     icon: <CardMembershipIcon />,
+  },
+  {
+    label: 'Diet Plans',
+    path: '/diet-plans',
+    icon: <RestaurantIcon />,
   },
 ];
 

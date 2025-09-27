@@ -33,6 +33,9 @@ const RoleConfiguration = React.lazy(() =>
 );
 
 const Exercises = React.lazy(() => import('./features/Exercises'));
+const DietPlanManagement = React.lazy(() =>
+  import('./features/DietPlanManagement')
+);
 
 const Settings = React.lazy(() => import('./features/Settings'));
 
@@ -84,6 +87,10 @@ function AppRoutes() {
                       />
                       <Route path='/settings' element={<Settings />} />
                       <Route path='/exercises' element={<Exercises />} />
+                      <Route
+                        path='/diet-plans'
+                        element={<DietPlanManagement />}
+                      />
                       <Route path='*' element={<Navigate to='/' replace />} />
                     </Routes>
                   </Suspense>

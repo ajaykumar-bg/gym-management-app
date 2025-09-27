@@ -1,0 +1,123 @@
+[
+  {
+    "id": "assignment001",
+    "dietPlanId": "dp001",
+    "memberId": "member001",
+    "memberName": "John Smith",
+    "memberEmail": "john.smith@email.com",
+    "assignedBy": "trainer001",
+    "assignedDate": "2024-01-20T10:00:00Z",
+    "startDate": "2024-01-22T00:00:00Z",
+    "endDate": "2024-02-21T23:59:59Z",
+    "status": "active",
+    "progress": {
+      "completedDays": 15,
+      "totalDays": 30,
+      "adherence": 85,
+      "weightChange": -2.5,
+      "measurements": {
+        "waist": -3.2,
+        "hips": -2.1,
+        "chest": 0.5
+      }
+    },
+    "notes": "Member is showing good progress and high adherence to the plan.",
+    "lastUpdated": "2024-02-05T16:30:00Z"
+  },
+  {
+    "id": "assignment002",
+    "dietPlanId": "dp002",
+    "memberId": "member002",
+    "memberName": "Sarah Johnson",
+    "memberEmail": "sarah.johnson@email.com",
+    "assignedBy": "trainer002",
+    "assignedDate": "2024-01-15T14:00:00Z",
+    "startDate": "2024-01-17T00:00:00Z",
+    "endDate": "2024-03-03T23:59:59Z",
+    "status": "active",
+    "progress": {
+      "completedDays": 22,
+      "totalDays": 45,
+      "adherence": 92,
+      "weightChange": 1.8,
+      "measurements": {
+        "waist": 1.5,
+        "hips": 1.2,
+        "chest": 2.3,
+        "arms": 1.1
+      }
+    },
+    "notes": "Excellent progress in muscle gain. Member is very dedicated.",
+    "lastUpdated": "2024-02-08T11:45:00Z"
+  },
+  {
+    "id": "assignment003",
+    "dietPlanId": "dp001",
+    "memberId": "member003",
+    "memberName": "Mike Davis",
+    "memberEmail": "mike.davis@email.com",
+    "assignedBy": "trainer001",
+    "assignedDate": "2024-01-25T09:30:00Z",
+    "startDate": "2024-01-27T00:00:00Z",
+    "endDate": "2024-02-26T23:59:59Z",
+    "status": "paused",
+    "progress": {
+      "completedDays": 8,
+      "totalDays": 30,
+      "adherence": 65,
+      "weightChange": -0.8,
+      "measurements": {
+        "waist": -1.2,
+        "hips": -0.5
+      }
+    },
+    "notes": "Member requested to pause due to work commitments. Will resume next week.",
+    "lastUpdated": "2024-02-03T14:20:00Z"
+  },
+  {
+    "id": "assignment004",
+    "dietPlanId": "dp003",
+    "memberId": "member004",
+    "memberName": "Emma Wilson",
+    "memberEmail": "emma.wilson@email.com",
+    "assignedBy": "trainer003",
+    "assignedDate": "2024-01-12T16:00:00Z",
+    "startDate": "2024-01-15T00:00:00Z",
+    "endDate": "2024-03-15T23:59:59Z",
+    "status": "completed",
+    "progress": {
+      "completedDays": 60,
+      "totalDays": 60,
+      "adherence": 95,
+      "weightChange": 0.2,
+      "measurements": {
+        "waist": 0,
+        "hips": 0.1,
+        "chest": 0.3
+      }
+    },
+    "notes": "Successfully completed maintenance plan. Excellent adherence and results.",
+    "lastUpdated": "2024-03-15T18:00:00Z"
+  },
+  {
+    "id": "assignment005",
+    "dietPlanId": "dp002",
+    "memberId": "member005",
+    "memberName": "Alex Brown",
+    "memberEmail": "alex.brown@email.com",
+    "assignedBy": "trainer002",
+    "assignedDate": "2024-02-01T10:15:00Z",
+    "startDate": "2024-02-03T00:00:00Z",
+    "endDate": "2024-03-20T23:59:59Z",
+    "status": "active",
+    "progress": {
+      "completedDays": 5,
+      "totalDays": 45,
+      "adherence": 80,
+      "weightChange": 0.3,
+      "measurements": {}
+    },
+    "notes": "Just started the plan. Initial measurements taken.",
+    "lastUpdated": "2024-02-08T09:30:00Z"
+  }
+]

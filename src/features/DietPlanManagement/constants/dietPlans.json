@@ -1,0 +1,270 @@
+[
+  {
+    "id": "dp001",
+    "name": "Weight Loss Plan - Beginner",
+    "description": "A balanced diet plan designed for beginners looking to lose weight gradually and safely.",
+    "type": "weight-loss",
+    "difficulty": "beginner",
+    "duration": 30,
+    "targetCalories": 1800,
+    "macros": {
+      "protein": 25,
+      "carbs": 45,
+      "fats": 30
+    },
+    "createdBy": "trainer001",
+    "createdAt": "2024-01-15T10:00:00Z",
+    "isActive": true,
+    "tags": ["weight-loss", "beginner", "balanced"],
+    "meals": [
+      {
+        "id": "meal001",
+        "type": "breakfast",
+        "name": "Protein-Rich Breakfast",
+        "time": "07:00",
+        "calories": 400,
+        "foods": [
+          {
+            "name": "Oatmeal",
+            "quantity": "1 cup",
+            "calories": 150,
+            "protein": 5,
+            "carbs": 27,
+            "fats": 3
+          },
+          {
+            "name": "Greek Yogurt",
+            "quantity": "150g",
+            "calories": 150,
+            "protein": 15,
+            "carbs": 9,
+            "fats": 8
+          },
+          {
+            "name": "Berries",
+            "quantity": "100g",
+            "calories": 100,
+            "protein": 1,
+            "carbs": 24,
+            "fats": 0
+          }
+        ]
+      },
+      {
+        "id": "meal002",
+        "type": "lunch",
+        "name": "Lean Protein Lunch",
+        "time": "12:30",
+        "calories": 500,
+        "foods": [
+          {
+            "name": "Grilled Chicken Breast",
+            "quantity": "150g",
+            "calories": 250,
+            "protein": 46,
+            "carbs": 0,
+            "fats": 6
+          },
+          {
+            "name": "Quinoa",
+            "quantity": "100g",
+            "calories": 120,
+            "protein": 4,
+            "carbs": 22,
+            "fats": 2
+          },
+          {
+            "name": "Mixed Vegetables",
+            "quantity": "200g",
+            "calories": 80,
+            "protein": 3,
+            "carbs": 16,
+            "fats": 1
+          },
+          {
+            "name": "Olive Oil",
+            "quantity": "1 tbsp",
+            "calories": 50,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 6
+          }
+        ]
+      },
+      {
+        "id": "meal003",
+        "type": "snack",
+        "name": "Healthy Snack",
+        "time": "15:30",
+        "calories": 200,
+        "foods": [
+          {
+            "name": "Apple",
+            "quantity": "1 medium",
+            "calories": 80,
+            "protein": 0,
+            "carbs": 21,
+            "fats": 0
+          },
+          {
+            "name": "Almonds",
+            "quantity": "20g",
+            "calories": 120,
+            "protein": 4,
+            "carbs": 2,
+            "fats": 11
+          }
+        ]
+      },
+      {
+        "id": "meal004",
+        "type": "dinner",
+        "name": "Light Dinner",
+        "time": "19:00",
+        "calories": 450,
+        "foods": [
+          {
+            "name": "Salmon Fillet",
+            "quantity": "120g",
+            "calories": 200,
+            "protein": 28,
+            "carbs": 0,
+            "fats": 9
+          },
+          {
+            "name": "Sweet Potato",
+            "quantity": "150g",
+            "calories": 130,
+            "protein": 2,
+            "carbs": 30,
+            "fats": 0
+          },
+          {
+            "name": "Steamed Broccoli",
+            "quantity": "150g",
+            "calories": 40,
+            "protein": 4,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "Avocado",
+            "quantity": "50g",
+            "calories": 80,
+            "protein": 1,
+            "carbs": 4,
+            "fats": 7
+          }
+        ]
+      }
+    ],
+    "waterIntake": 3000,
+    "supplements": [
+      {
+        "name": "Multivitamin",
+        "dosage": "1 tablet",
+        "timing": "breakfast"
+      },
+      {
+        "name": "Omega-3",
+        "dosage": "1000mg",
+        "timing": "dinner"
+      }
+    ]
+  },
+  {
+    "id": "dp002",
+    "name": "Muscle Gain Plan - Intermediate",
+    "description": "High-protein diet plan designed for intermediate fitness enthusiasts looking to build lean muscle mass.",
+    "type": "muscle-gain",
+    "difficulty": "intermediate",
+    "duration": 45,
+    "targetCalories": 2500,
+    "macros": {
+      "protein": 35,
+      "carbs": 40,
+      "fats": 25
+    },
+    "createdBy": "trainer002",
+    "createdAt": "2024-01-10T14:30:00Z",
+    "isActive": true,
+    "tags": ["muscle-gain", "intermediate", "high-protein"],
+    "meals": [
+      {
+        "id": "meal005",
+        "type": "breakfast",
+        "name": "Power Breakfast",
+        "time": "07:00",
+        "calories": 550,
+        "foods": [
+          {
+            "name": "Scrambled Eggs",
+            "quantity": "3 whole + 2 whites",
+            "calories": 250,
+            "protein": 24,
+            "carbs": 2,
+            "fats": 16
+          },
+          {
+            "name": "Whole Grain Toast",
+            "quantity": "2 slices",
+            "calories": 160,
+            "protein": 6,
+            "carbs": 32,
+            "fats": 2
+          },
+          {
+            "name": "Banana",
+            "quantity": "1 large",
+            "calories": 120,
+            "protein": 1,
+            "carbs": 31,
+            "fats": 0
+          },
+          {
+            "name": "Peanut Butter",
+            "quantity": "1 tbsp",
+            "calories": 90,
+            "protein": 4,
+            "carbs": 3,
+            "fats": 8
+          }
+        ]
+      }
+    ],
+    "waterIntake": 4000,
+    "supplements": [
+      {
+        "name": "Whey Protein",
+        "dosage": "25g",
+        "timing": "post-workout"
+      },
+      {
+        "name": "Creatine",
+        "dosage": "5g",
+        "timing": "post-workout"
+      }
+    ]
+  },
+  {
+    "id": "dp003",
+    "name": "Maintenance Plan - Advanced",
+    "description": "Balanced maintenance plan for advanced athletes to maintain current weight and performance.",
+    "type": "maintenance",
+    "difficulty": "advanced",
+    "duration": 60,
+    "targetCalories": 2200,
+    "macros": {
+      "protein": 30,
+      "carbs": 40,
+      "fats": 30
+    },
+    "createdBy": "trainer003",
+    "createdAt": "2024-01-05T09:15:00Z",
+    "isActive": true,
+    "tags": ["maintenance", "advanced", "balanced"],
+    "meals": [],
+    "waterIntake": 3500,
+    "supplements": []
+  }
+]
