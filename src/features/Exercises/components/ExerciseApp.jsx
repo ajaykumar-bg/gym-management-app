@@ -248,11 +248,7 @@ const ExerciseApp = () => {
                 border: 1,
                 borderColor: 'divider',
                 borderRadius: 1,
-                backgroundColor: 'background.paper',
                 cursor: 'pointer',
-                '&:hover': {
-                  backgroundColor: 'action.hover',
-                },
               }}
             >
               <Typography variant='body2'>Filters</Typography>
