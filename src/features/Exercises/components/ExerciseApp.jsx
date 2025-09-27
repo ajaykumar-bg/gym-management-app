@@ -3,19 +3,24 @@
  * Main container for the exercises feature using ExercisesContext for state management
  */
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Box,
   Typography,
   Drawer,
   useMediaQuery,
   useTheme,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
 } from '@mui/material';
 
 import { useExercises } from '../context';
 import ExerciseDetail from './ExerciseDetail';
 import SearchFilters from './SearchFilters';
 import ExerciseList from './ExerciseList';
+import ExerciseListInfo from './ExerciseListInfo';
 
 // Main App Component
 const ExerciseApp = () => {
@@ -54,6 +59,42 @@ const ExerciseApp = () => {
     totalExercises,
   } = useExercises();
 
+  // Pagination state (moved from ExerciseList)
+  const [page, setPage] = useState(1);
+  const [exercisesPerPage, setExercisesPerPage] = useState(12);
+
+  // Calculate pagination values
+  const totalFilteredExercises = filteredExercises.length;
+  const totalPages = Math.ceil(totalFilteredExercises / exercisesPerPage);
+  const startIndex = (page - 1) * exercisesPerPage;
+  const endIndex = Math.min(
+    startIndex + exercisesPerPage,
+    totalFilteredExercises
+  );
+
+  // Get exercises for current page
+  const paginatedExercises = useMemo(() => {
+    return filteredExercises.slice(startIndex, endIndex);
+  }, [filteredExercises, startIndex, endIndex]);
+
+  // Handle pagination changes
+  const handlePageChange = (event, newPage) => {
+    setPage(newPage);
+    // Scroll to top of exercise list
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleExercisesPerPageChange = (event) => {
+    setExercisesPerPage(event.target.value);
+    setPage(1); // Reset to first page when changing page size
+  };
+
+  // Reset page when exercises change (due to filters)
+  React.useEffect(() => {
+    setPage(1);
+  }, [filteredExercises.length]);
+
+  const exercisesPerPageOptions = [6, 12, 24, 48, 96];
   return (
     <Box sx={{ display: 'flex', width: '100%', height: '100vh' }}>
       {/* Left Sidebar - Search Filters */}
@@ -121,7 +162,7 @@ const ExerciseApp = () => {
           width: { xs: '100%', md: 'calc(100% - 320px)' },
         }}
       >
-        {/* Header */}
+        {/* Header with Exercise Info */}
         <Box
           sx={{
             p: 2,
@@ -131,32 +172,80 @@ const ExerciseApp = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: 2,
           }}
         >
-          <Typography component='h1' variant='h5' sx={{ fontWeight: 600 }}>
-            Exercise Library
-          </Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 3,
+              flexWrap: 'wrap',
+            }}
+          >
+            <Typography component='h1' variant='h5' sx={{ fontWeight: 600 }}>
+              Exercise Library
+            </Typography>
 
-          {/* Mobile Filter Toggle Button */}
-          {isMobile && (
-            <Box
-              component='button'
-              onClick={openMobileFilters}
-              sx={{
-                display: { xs: 'flex', md: 'none' },
-                alignItems: 'center',
-                gap: 1,
-                px: 2,
-                py: 1,
-                border: 1,
-                borderColor: 'divider',
-                borderRadius: 1,
-                cursor: 'pointer',
-              }}
-            >
-              <Typography variant='body2'>Filters</Typography>
-            </Box>
-          )}
+            {/* Exercise List Info */}
+            {totalFilteredExercises > 0 && (
+              <ExerciseListInfo
+                totalExercises={totalFilteredExercises}
+                page={page}
+                pageSize={exercisesPerPage}
+                totalUnfilteredCount={totalExercises}
+              />
+            )}
+          </Box>
+
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+              flexWrap: 'wrap',
+            }}
+          >
+            {/* Exercises Per Page Selector */}
+            {totalFilteredExercises > 0 && (
+              <FormControl size='small' sx={{ minWidth: 120 }}>
+                <InputLabel>Per page</InputLabel>
+                <Select
+                  value={exercisesPerPage}
+                  onChange={handleExercisesPerPageChange}
+                  label='Per page'
+                >
+                  {exercisesPerPageOptions.map((option) => (
+                    <MenuItem key={option} value={option}>
+                      {option}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            )}
+
+            {/* Mobile Filter Toggle Button */}
+            {isMobile && (
+              <Box
+                component='button'
+                onClick={openMobileFilters}
+                sx={{
+                  display: { xs: 'flex', md: 'none' },
+                  alignItems: 'center',
+                  gap: 1,
+                  px: 2,
+                  py: 1,
+                  border: 1,
+                  borderColor: 'divider',
+                  borderRadius: 1,
+                  cursor: 'pointer',
+                }}
+              >
+                <Typography variant='body2'>Filters</Typography>
+              </Box>
+            )}
+          </Box>
         </Box>
 
         {/* Exercise List Container */}
@@ -168,10 +257,14 @@ const ExerciseApp = () => {
           }}
         >
           <ExerciseList
-            exercises={filteredExercises}
+            exercises={paginatedExercises}
+            totalExercises={totalFilteredExercises}
+            totalPages={totalPages}
+            page={page}
+            exercisesPerPage={exercisesPerPage}
+            onPageChange={handlePageChange}
             openExerciseDetails={openExerciseDetails}
             clearFilters={clearFilters}
-            totalUnfilteredCount={totalExercises}
           />
         </Box>
       </Box>
