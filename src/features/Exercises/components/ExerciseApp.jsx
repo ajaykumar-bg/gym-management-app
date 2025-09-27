@@ -76,12 +76,12 @@ const ExerciseApp = () => {
       const query = filters.searchQuery.toLowerCase();
       filtered = filtered.filter(
         (exercise) =>
-          exercise.name.toLowerCase().includes(query) ||
+          exercise.name?.toLowerCase().includes(query) ||
           exercise.primaryMuscles.some((muscle) =>
-            muscle.toLowerCase().includes(query)
+            muscle?.toLowerCase().includes(query)
           ) ||
-          exercise.equipment.toLowerCase().includes(query) ||
-          exercise.category.toLowerCase().includes(query)
+          exercise.equipment?.toLowerCase().includes(query) ||
+          exercise.category?.toLowerCase().includes(query)
       );
     }
 
