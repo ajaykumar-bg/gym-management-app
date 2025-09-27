@@ -109,9 +109,6 @@ const ExerciseApp = () => {
         }}
       >
         <Box sx={{ p: 2 }}>
-          <Typography component='h2' variant='h6' sx={{ mb: 2 }}>
-            Filter Exercises
-          </Typography>
           <SearchFilters
             filters={filters}
             handleSearch={handleSearch}
@@ -139,9 +136,6 @@ const ExerciseApp = () => {
         }}
       >
         <Box sx={{ p: 2 }}>
-          <Typography component='h2' variant='h6' sx={{ mb: 2 }}>
-            Filter Exercises
-          </Typography>
           <SearchFilters
             filters={filters}
             handleSearch={handleSearch}

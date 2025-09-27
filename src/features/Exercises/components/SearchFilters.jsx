@@ -124,7 +124,7 @@ function SearchFilters(props) {
         }}
       >
         <Typography variant='h6' component='h3' sx={{ fontWeight: 600 }}>
-          Filters
+          Filter Exercises
         </Typography>
         {activeFiltersCount > 0 && (
           <Chip
