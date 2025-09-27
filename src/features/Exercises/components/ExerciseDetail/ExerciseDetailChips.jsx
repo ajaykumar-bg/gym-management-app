@@ -29,14 +29,28 @@ const DetailedTooltip = styled(({ className, ...props }) => (
 /**
  * Muscle Groups Chip with enhanced tooltip
  */
-const MuscleGroupsChip = ({ exercise }) => {
-  if (!exercise?.primaryMuscles?.length) {
+const MuscleGroupsChip = ({ exercise, chipColor = 'primary' }) => {
+  if (!exercise?.primaryMuscles?.length && !exercise?.target) {
     return null;
   }
 
-  const primaryMuscles = exercise.primaryMuscles || [];
-  const secondaryMuscles = exercise.secondaryMuscles || [];
-  const primaryMuscle = primaryMuscles[0];
+  // Get muscle groups using our utility function
+  const muscleGroups = formatMuscleGroups(
+    exercise.primaryMuscles || exercise.target || [],
+    exercise.secondaryMuscles || []
+  );
+
+  const primaryMuscles = muscleGroups.primary;
+  const secondaryMuscles = muscleGroups.secondary;
+
+  if (primaryMuscles.length === 0) {
+    return null;
+  }
+
+  const displayLabel =
+    primaryMuscles.length === 1
+      ? primaryMuscles[0]
+      : `${primaryMuscles[0]} +${primaryMuscles.length - 1}`;
 
   const tooltipContent = (
     <React.Fragment>
@@ -45,12 +59,11 @@ const MuscleGroupsChip = ({ exercise }) => {
       </Typography>
       <Box sx={{ mt: 1 }}>
         <Typography variant='body2' component='div'>
-          <strong>Primary:</strong> {formatMuscleGroups(primaryMuscles, 3)}
+          <strong>Primary:</strong> {primaryMuscles.join(', ')}
         </Typography>
         {secondaryMuscles.length > 0 && (
           <Typography variant='body2' component='div' sx={{ mt: 0.5 }}>
-            <strong>Secondary:</strong>{' '}
-            {formatMuscleGroups(secondaryMuscles, 3)}
+            <strong>Secondary:</strong> {secondaryMuscles.join(', ')}
           </Typography>
         )}
       </Box>
@@ -63,8 +76,8 @@ const MuscleGroupsChip = ({ exercise }) => {
   return (
     <DetailedTooltip title={tooltipContent} arrow placement='top'>
       <Chip
-        label={getChipLabel(primaryMuscle)}
-        color={CHIP_COLORS.PRIMARY_MUSCLE}
+        label={displayLabel}
+        color={chipColor}
         size='small'
         sx={{
           textTransform: 'capitalize',
@@ -79,19 +92,27 @@ const MuscleGroupsChip = ({ exercise }) => {
  * Generic exercise attribute chip with tooltip
  */
 const AttributeChip = ({
+  attribute,
   label,
   color,
   tooltip,
   size = 'small',
   description,
 }) => {
-  if (!label || label === '-') {
+  if (!label || label === '-' || label === 'None') {
     return null;
   }
 
+  // Use getChipLabel with attribute and value, or fallback to label
+  const displayLabel = attribute
+    ? getChipLabel(attribute, label)
+    : typeof label === 'string'
+    ? label
+    : String(label);
+
   const chipElement = (
     <Chip
-      label={getChipLabel(label)}
+      label={displayLabel}
       color={color}
       size={size}
       sx={{
@@ -149,20 +170,36 @@ const ExerciseDetailChips = ({
     return null;
   }
 
+  // Safely access CHIP_COLORS with fallbacks
+  const safeChipColors = {
+    PRIMARY_MUSCLE: CHIP_COLORS?.PRIMARY_MUSCLE || 'primary',
+    EQUIPMENT: CHIP_COLORS?.EQUIPMENT || 'default',
+    LEVEL: CHIP_COLORS?.LEVEL || 'secondary',
+    CATEGORY: CHIP_COLORS?.CATEGORY || 'info',
+    FORCE: CHIP_COLORS?.FORCE || 'warning',
+    MECHANIC: CHIP_COLORS?.MECHANIC || 'success',
+  };
+
   const chipConfig = [
     {
       key: 'muscle',
-      component: <MuscleGroupsChip exercise={exercise} />,
+      component: (
+        <MuscleGroupsChip
+          exercise={exercise}
+          chipColor={safeChipColors.PRIMARY_MUSCLE}
+        />
+      ),
     },
     {
       key: 'equipment',
       component: (
         <AttributeChip
+          attribute='equipment'
           label={exercise.equipment}
-          color={CHIP_COLORS.EQUIPMENT}
+          color={safeChipColors.EQUIPMENT}
           tooltip='Equipment Required'
           description={
-            exercise.equipment
+            exercise.equipment && exercise.equipment.toLowerCase() !== 'none'
               ? `This exercise requires ${exercise.equipment.toLowerCase()}`
               : 'No equipment needed - bodyweight exercise'
           }
@@ -173,10 +210,13 @@ const ExerciseDetailChips = ({
       key: 'level',
       component: (
         <AttributeChip
-          label={exercise.level}
-          color={CHIP_COLORS.LEVEL}
+          attribute='difficulty'
+          label={exercise.level || exercise.difficulty}
+          color={safeChipColors.LEVEL}
           tooltip='Difficulty Level'
-          description={`This exercise is suitable for ${exercise.level?.toLowerCase()} level practitioners`}
+          description={`This exercise is suitable for ${(
+            exercise.level || exercise.difficulty
+          )?.toLowerCase()} level practitioners`}
         />
       ),
     },
@@ -184,8 +224,9 @@ const ExerciseDetailChips = ({
       key: 'category',
       component: (
         <AttributeChip
+          attribute='category'
           label={exercise.category}
-          color={CHIP_COLORS.CATEGORY}
+          color={safeChipColors.CATEGORY}
           tooltip='Exercise Category'
           description={`This is a ${exercise.category?.toLowerCase()} exercise`}
         />
@@ -195,8 +236,9 @@ const ExerciseDetailChips = ({
       key: 'force',
       component: exercise.force ? (
         <AttributeChip
+          attribute='force'
           label={exercise.force}
-          color={CHIP_COLORS.FORCE}
+          color={safeChipColors.FORCE}
           tooltip='Force Type'
           description={`This exercise involves ${exercise.force?.toLowerCase()} movement pattern`}
         />
@@ -206,8 +248,9 @@ const ExerciseDetailChips = ({
       key: 'mechanic',
       component: exercise.mechanic ? (
         <AttributeChip
+          attribute='mechanic'
           label={exercise.mechanic}
-          color={CHIP_COLORS.MECHANIC}
+          color={safeChipColors.MECHANIC}
           tooltip='Movement Mechanic'
           description={`This exercise uses ${exercise.mechanic?.toLowerCase()} movement mechanics`}
         />

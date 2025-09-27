@@ -167,7 +167,6 @@ const ExerciseDetailContent = ({
           variant='outlined'
           sx={{
             mb: 3,
-            backgroundColor: 'grey.50',
             borderColor: 'divider',
           }}
         >
