@@ -96,18 +96,34 @@ function ExerciseDetail({
         '& .MuiDrawer-paper': {
           width: { xs: '100%', sm: 600, md: 700 },
           boxSizing: 'border-box',
+          display: 'flex',
+          flexDirection: 'column',
+          padding: 0,
         },
       }}
     >
-      {/* Header */}
+      {/* Fixed Header */}
       <AppBar
-        position='sticky'
+        position='static'
         color='default'
-        elevation={1}
-        sx={{ zIndex: 1201 }}
+        elevation={2}
+        sx={{
+          zIndex: (theme) => theme.zIndex.appBar + 1,
+          flexShrink: 0,
+          borderBottom: 1,
+          borderColor: 'divider',
+        }}
       >
-        <Toolbar>
-          <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
+        <Toolbar sx={{ minHeight: '64px !important' }}>
+          <Typography
+            variant='h6'
+            component='div'
+            sx={{
+              flexGrow: 1,
+              fontWeight: 600,
+              color: 'text.primary',
+            }}
+          >
             Exercise Details
           </Typography>
           <IconButton
@@ -115,71 +131,91 @@ function ExerciseDetail({
             color='inherit'
             onClick={onClose}
             aria-label='close'
+            sx={{
+              '&:hover': {
+                backgroundColor: 'action.hover',
+              },
+            }}
           >
             <CloseIcon />
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      {/* Content */}
+      {/* Scrollable Content */}
       <Box
         sx={{
           flex: 1,
           overflow: 'auto',
-          px: 3,
-          pb: 3,
+          backgroundColor: 'background.default',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            backgroundColor: 'grey.100',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            backgroundColor: 'grey.400',
+            borderRadius: '4px',
+            '&:hover': {
+              backgroundColor: 'grey.600',
+            },
+          },
         }}
       >
-        {/* Image Slider */}
-        <ExerciseImageSlider
-          exercise={selectedExercise}
-          showImageCounter={true}
-          showNavigation={true}
-          autoplay={false}
-          height={300}
-        />
+        <Box sx={{ px: 3, py: 2 }}>
+          {/* Image Slider */}
+          <Box sx={{ mb: 2 }}>
+            <ExerciseImageSlider
+              exercise={selectedExercise}
+              showImageCounter={true}
+              showNavigation={true}
+              imageHeight={300}
+            />
+          </Box>
 
-        {/* Main Content */}
-        <ExerciseDetailContent
-          exercise={selectedExercise}
-          showExpandableDescription={true}
-          maxDescriptionLength={300}
-          showMetadata={true}
-        />
+          {/* Main Content */}
+          <ExerciseDetailContent
+            exercise={selectedExercise}
+            showExpandableDescription={true}
+            maxDescriptionLength={300}
+            showMetadata={true}
+          />
 
-        {/* Exercise Attribute Chips */}
-        <ExerciseDetailChips
-          exercise={selectedExercise}
-          showTooltips={true}
-          maxChipsToShow={10}
-          layout='wrap'
-        />
+          {/* Exercise Attribute Chips */}
+          <ExerciseDetailChips
+            exercise={selectedExercise}
+            showTooltips={true}
+            maxChipsToShow={10}
+            layout='wrap'
+          />
 
-        {/* Instructions */}
-        <ExerciseInstructions
-          exercise={selectedExercise}
-          showCheckboxes={false}
-          collapsible={true}
-          defaultExpanded={true}
-        />
+          {/* Instructions */}
+          <ExerciseInstructions
+            exercise={selectedExercise}
+            showCheckboxes={false}
+            collapsible={true}
+            defaultExpanded={true}
+          />
 
-        {/* Actions */}
-        <ExerciseDetailActions
-          exercise={selectedExercise}
-          onAddToWorkout={handleAddToWorkout}
-          onToggleFavorite={handleToggleFavorite}
-          onShare={handleShare}
-          onSchedule={handleSchedule}
-          onBookmark={handleBookmark}
-          onEdit={handleEdit}
-          onReport={handleReport}
-          isFavorite={isFavorite}
-          isBookmarked={isBookmarked}
-          canEdit={canEdit}
-          showSecondaryActions={true}
-          size='medium'
-          variant='contained'
-        />
+          {/* Actions */}
+          <ExerciseDetailActions
+            exercise={selectedExercise}
+            onAddToWorkout={handleAddToWorkout}
+            onToggleFavorite={handleToggleFavorite}
+            onShare={handleShare}
+            onSchedule={handleSchedule}
+            onBookmark={handleBookmark}
+            onEdit={handleEdit}
+            onReport={handleReport}
+            isFavorite={isFavorite}
+            isBookmarked={isBookmarked}
+            canEdit={canEdit}
+            showSecondaryActions={true}
+            size='medium'
+            variant='contained'
+          />
+        </Box>
       </Box>
     </Drawer>
   );

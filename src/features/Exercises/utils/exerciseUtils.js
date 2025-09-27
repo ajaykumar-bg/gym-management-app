@@ -160,24 +160,41 @@ export const getPrimaryImage = (exercise) => {
 };
 
 export const getPrepopulatedImage = (exercise) => {
-  // Process images to include PUBLIC_URL
-  const processedImages = Array.isArray(exercise.images)
-    ? exercise.images.map((image) => {
-        if (!image) return image;
-        // Only prepend PUBLIC_URL if the image doesn't already have a protocol (http/https)
-        if (
-          image.startsWith('http://') ||
-          image.startsWith('https://') ||
-          image.startsWith('/api/')
-        ) {
-          return image;
-        }
-        return `${process.env.PUBLIC_URL || ''}${
-          image.startsWith('/') ? image : `/${image}`
-        }`;
-      })
-    : [];
-  return processedImages;
+  // If exercise already has images, process them
+  if (Array.isArray(exercise.images) && exercise.images.length > 0) {
+    return exercise.images.map((image) => {
+      if (!image) return image;
+      // Only prepend PUBLIC_URL if the image doesn't already have a protocol (http/https)
+      if (
+        image.startsWith('http://') ||
+        image.startsWith('https://') ||
+        image.startsWith('/api/')
+      ) {
+        return image;
+      }
+      return `${process.env.PUBLIC_URL || ''}${
+        image.startsWith('/') ? image : `/${image}`
+      }`;
+    });
+  }
+
+  // Generate image paths based on exercise name
+  if (exercise.name) {
+    // Use the exact exercise name as folder name, replacing spaces with underscores
+    // This matches the folder structure in public/exercises/
+    const exerciseFolderName = exercise.name.replace(/\s+/g, '_');
+    const baseImagePath = `exercises/${exerciseFolderName}`;
+
+    // Try common image file names found in the exercise folders
+    const commonImageNames = ['0.jpg', '1.jpg'];
+    const generatedImages = commonImageNames.map((imageName) => {
+      return `${process.env.PUBLIC_URL || ''}/${baseImagePath}/${imageName}`;
+    });
+
+    return generatedImages;
+  }
+
+  return [];
 };
 
 /**

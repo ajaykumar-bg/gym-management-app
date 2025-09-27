@@ -35,7 +35,6 @@ const ExerciseImage = ({ src, alt, height = 300 }) => {
         width='100%'
         height={height}
         sx={{
-          bgcolor: 'grey.100',
           borderRadius: 1,
         }}
       />
@@ -86,15 +85,40 @@ const ExerciseImage = ({ src, alt, height = 300 }) => {
  * @param {Function} props.onNext - Handler for next button
  * @param {Function} props.onBack - Handler for back button
  * @param {number} props.imageHeight - Height of images (optional, default: 300)
+ * @param {boolean} props.showNavigation - Whether to show navigation controls
+ * @param {boolean} props.showImageCounter - Whether to show image counter
  * @returns {JSX.Element} ExerciseImageSlider component
  */
 const ExerciseImageSlider = ({
   exercise,
-  activeStep,
-  onNext,
-  onBack,
+  activeStep: propActiveStep,
+  onNext: propOnNext,
+  onBack: propOnBack,
   imageHeight = 300,
+  showNavigation = true,
+  showImageCounter = true,
 }) => {
+  // Internal state for navigation if not controlled externally
+  const [internalActiveStep, setInternalActiveStep] = useState(0);
+
+  // Use prop values if provided, otherwise use internal state
+  const activeStep =
+    propActiveStep !== undefined ? propActiveStep : internalActiveStep;
+  const onNext =
+    propOnNext ||
+    (() => {
+      const images = validateImageArray(exercise?.images);
+      if (activeStep < images.length - 1) {
+        setInternalActiveStep(activeStep + 1);
+      }
+    });
+  const onBack =
+    propOnBack ||
+    (() => {
+      if (activeStep > 0) {
+        setInternalActiveStep(activeStep - 1);
+      }
+    });
   if (!exercise) {
     return (
       <Skeleton
@@ -108,7 +132,14 @@ const ExerciseImageSlider = ({
 
   const images = validateImageArray(exercise.images);
   const totalImages = images.length;
-  const currentImageSrc = getImageSrc(images, activeStep);
+  const currentImage = images[activeStep] || '';
+
+  // If the image already has PUBLIC_URL (from sanitizeExercise), use it directly
+  // Otherwise, use getImageSrc to add PUBLIC_URL
+  const currentImageSrc =
+    currentImage && currentImage.includes(process.env.PUBLIC_URL || '')
+      ? currentImage
+      : getImageSrc(currentImage, exercise.name);
 
   // If no valid images, show skeleton
   if (totalImages === 0) {
@@ -138,7 +169,7 @@ const ExerciseImageSlider = ({
         />
 
         {/* Navigation Stepper */}
-        {canNavigate && (
+        {canNavigate && showNavigation && (
           <MobileStepper
             variant='dots'
             steps={totalImages}
@@ -183,7 +214,7 @@ const ExerciseImageSlider = ({
       </Box>
 
       {/* Image Counter */}
-      {totalImages > 1 && (
+      {totalImages > 1 && showImageCounter && (
         <Box
           sx={{
             position: 'absolute',
