@@ -4,7 +4,7 @@
  */
 
 // Main Exercise component
-export { default as Exercise } from './Exercise.jsx';
+export { default } from './Exercise';
 
 // Exercise sub-components
 export { default as ExerciseImage } from './ExerciseImage';
