@@ -12,7 +12,6 @@ import React, {
   useMemo,
 } from 'react';
 import exercisesData from '../constants/exercises.json';
-import { sanitizeExercise } from '../utils/exerciseUtils';
 
 // Create the context
 const ExercisesContext = createContext(undefined);
@@ -101,9 +100,7 @@ export const ExercisesProvider = ({ children }) => {
     }
 
     // Sanitize exercises before returning
-    return filtered
-      .map((exercise) => sanitizeExercise(exercise))
-      .filter(Boolean);
+    return filtered;
   }, [filters]);
 
   // Filter management functions
@@ -137,8 +134,7 @@ export const ExercisesProvider = ({ children }) => {
 
   // Exercise details management
   const openExerciseDetails = useCallback((exercise) => {
-    const sanitizedExercise = sanitizeExercise(exercise);
-    setSelectedExercise(sanitizedExercise);
+    setSelectedExercise(exercise);
     setDetailsOpen(true);
     setActiveStep(0);
   }, []);
