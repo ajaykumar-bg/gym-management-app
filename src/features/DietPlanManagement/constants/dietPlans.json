@@ -230,6 +230,154 @@
             "fats": 8
           }
         ]
+      },
+      {
+        "id": "meal006",
+        "type": "snack",
+        "name": "Pre-Workout Fuel",
+        "time": "09:30",
+        "calories": 300,
+        "foods": [
+          {
+            "name": "Protein Shake",
+            "quantity": "1 scoop whey + 300ml milk",
+            "calories": 180,
+            "protein": 28,
+            "carbs": 12,
+            "fats": 2
+          },
+          {
+            "name": "Oats",
+            "quantity": "40g dry",
+            "calories": 120,
+            "protein": 4,
+            "carbs": 22,
+            "fats": 2
+          }
+        ]
+      },
+      {
+        "id": "meal007",
+        "type": "lunch",
+        "name": "Muscle Building Lunch",
+        "time": "13:00",
+        "calories": 650,
+        "foods": [
+          {
+            "name": "Lean Beef",
+            "quantity": "200g",
+            "calories": 300,
+            "protein": 52,
+            "carbs": 0,
+            "fats": 10
+          },
+          {
+            "name": "Jasmine Rice",
+            "quantity": "100g cooked",
+            "calories": 130,
+            "protein": 3,
+            "carbs": 28,
+            "fats": 0
+          },
+          {
+            "name": "Mixed Vegetables",
+            "quantity": "150g",
+            "calories": 60,
+            "protein": 2,
+            "carbs": 12,
+            "fats": 1
+          },
+          {
+            "name": "Avocado",
+            "quantity": "100g",
+            "calories": 160,
+            "protein": 2,
+            "carbs": 8,
+            "fats": 15
+          }
+        ]
+      },
+      {
+        "id": "meal008",
+        "type": "snack",
+        "name": "Post-Workout Recovery",
+        "time": "16:00",
+        "calories": 400,
+        "foods": [
+          {
+            "name": "Whey Protein Shake",
+            "quantity": "1.5 scoop + water",
+            "calories": 150,
+            "protein": 35,
+            "carbs": 3,
+            "fats": 1
+          },
+          {
+            "name": "White Rice Cakes",
+            "quantity": "3 cakes",
+            "calories": 105,
+            "protein": 2,
+            "carbs": 23,
+            "fats": 1
+          },
+          {
+            "name": "Honey",
+            "quantity": "1 tbsp",
+            "calories": 65,
+            "protein": 0,
+            "carbs": 17,
+            "fats": 0
+          },
+          {
+            "name": "Cashews",
+            "quantity": "20g",
+            "calories": 110,
+            "protein": 4,
+            "carbs": 6,
+            "fats": 9
+          }
+        ]
+      },
+      {
+        "id": "meal009",
+        "type": "dinner",
+        "name": "High-Protein Dinner",
+        "time": "19:30",
+        "calories": 600,
+        "foods": [
+          {
+            "name": "Grilled Chicken Thigh",
+            "quantity": "200g",
+            "calories": 280,
+            "protein": 40,
+            "carbs": 0,
+            "fats": 12
+          },
+          {
+            "name": "Sweet Potato",
+            "quantity": "200g",
+            "calories": 180,
+            "protein": 4,
+            "carbs": 40,
+            "fats": 0
+          },
+          {
+            "name": "Asparagus",
+            "quantity": "200g",
+            "calories": 40,
+            "protein": 4,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "Olive Oil",
+            "quantity": "1 tbsp",
+            "calories": 120,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 14
+          }
+        ]
       }
     ],
     "waterIntake": 4000,
@@ -243,6 +391,16 @@
         "name": "Creatine",
         "dosage": "5g",
         "timing": "post-workout"
+      },
+      {
+        "name": "BCAA",
+        "dosage": "10g",
+        "timing": "during workout"
+      },
+      {
+        "name": "Multivitamin",
+        "dosage": "1 tablet",
+        "timing": "breakfast"
       }
     ]
   },
@@ -263,8 +421,260 @@
     "createdAt": "2024-01-05T09:15:00Z",
     "isActive": true,
     "tags": ["maintenance", "advanced", "balanced"],
-    "meals": [],
+    "meals": [
+      {
+        "id": "meal010",
+        "type": "breakfast",
+        "name": "Balanced Morning Meal",
+        "time": "07:30",
+        "calories": 450,
+        "foods": [
+          {
+            "name": "Steel Cut Oats",
+            "quantity": "60g dry",
+            "calories": 220,
+            "protein": 8,
+            "carbs": 40,
+            "fats": 4
+          },
+          {
+            "name": "Blueberries",
+            "quantity": "100g",
+            "calories": 60,
+            "protein": 1,
+            "carbs": 14,
+            "fats": 0
+          },
+          {
+            "name": "Almond Butter",
+            "quantity": "1 tbsp",
+            "calories": 100,
+            "protein": 4,
+            "carbs": 3,
+            "fats": 9
+          },
+          {
+            "name": "Chia Seeds",
+            "quantity": "1 tbsp",
+            "calories": 70,
+            "protein": 3,
+            "carbs": 6,
+            "fats": 4
+          }
+        ]
+      },
+      {
+        "id": "meal011",
+        "type": "snack",
+        "name": "Mid-Morning Energy",
+        "time": "10:00",
+        "calories": 200,
+        "foods": [
+          {
+            "name": "Greek Yogurt",
+            "quantity": "100g",
+            "calories": 100,
+            "protein": 10,
+            "carbs": 6,
+            "fats": 5
+          },
+          {
+            "name": "Walnuts",
+            "quantity": "15g",
+            "calories": 100,
+            "protein": 2,
+            "carbs": 2,
+            "fats": 10
+          }
+        ]
+      },
+      {
+        "id": "meal012",
+        "type": "lunch",
+        "name": "Performance Lunch",
+        "time": "12:30",
+        "calories": 550,
+        "foods": [
+          {
+            "name": "Grilled Salmon",
+            "quantity": "150g",
+            "calories": 250,
+            "protein": 35,
+            "carbs": 0,
+            "fats": 11
+          },
+          {
+            "name": "Quinoa",
+            "quantity": "80g cooked",
+            "calories": 110,
+            "protein": 4,
+            "carbs": 20,
+            "fats": 2
+          },
+          {
+            "name": "Kale Salad",
+            "quantity": "100g",
+            "calories": 35,
+            "protein": 3,
+            "carbs": 7,
+            "fats": 0
+          },
+          {
+            "name": "Cherry Tomatoes",
+            "quantity": "100g",
+            "calories": 20,
+            "protein": 1,
+            "carbs": 4,
+            "fats": 0
+          },
+          {
+            "name": "Olive Oil Dressing",
+            "quantity": "1 tbsp",
+            "calories": 135,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 15
+          }
+        ]
+      },
+      {
+        "id": "meal013",
+        "type": "snack",
+        "name": "Afternoon Fuel",
+        "time": "15:30",
+        "calories": 250,
+        "foods": [
+          {
+            "name": "Cottage Cheese",
+            "quantity": "100g",
+            "calories": 100,
+            "protein": 11,
+            "carbs": 4,
+            "fats": 4
+          },
+          {
+            "name": "Cucumber",
+            "quantity": "100g",
+            "calories": 15,
+            "protein": 1,
+            "carbs": 3,
+            "fats": 0
+          },
+          {
+            "name": "Hummus",
+            "quantity": "30g",
+            "calories": 85,
+            "protein": 3,
+            "carbs": 7,
+            "fats": 6
+          },
+          {
+            "name": "Whole Grain Crackers",
+            "quantity": "20g",
+            "calories": 80,
+            "protein": 2,
+            "carbs": 14,
+            "fats": 2
+          }
+        ]
+      },
+      {
+        "id": "meal014",
+        "type": "dinner",
+        "name": "Recovery Dinner",
+        "time": "19:00",
+        "calories": 500,
+        "foods": [
+          {
+            "name": "Lean Turkey Breast",
+            "quantity": "150g",
+            "calories": 200,
+            "protein": 40,
+            "carbs": 0,
+            "fats": 4
+          },
+          {
+            "name": "Brown Rice",
+            "quantity": "80g cooked",
+            "calories": 110,
+            "protein": 3,
+            "carbs": 23,
+            "fats": 1
+          },
+          {
+            "name": "Roasted Brussels Sprouts",
+            "quantity": "150g",
+            "calories": 55,
+            "protein": 4,
+            "carbs": 11,
+            "fats": 0
+          },
+          {
+            "name": "Coconut Oil",
+            "quantity": "1 tsp",
+            "calories": 40,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 4
+          },
+          {
+            "name": "Mixed Seeds",
+            "quantity": "10g",
+            "calories": 55,
+            "protein": 2,
+            "carbs": 2,
+            "fats": 5
+          }
+        ]
+      },
+      {
+        "id": "meal015",
+        "type": "snack",
+        "name": "Evening Recovery",
+        "time": "21:00",
+        "calories": 250,
+        "foods": [
+          {
+            "name": "Casein Protein Powder",
+            "quantity": "1 scoop + 250ml almond milk",
+            "calories": 150,
+            "protein": 25,
+            "carbs": 3,
+            "fats": 2
+          },
+          {
+            "name": "Dark Chocolate",
+            "quantity": "20g (85% cacao)",
+            "calories": 100,
+            "protein": 2,
+            "carbs": 5,
+            "fats": 8
+          }
+        ]
+      }
+    ],
     "waterIntake": 3500,
-    "supplements": []
+    "supplements": [
+      {
+        "name": "Multivitamin",
+        "dosage": "1 tablet",
+        "timing": "breakfast"
+      },
+      {
+        "name": "Fish Oil",
+        "dosage": "1000mg",
+        "timing": "lunch"
+      },
+      {
+        "name": "Magnesium",
+        "dosage": "400mg",
+        "timing": "dinner"
+      },
+      {
+        "name": "Vitamin D3",
+        "dosage": "2000 IU",
+        "timing": "breakfast"
+      }
+    ]
   }
 ]
