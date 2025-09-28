@@ -22,6 +22,11 @@ import {
   Grid,
   Avatar,
   Divider,
+  Collapse,
+  List,
+  ListItem,
+  ListItemText,
+  ListItemIcon,
 } from '@mui/material';
 import {
   Add as AddIcon,
@@ -34,6 +39,14 @@ import {
   Restaurant as RestaurantIcon,
   AccessTime as AccessTimeIcon,
   LocalFireDepartment as CalorieIcon,
+  ExpandMore as ExpandMoreIcon,
+  ExpandLess as ExpandLessIcon,
+  FreeBreakfast as FreeBreakfastIcon,
+  LunchDining as LunchIcon,
+  DinnerDining as DinnerDiningIcon,
+  Coffee as SnackIcon,
+  LocalDrink as WaterIcon,
+  MedicalServices as SupplementIcon,
 } from '@mui/icons-material';
 import { useDietPlan } from '../context';
 import {
@@ -45,6 +58,7 @@ import {
 
 const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [showMealDetails, setShowMealDetails] = useState(false);
   const open = Boolean(anchorEl);
 
   const handleMenuClick = (event) => {
@@ -71,16 +85,50 @@ const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
     onAssign(plan);
   };
 
+  const toggleMealDetails = (event) => {
+    event.stopPropagation();
+    setShowMealDetails(!showMealDetails);
+  };
+
+  // Helper function to get meal type icon
+  const getMealTypeIcon = (mealType) => {
+    switch (mealType?.toLowerCase()) {
+      case 'breakfast':
+        return <FreeBreakfastIcon fontSize='small' />;
+      case 'lunch':
+        return <LunchIcon fontSize='small' />;
+      case 'dinner':
+        return <DinnerDiningIcon fontSize='small' />;
+      case 'snack':
+        return <SnackIcon fontSize='small' />;
+      default:
+        return <RestaurantIcon fontSize='small' />;
+    }
+  };
+
   const totalCalories = (plan.meals || []).reduce(
     (sum, meal) => sum + (meal.calories || 0),
     0
   );
+
   const totalMacros = (plan.meals || []).reduce(
-    (acc, meal) => ({
-      protein: acc.protein + (meal.macros?.protein || 0),
-      carbs: acc.carbs + (meal.macros?.carbs || 0),
-      fats: acc.fats + (meal.macros?.fats || 0),
-    }),
+    (acc, meal) => {
+      // Calculate macros from foods within each meal
+      const mealMacros = (meal.foods || []).reduce(
+        (mealAcc, food) => ({
+          protein: mealAcc.protein + (food.protein || 0),
+          carbs: mealAcc.carbs + (food.carbs || 0),
+          fats: mealAcc.fats + (food.fats || 0),
+        }),
+        { protein: 0, carbs: 0, fats: 0 }
+      );
+
+      return {
+        protein: acc.protein + mealMacros.protein,
+        carbs: acc.carbs + mealMacros.carbs,
+        fats: acc.fats + mealMacros.fats,
+      };
+    },
     { protein: 0, carbs: 0, fats: 0 }
   );
 
@@ -88,6 +136,7 @@ const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
     <Card
       sx={{
         height: '100%',
+        minHeight: 400,
         cursor: 'pointer',
         transition: 'all 0.2s ease-in-out',
         '&:hover': {
@@ -175,13 +224,21 @@ const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
           {plan.description || 'No description available'}
         </Typography>
 
-        {/* Nutrition Summary */}
+        {/* Enhanced Nutrition Summary */}
         <Box sx={{ mb: 2 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 1 }}>
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: 2,
+              mb: 1,
+              flexWrap: 'wrap',
+            }}
+          >
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
               <CalorieIcon fontSize='small' color='primary' />
               <Typography variant='body2' fontWeight='medium'>
-                {totalCalories} cal
+                {totalCalories} / {plan.targetCalories || 0} cal
               </Typography>
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
@@ -196,64 +253,307 @@ const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
             </Box>
           </Box>
 
+          {/* Target vs Actual Calories Progress */}
+          {plan.targetCalories && (
+            <Box sx={{ mb: 1 }}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  mb: 0.5,
+                }}
+              >
+                <Typography variant='caption' color='text.secondary'>
+                  Calorie Target
+                </Typography>
+                <Typography variant='caption' color='text.secondary'>
+                  {Math.round((totalCalories / plan.targetCalories) * 100)}%
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  width: '100%',
+                  height: 4,
+                  backgroundColor: 'grey.200',
+                  borderRadius: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    width: `${Math.min(
+                      (totalCalories / plan.targetCalories) * 100,
+                      100
+                    )}%`,
+                    height: '100%',
+                    backgroundColor:
+                      totalCalories <= plan.targetCalories
+                        ? 'success.main'
+                        : 'warning.main',
+                    borderRadius: 1,
+                  }}
+                />
+              </Box>
+            </Box>
+          )}
+
           {/* Macro breakdown */}
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}>
             <Chip
-              label={`P: ${totalMacros.protein}g`}
+              label={`P: ${Math.round(totalMacros.protein)}g`}
               size='small'
               variant='outlined'
               color='success'
             />
             <Chip
-              label={`C: ${totalMacros.carbs}g`}
+              label={`C: ${Math.round(totalMacros.carbs)}g`}
               size='small'
               variant='outlined'
               color='warning'
             />
             <Chip
-              label={`F: ${totalMacros.fats}g`}
+              label={`F: ${Math.round(totalMacros.fats)}g`}
               size='small'
               variant='outlined'
               color='error'
             />
+            {plan.difficulty && (
+              <Chip
+                label={plan.difficulty}
+                size='small'
+                color='info'
+                variant='filled'
+                sx={{ textTransform: 'capitalize' }}
+              />
+            )}
           </Box>
         </Box>
 
         <Divider sx={{ mb: 2 }} />
 
-        {/* Sample meals preview */}
+        {/* Comprehensive Meal Details */}
         <Box>
-          <Typography variant='subtitle2' color='text.secondary' gutterBottom>
-            Sample Meals:
-          </Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
-            {(plan.meals || []).slice(0, 3).map((meal, index) => (
-              <Box
-                key={index}
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
-                <Typography variant='caption' sx={{ fontWeight: 'medium' }}>
-                  {meal.name || 'Untitled Meal'}
-                </Typography>
-                <Typography variant='caption' color='text.secondary'>
-                  {meal.calories || 0} cal
-                </Typography>
-              </Box>
-            ))}
-            {(plan.meals || []).length > 3 && (
-              <Typography
-                variant='caption'
-                color='text.secondary'
-                sx={{ fontStyle: 'italic' }}
-              >
-                +{(plan.meals || []).length - 3} more meals...
-              </Typography>
-            )}
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              mb: 1,
+              cursor: 'pointer',
+            }}
+            onClick={toggleMealDetails}
+          >
+            <Typography variant='subtitle2' color='text.secondary'>
+              Meal Plan Details ({(plan.meals || []).length} meals)
+            </Typography>
+            <IconButton size='small'>
+              {showMealDetails ? (
+                <ExpandLessIcon fontSize='small' />
+              ) : (
+                <ExpandMoreIcon fontSize='small' />
+              )}
+            </IconButton>
           </Box>
+
+          <Collapse in={showMealDetails}>
+            <Box sx={{ maxHeight: 300, overflowY: 'auto', pr: 1 }}>
+              {(plan.meals || []).map((meal, mealIndex) => (
+                <Box key={meal.id || mealIndex} sx={{ mb: 2 }}>
+                  {/* Meal Header */}
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      mb: 1,
+                    }}
+                  >
+                    {getMealTypeIcon(meal.type)}
+                    <Typography
+                      variant='body2'
+                      fontWeight='medium'
+                      sx={{ textTransform: 'capitalize' }}
+                    >
+                      {meal.name || `${meal.type || 'Meal'} ${mealIndex + 1}`}
+                    </Typography>
+                    <Chip
+                      size='small'
+                      label={`${meal.calories || 0} cal`}
+                      color='primary'
+                      variant='outlined'
+                    />
+                    {meal.time && (
+                      <Typography variant='caption' color='text.secondary'>
+                        @ {meal.time}
+                      </Typography>
+                    )}
+                  </Box>
+
+                  {/* Foods in Meal */}
+                  <List dense sx={{ py: 0 }}>
+                    {(meal.foods || []).map((food, foodIndex) => (
+                      <ListItem key={foodIndex} sx={{ py: 0.5, pl: 2 }}>
+                        <ListItemIcon sx={{ minWidth: 32 }}>
+                          <Box
+                            sx={{
+                              width: 6,
+                              height: 6,
+                              borderRadius: '50%',
+                              backgroundColor: 'primary.main',
+                            }}
+                          />
+                        </ListItemIcon>
+                        <ListItemText
+                          primary={
+                            <Box
+                              sx={{
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                alignItems: 'center',
+                              }}
+                            >
+                              <Typography
+                                variant='caption'
+                                sx={{ fontWeight: 'medium' }}
+                              >
+                                {food.name}
+                              </Typography>
+                              <Typography
+                                variant='caption'
+                                color='text.secondary'
+                              >
+                                {food.quantity}
+                              </Typography>
+                            </Box>
+                          }
+                          secondary={
+                            <Box
+                              sx={{ display: 'flex', gap: 1, flexWrap: 'wrap' }}
+                            >
+                              <Typography
+                                variant='caption'
+                                color='text.secondary'
+                              >
+                                {food.calories}cal
+                              </Typography>
+                              {food.protein > 0 && (
+                                <Typography
+                                  variant='caption'
+                                  color='success.main'
+                                >
+                                  P:{food.protein}g
+                                </Typography>
+                              )}
+                              {food.carbs > 0 && (
+                                <Typography
+                                  variant='caption'
+                                  color='warning.main'
+                                >
+                                  C:{food.carbs}g
+                                </Typography>
+                              )}
+                              {food.fats > 0 && (
+                                <Typography
+                                  variant='caption'
+                                  color='error.main'
+                                >
+                                  F:{food.fats}g
+                                </Typography>
+                              )}
+                            </Box>
+                          }
+                        />
+                      </ListItem>
+                    ))}
+                  </List>
+                </Box>
+              ))}
+
+              {/* Additional Plan Details */}
+              {(plan.waterIntake || plan.supplements?.length > 0) && (
+                <Divider sx={{ my: 2 }} />
+              )}
+
+              {plan.waterIntake && (
+                <Box
+                  sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}
+                >
+                  <WaterIcon fontSize='small' color='info' />
+                  <Typography variant='caption' color='text.secondary'>
+                    Daily Water Intake: {plan.waterIntake}ml
+                  </Typography>
+                </Box>
+              )}
+
+              {plan.supplements && plan.supplements.length > 0 && (
+                <Box>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 1,
+                      mb: 1,
+                    }}
+                  >
+                    <SupplementIcon fontSize='small' color='secondary' />
+                    <Typography
+                      variant='caption'
+                      color='text.secondary'
+                      fontWeight='medium'
+                    >
+                      Supplements:
+                    </Typography>
+                  </Box>
+                  {plan.supplements.map((supplement, index) => (
+                    <Box key={index} sx={{ pl: 3, mb: 0.5 }}>
+                      <Typography variant='caption' color='text.secondary'>
+                        • {supplement.name} ({supplement.dosage}) -{' '}
+                        {supplement.timing}
+                      </Typography>
+                    </Box>
+                  ))}
+                </Box>
+              )}
+            </Box>
+          </Collapse>
+
+          {!showMealDetails && (plan.meals || []).length > 0 && (
+            <Box sx={{ display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+              {(plan.meals || []).slice(0, 2).map((meal, index) => (
+                <Box
+                  key={index}
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                    {getMealTypeIcon(meal.type)}
+                    <Typography
+                      variant='caption'
+                      sx={{ fontWeight: 'medium', textTransform: 'capitalize' }}
+                    >
+                      {meal.type || 'Meal'} - {(meal.foods || []).length} items
+                    </Typography>
+                  </Box>
+                  <Typography variant='caption' color='text.secondary'>
+                    {meal.calories || 0} cal
+                  </Typography>
+                </Box>
+              ))}
+              {(plan.meals || []).length > 2 && (
+                <Typography
+                  variant='caption'
+                  color='primary.main'
+                  sx={{ fontStyle: 'italic', cursor: 'pointer' }}
+                  onClick={toggleMealDetails}
+                >
+                  +{(plan.meals || []).length - 2} more meals... (click to
+                  expand)
+                </Typography>
+              )}
+            </Box>
+          )}
         </Box>
 
         {/* Footer */}
@@ -267,8 +567,8 @@ const DietPlanCard = ({ plan, onEdit, onDelete, onAssign }) => {
           >
             <Typography variant='caption' color='text.secondary'>
               Created:{' '}
-              {plan.createdDate
-                ? new Date(plan.createdDate).toLocaleDateString()
+              {plan.createdAt
+                ? new Date(plan.createdAt).toLocaleDateString()
                 : 'Unknown'}
             </Typography>
             <Avatar sx={{ width: 24, height: 24, fontSize: '0.75rem' }}>
@@ -447,7 +747,7 @@ const DietPlanList = () => {
       ) : (
         <Grid container spacing={3}>
           {filteredPlans.map((plan) => (
-            <Grid key={plan.id} size={{ xs: 12, sm: 6, lg: 4 }}>
+            <Grid key={plan.id} size={{ xs: 12, md: 6, xl: 4 }}>
               <DietPlanCard
                 plan={plan}
                 onEdit={handleEditPlan}
