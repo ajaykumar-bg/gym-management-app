@@ -676,5 +676,545 @@
         "timing": "breakfast"
       }
     ]
+  },
+  {
+    "id": "dp004",
+    "name": "Cutting Plan - Advanced",
+    "description": "Aggressive fat loss plan for advanced trainees with precise macro tracking and higher meal frequency.",
+    "type": "weight-loss",
+    "difficulty": "advanced",
+    "duration": 45,
+    "targetCalories": 1600,
+    "macros": {
+      "protein": 40,
+      "carbs": 30,
+      "fats": 30
+    },
+    "createdBy": "trainer001",
+    "createdAt": "2024-02-01T08:00:00Z",
+    "isActive": true,
+    "tags": ["cutting", "advanced", "high-protein", "fat-loss"],
+    "meals": [
+      {
+        "id": "meal016",
+        "type": "breakfast",
+        "name": "High-Protein Start",
+        "time": "06:30",
+        "calories": 320,
+        "foods": [
+          {
+            "name": "Egg Whites",
+            "quantity": "200g (6 whites)",
+            "calories": 108,
+            "protein": 22,
+            "carbs": 1,
+            "fats": 0
+          },
+          {
+            "name": "Whole Eggs",
+            "quantity": "1 large",
+            "calories": 70,
+            "protein": 6,
+            "carbs": 1,
+            "fats": 5
+          },
+          {
+            "name": "Spinach",
+            "quantity": "100g",
+            "calories": 23,
+            "protein": 3,
+            "carbs": 4,
+            "fats": 0
+          },
+          {
+            "name": "Mushrooms",
+            "quantity": "100g",
+            "calories": 22,
+            "protein": 3,
+            "carbs": 3,
+            "fats": 0
+          },
+          {
+            "name": "Coconut Oil",
+            "quantity": "1 tsp",
+            "calories": 40,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 4
+          },
+          {
+            "name": "Berries Mixed",
+            "quantity": "80g",
+            "calories": 45,
+            "protein": 1,
+            "carbs": 11,
+            "fats": 0
+          }
+        ]
+      },
+      {
+        "id": "meal017",
+        "type": "snack",
+        "name": "Morning Protein",
+        "time": "09:00",
+        "calories": 150,
+        "foods": [
+          {
+            "name": "Whey Protein Isolate",
+            "quantity": "25g",
+            "calories": 100,
+            "protein": 23,
+            "carbs": 1,
+            "fats": 0
+          },
+          {
+            "name": "Almond Milk Unsweetened",
+            "quantity": "250ml",
+            "calories": 15,
+            "protein": 1,
+            "carbs": 1,
+            "fats": 1
+          },
+          {
+            "name": "Cucumber",
+            "quantity": "150g",
+            "calories": 24,
+            "protein": 1,
+            "carbs": 6,
+            "fats": 0
+          }
+        ]
+      },
+      {
+        "id": "meal018",
+        "type": "lunch",
+        "name": "Lean Protein Focus",
+        "time": "12:00",
+        "calories": 380,
+        "foods": [
+          {
+            "name": "Chicken Breast",
+            "quantity": "180g",
+            "calories": 300,
+            "protein": 55,
+            "carbs": 0,
+            "fats": 6
+          },
+          {
+            "name": "Asparagus",
+            "quantity": "200g",
+            "calories": 40,
+            "protein": 4,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "Bell Peppers",
+            "quantity": "100g",
+            "calories": 20,
+            "protein": 1,
+            "carbs": 5,
+            "fats": 0
+          },
+          {
+            "name": "Olive Oil",
+            "quantity": "1/2 tbsp",
+            "calories": 60,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 7
+          }
+        ]
+      },
+      {
+        "id": "meal019",
+        "type": "snack",
+        "name": "Pre-Workout",
+        "time": "15:00",
+        "calories": 180,
+        "foods": [
+          {
+            "name": "Cod Fish",
+            "quantity": "120g",
+            "calories": 105,
+            "protein": 23,
+            "carbs": 0,
+            "fats": 1
+          },
+          {
+            "name": "Green Beans",
+            "quantity": "150g",
+            "calories": 35,
+            "protein": 2,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "Almonds",
+            "quantity": "10g",
+            "calories": 60,
+            "protein": 2,
+            "carbs": 2,
+            "fats": 5
+          }
+        ]
+      },
+      {
+        "id": "meal020",
+        "type": "dinner",
+        "name": "Evening Lean Meal",
+        "time": "18:30",
+        "calories": 350,
+        "foods": [
+          {
+            "name": "White Fish (Tilapia)",
+            "quantity": "200g",
+            "calories": 220,
+            "protein": 46,
+            "carbs": 0,
+            "fats": 3
+          },
+          {
+            "name": "Zucchini",
+            "quantity": "200g",
+            "calories": 40,
+            "protein": 3,
+            "carbs": 8,
+            "fats": 1
+          },
+          {
+            "name": "Cauliflower",
+            "quantity": "150g",
+            "calories": 38,
+            "protein": 3,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "MCT Oil",
+            "quantity": "1 tsp",
+            "calories": 45,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 5
+          }
+        ]
+      },
+      {
+        "id": "meal021",
+        "type": "snack",
+        "name": "Night Protein",
+        "time": "21:00",
+        "calories": 220,
+        "foods": [
+          {
+            "name": "Casein Protein",
+            "quantity": "30g",
+            "calories": 110,
+            "protein": 24,
+            "carbs": 3,
+            "fats": 1
+          },
+          {
+            "name": "Greek Yogurt 0% Fat",
+            "quantity": "100g",
+            "calories": 60,
+            "protein": 10,
+            "carbs": 4,
+            "fats": 0
+          },
+          {
+            "name": "Walnuts",
+            "quantity": "8g",
+            "calories": 52,
+            "protein": 1,
+            "carbs": 1,
+            "fats": 5
+          }
+        ]
+      }
+    ],
+    "waterIntake": 4500,
+    "supplements": [
+      {
+        "name": "L-Carnitine",
+        "dosage": "2g",
+        "timing": "pre-workout"
+      },
+      {
+        "name": "CLA",
+        "dosage": "1000mg",
+        "timing": "lunch"
+      },
+      {
+        "name": "Multivitamin",
+        "dosage": "1 tablet",
+        "timing": "breakfast"
+      },
+      {
+        "name": "Fish Oil",
+        "dosage": "2g",
+        "timing": "dinner"
+      }
+    ]
+  },
+  {
+    "id": "dp005",
+    "name": "Bulking Plan - Beginner",
+    "description": "Clean bulk approach for beginners focusing on gradual muscle gain with minimal fat accumulation.",
+    "type": "muscle-gain",
+    "difficulty": "beginner",
+    "duration": 60,
+    "targetCalories": 2800,
+    "macros": {
+      "protein": 30,
+      "carbs": 45,
+      "fats": 25
+    },
+    "createdBy": "trainer002",
+    "createdAt": "2024-02-15T10:30:00Z",
+    "isActive": true,
+    "tags": ["bulking", "beginner", "muscle-gain", "clean-bulk"],
+    "meals": [
+      {
+        "id": "meal022",
+        "type": "breakfast",
+        "name": "Mass Gaining Breakfast",
+        "time": "07:30",
+        "calories": 650,
+        "foods": [
+          {
+            "name": "Old-Fashioned Oats",
+            "quantity": "80g dry",
+            "calories": 300,
+            "protein": 11,
+            "carbs": 54,
+            "fats": 6
+          },
+          {
+            "name": "Whole Milk",
+            "quantity": "300ml",
+            "calories": 180,
+            "protein": 9,
+            "carbs": 14,
+            "fats": 10
+          },
+          {
+            "name": "Banana",
+            "quantity": "1 large",
+            "calories": 120,
+            "protein": 1,
+            "carbs": 31,
+            "fats": 0
+          },
+          {
+            "name": "Peanut Butter Natural",
+            "quantity": "20g",
+            "calories": 120,
+            "protein": 5,
+            "carbs": 4,
+            "fats": 10
+          },
+          {
+            "name": "Honey",
+            "quantity": "10g",
+            "calories": 30,
+            "protein": 0,
+            "carbs": 8,
+            "fats": 0
+          }
+        ]
+      },
+      {
+        "id": "meal023",
+        "type": "snack",
+        "name": "Mid-Morning Fuel",
+        "time": "10:30",
+        "calories": 350,
+        "foods": [
+          {
+            "name": "Whole Grain Bagel",
+            "quantity": "1 medium",
+            "calories": 240,
+            "protein": 9,
+            "carbs": 48,
+            "fats": 2
+          },
+          {
+            "name": "Cream Cheese",
+            "quantity": "15g",
+            "calories": 50,
+            "protein": 1,
+            "carbs": 1,
+            "fats": 5
+          },
+          {
+            "name": "Turkey Slices",
+            "quantity": "50g",
+            "calories": 60,
+            "protein": 11,
+            "carbs": 1,
+            "fats": 1
+          }
+        ]
+      },
+      {
+        "id": "meal024",
+        "type": "lunch",
+        "name": "Power Lunch",
+        "time": "13:00",
+        "calories": 750,
+        "foods": [
+          {
+            "name": "Ground Turkey 93/7",
+            "quantity": "200g",
+            "calories": 240,
+            "protein": 48,
+            "carbs": 0,
+            "fats": 6
+          },
+          {
+            "name": "Basmati Rice",
+            "quantity": "120g cooked",
+            "calories": 150,
+            "protein": 3,
+            "carbs": 33,
+            "fats": 0
+          },
+          {
+            "name": "Black Beans",
+            "quantity": "100g",
+            "calories": 130,
+            "protein": 9,
+            "carbs": 23,
+            "fats": 1
+          },
+          {
+            "name": "Avocado",
+            "quantity": "80g",
+            "calories": 128,
+            "protein": 2,
+            "carbs": 7,
+            "fats": 12
+          },
+          {
+            "name": "Bell Peppers Mixed",
+            "quantity": "100g",
+            "calories": 30,
+            "protein": 1,
+            "carbs": 7,
+            "fats": 0
+          },
+          {
+            "name": "Olive Oil",
+            "quantity": "10ml",
+            "calories": 90,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 10
+          }
+        ]
+      },
+      {
+        "id": "meal025",
+        "type": "snack",
+        "name": "Pre-Workout Energy",
+        "time": "16:00",
+        "calories": 400,
+        "foods": [
+          {
+            "name": "Greek Yogurt Full Fat",
+            "quantity": "200g",
+            "calories": 200,
+            "protein": 20,
+            "carbs": 12,
+            "fats": 10
+          },
+          {
+            "name": "Granola",
+            "quantity": "30g",
+            "calories": 140,
+            "protein": 4,
+            "carbs": 20,
+            "fats": 5
+          },
+          {
+            "name": "Strawberries",
+            "quantity": "100g",
+            "calories": 32,
+            "protein": 1,
+            "carbs": 8,
+            "fats": 0
+          },
+          {
+            "name": "Almonds Sliced",
+            "quantity": "10g",
+            "calories": 60,
+            "protein": 2,
+            "carbs": 2,
+            "fats": 5
+          }
+        ]
+      },
+      {
+        "id": "meal026",
+        "type": "dinner",
+        "name": "Growth Dinner",
+        "time": "19:30",
+        "calories": 650,
+        "foods": [
+          {
+            "name": "Salmon Fillet",
+            "quantity": "180g",
+            "calories": 300,
+            "protein": 42,
+            "carbs": 0,
+            "fats": 14
+          },
+          {
+            "name": "Sweet Potato",
+            "quantity": "250g",
+            "calories": 215,
+            "protein": 5,
+            "carbs": 50,
+            "fats": 0
+          },
+          {
+            "name": "Broccoli",
+            "quantity": "200g",
+            "calories": 55,
+            "protein": 6,
+            "carbs": 11,
+            "fats": 1
+          },
+          {
+            "name": "Butter",
+            "quantity": "8g",
+            "calories": 60,
+            "protein": 0,
+            "carbs": 0,
+            "fats": 7
+          }
+        ]
+      }
+    ],
+    "waterIntake": 3500,
+    "supplements": [
+      {
+        "name": "Whey Protein",
+        "dosage": "30g",
+        "timing": "post-workout"
+      },
+      {
+        "name": "Creatine Monohydrate",
+        "dosage": "5g",
+        "timing": "post-workout"
+      },
+      {
+        "name": "Multivitamin",
+        "dosage": "1 tablet",
+        "timing": "breakfast"
+      }
+    ]
   }
 ]
