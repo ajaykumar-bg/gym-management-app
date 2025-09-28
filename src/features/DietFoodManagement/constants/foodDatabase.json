@@ -1,0 +1,767 @@
+[
+  {
+    "id": "food001",
+    "name": "Chicken Breast",
+    "category": "protein",
+    "subcategory": "poultry",
+    "description": "Lean, boneless, skinless chicken breast - excellent source of high-quality protein",
+    "image": "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 165,
+      "protein": 31,
+      "carbs": 0,
+      "fats": 3.6,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 74
+    },
+    "commonPortions": [
+      {
+        "name": "Small breast",
+        "weight": "120g",
+        "calories": 198,
+        "protein": 37.2,
+        "carbs": 0,
+        "fats": 4.3
+      },
+      {
+        "name": "Medium breast",
+        "weight": "150g",
+        "calories": 248,
+        "protein": 46.5,
+        "carbs": 0,
+        "fats": 5.4
+      },
+      {
+        "name": "Large breast",
+        "weight": "200g",
+        "calories": 330,
+        "protein": 62,
+        "carbs": 0,
+        "fats": 7.2
+      }
+    ],
+    "benefits": ["High protein", "Low fat", "Zero carbs", "Rich in B vitamins"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "low-carb", "keto-friendly", "paleo"],
+    "preparationMethods": ["grilled", "baked", "steamed", "pan-fried"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food002",
+    "name": "Salmon Fillet",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh Atlantic salmon fillet - rich in omega-3 fatty acids and high-quality protein",
+    "image": "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 208,
+      "protein": 25.4,
+      "carbs": 0,
+      "fats": 12.4,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 59
+    },
+    "commonPortions": [
+      {
+        "name": "Small fillet",
+        "weight": "120g",
+        "calories": 250,
+        "protein": 30.5,
+        "carbs": 0,
+        "fats": 14.9
+      },
+      {
+        "name": "Medium fillet",
+        "weight": "150g",
+        "calories": 312,
+        "protein": 38.1,
+        "carbs": 0,
+        "fats": 18.6
+      },
+      {
+        "name": "Large fillet",
+        "weight": "180g",
+        "calories": 374,
+        "protein": 45.7,
+        "carbs": 0,
+        "fats": 22.3
+      }
+    ],
+    "benefits": ["Omega-3 fatty acids", "High protein", "Heart healthy", "Brain health"],
+    "allergens": ["fish"],
+    "dietaryTags": ["high-protein", "omega-3", "keto-friendly", "paleo"],
+    "preparationMethods": ["grilled", "baked", "pan-seared", "steamed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food003",
+    "name": "Brown Rice",
+    "category": "carbs",
+    "subcategory": "grains",
+    "description": "Whole grain brown rice - excellent source of complex carbohydrates and fiber",
+    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80",
+    "servingSize": "100g cooked",
+    "nutritionPer100g": {
+      "calories": 112,
+      "protein": 2.6,
+      "carbs": 22,
+      "fats": 0.9,
+      "fiber": 1.8,
+      "sugar": 0.4,
+      "sodium": 5
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "80g",
+        "calories": 90,
+        "protein": 2.1,
+        "carbs": 17.6,
+        "fats": 0.7
+      },
+      {
+        "name": "Medium serving",
+        "weight": "150g",
+        "calories": 168,
+        "protein": 3.9,
+        "carbs": 33,
+        "fats": 1.4
+      },
+      {
+        "name": "Large serving",
+        "weight": "200g",
+        "calories": 224,
+        "protein": 5.2,
+        "carbs": 44,
+        "fats": 1.8
+      }
+    ],
+    "benefits": ["Complex carbs", "High fiber", "B vitamins", "Sustained energy"],
+    "allergens": [],
+    "dietaryTags": ["whole-grain", "high-fiber", "gluten-free"],
+    "preparationMethods": ["boiled", "steamed", "pilaf-style"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food004",
+    "name": "Avocado",
+    "category": "fats",
+    "subcategory": "fruits",
+    "description": "Fresh avocado - rich in healthy monounsaturated fats and potassium",
+    "image": "https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 160,
+      "protein": 2,
+      "carbs": 8.5,
+      "fats": 14.7,
+      "fiber": 6.7,
+      "sugar": 0.7,
+      "sodium": 7
+    },
+    "commonPortions": [
+      {
+        "name": "Half avocado",
+        "weight": "75g",
+        "calories": 120,
+        "protein": 1.5,
+        "carbs": 6.4,
+        "fats": 11
+      },
+      {
+        "name": "Whole avocado",
+        "weight": "150g",
+        "calories": 240,
+        "protein": 3,
+        "carbs": 12.8,
+        "fats": 22
+      },
+      {
+        "name": "Sliced (1/4)",
+        "weight": "40g",
+        "calories": 64,
+        "protein": 0.8,
+        "carbs": 3.4,
+        "fats": 5.9
+      }
+    ],
+    "benefits": ["Healthy fats", "High fiber", "Potassium", "Heart healthy"],
+    "allergens": [],
+    "dietaryTags": ["healthy-fats", "high-fiber", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "mashed", "grilled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food005",
+    "name": "Greek Yogurt",
+    "category": "protein",
+    "subcategory": "dairy",
+    "description": "Plain Greek yogurt (0% fat) - high in protein and probiotics",
+    "image": "https://images.unsplash.com/photo-1571212515416-fac8006d1c77?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 59,
+      "protein": 10.3,
+      "carbs": 3.6,
+      "fats": 0.4,
+      "fiber": 0,
+      "sugar": 3.6,
+      "sodium": 36
+    },
+    "commonPortions": [
+      {
+        "name": "Small container",
+        "weight": "150g",
+        "calories": 89,
+        "protein": 15.5,
+        "carbs": 5.4,
+        "fats": 0.6
+      },
+      {
+        "name": "Medium container",
+        "weight": "200g",
+        "calories": 118,
+        "protein": 20.6,
+        "carbs": 7.2,
+        "fats": 0.8
+      },
+      {
+        "name": "Large container",
+        "weight": "250g",
+        "calories": 148,
+        "protein": 25.8,
+        "carbs": 9,
+        "fats": 1
+      }
+    ],
+    "benefits": ["High protein", "Probiotics", "Low fat", "Calcium"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["high-protein", "low-fat", "probiotic"],
+    "preparationMethods": ["plain", "with-toppings"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food006",
+    "name": "Almonds",
+    "category": "fats",
+    "subcategory": "nuts",
+    "description": "Raw almonds - excellent source of healthy fats, protein, and vitamin E",
+    "image": "https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 579,
+      "protein": 21.2,
+      "carbs": 21.6,
+      "fats": 49.9,
+      "fiber": 12.5,
+      "sugar": 4.4,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small handful",
+        "weight": "20g",
+        "calories": 116,
+        "protein": 4.2,
+        "carbs": 4.3,
+        "fats": 10
+      },
+      {
+        "name": "Medium handful",
+        "weight": "30g",
+        "calories": 174,
+        "protein": 6.4,
+        "carbs": 6.5,
+        "fats": 15
+      },
+      {
+        "name": "Large handful",
+        "weight": "40g",
+        "calories": 232,
+        "protein": 8.5,
+        "carbs": 8.6,
+        "fats": 20
+      }
+    ],
+    "benefits": ["Healthy fats", "High protein", "Vitamin E", "Magnesium"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["healthy-fats", "high-protein", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "roasted", "sliced"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food007",
+    "name": "Broccoli",
+    "category": "vegetables",
+    "subcategory": "cruciferous",
+    "description": "Fresh broccoli - nutrient-dense vegetable high in vitamins C and K",
+    "image": "https://images.unsplash.com/photo-1459411621453-7b03977f4bfc?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 25,
+      "protein": 3,
+      "carbs": 5,
+      "fats": 0.4,
+      "fiber": 3,
+      "sugar": 1.5,
+      "sodium": 33
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "100g",
+        "calories": 25,
+        "protein": 3,
+        "carbs": 5,
+        "fats": 0.4
+      },
+      {
+        "name": "Medium serving",
+        "weight": "150g",
+        "calories": 38,
+        "protein": 4.5,
+        "carbs": 7.5,
+        "fats": 0.6
+      },
+      {
+        "name": "Large serving",
+        "weight": "200g",
+        "calories": 50,
+        "protein": 6,
+        "carbs": 10,
+        "fats": 0.8
+      }
+    ],
+    "benefits": ["Vitamin C", "Vitamin K", "Antioxidants", "Low calorie"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "high-fiber", "keto-friendly", "paleo"],
+    "preparationMethods": ["steamed", "roasted", "raw", "stir-fried"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food008",
+    "name": "Sweet Potato",
+    "category": "carbs",
+    "subcategory": "vegetables",
+    "description": "Roasted sweet potato - complex carbohydrate rich in beta-carotene and fiber",
+    "image": "https://images.unsplash.com/photo-1557844352-761f2565b576?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 86,
+      "protein": 1.6,
+      "carbs": 20.1,
+      "fats": 0.1,
+      "fiber": 3,
+      "sugar": 4.2,
+      "sodium": 6
+    },
+    "commonPortions": [
+      {
+        "name": "Small potato",
+        "weight": "150g",
+        "calories": 129,
+        "protein": 2.4,
+        "carbs": 30.2,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium potato",
+        "weight": "200g",
+        "calories": 172,
+        "protein": 3.2,
+        "carbs": 40.2,
+        "fats": 0.2
+      },
+      {
+        "name": "Large potato",
+        "weight": "300g",
+        "calories": 258,
+        "protein": 4.8,
+        "carbs": 60.3,
+        "fats": 0.3
+      }
+    ],
+    "benefits": ["Complex carbs", "Beta-carotene", "High fiber", "Potassium"],
+    "allergens": [],
+    "dietaryTags": ["complex-carbs", "high-fiber", "beta-carotene"],
+    "preparationMethods": ["baked", "roasted", "mashed", "grilled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food009",
+    "name": "Oatmeal",
+    "category": "carbs",
+    "subcategory": "grains",
+    "description": "Steel-cut oats - whole grain breakfast option high in soluble fiber",
+    "image": "https://images.unsplash.com/photo-1517686749443-8f4d3a9e3ebd?w=400&q=80",
+    "servingSize": "100g cooked",
+    "nutritionPer100g": {
+      "calories": 68,
+      "protein": 2.4,
+      "carbs": 12,
+      "fats": 1.4,
+      "fiber": 1.7,
+      "sugar": 0.3,
+      "sodium": 4
+    },
+    "commonPortions": [
+      {
+        "name": "Small bowl",
+        "weight": "150g",
+        "calories": 102,
+        "protein": 3.6,
+        "carbs": 18,
+        "fats": 2.1
+      },
+      {
+        "name": "Medium bowl",
+        "weight": "200g",
+        "calories": 136,
+        "protein": 4.8,
+        "carbs": 24,
+        "fats": 2.8
+      },
+      {
+        "name": "Large bowl",
+        "weight": "250g",
+        "calories": 170,
+        "protein": 6,
+        "carbs": 30,
+        "fats": 3.5
+      }
+    ],
+    "benefits": ["Soluble fiber", "Complex carbs", "Heart healthy", "Sustained energy"],
+    "allergens": ["gluten"],
+    "dietaryTags": ["whole-grain", "high-fiber", "heart-healthy"],
+    "preparationMethods": ["cooked", "overnight-oats"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food010",
+    "name": "Quinoa",
+    "category": "carbs",
+    "subcategory": "grains",
+    "description": "Cooked quinoa - complete protein grain alternative, gluten-free",
+    "image": "https://images.unsplash.com/photo-1586318447488-6af9a98c13d4?w=400&q=80",
+    "servingSize": "100g cooked",
+    "nutritionPer100g": {
+      "calories": 120,
+      "protein": 4.4,
+      "carbs": 21.3,
+      "fats": 1.9,
+      "fiber": 2.8,
+      "sugar": 0.9,
+      "sodium": 7
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "80g",
+        "calories": 96,
+        "protein": 3.5,
+        "carbs": 17,
+        "fats": 1.5
+      },
+      {
+        "name": "Medium serving",
+        "weight": "150g",
+        "calories": 180,
+        "protein": 6.6,
+        "carbs": 32,
+        "fats": 2.9
+      },
+      {
+        "name": "Large serving",
+        "weight": "200g",
+        "calories": 240,
+        "protein": 8.8,
+        "carbs": 42.6,
+        "fats": 3.8
+      }
+    ],
+    "benefits": ["Complete protein", "Gluten-free", "High fiber", "Magnesium"],
+    "allergens": [],
+    "dietaryTags": ["complete-protein", "gluten-free", "high-fiber"],
+    "preparationMethods": ["boiled", "pilaf-style", "salad"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food011",
+    "name": "Eggs",
+    "category": "protein",
+    "subcategory": "dairy",
+    "description": "Large chicken eggs - complete protein source with essential amino acids",
+    "image": "https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=400&q=80",
+    "servingSize": "1 large egg (50g)",
+    "nutritionPer100g": {
+      "calories": 155,
+      "protein": 13,
+      "carbs": 1.1,
+      "fats": 11,
+      "fiber": 0,
+      "sugar": 1.1,
+      "sodium": 124
+    },
+    "commonPortions": [
+      {
+        "name": "1 large egg",
+        "weight": "50g",
+        "calories": 78,
+        "protein": 6.5,
+        "carbs": 0.6,
+        "fats": 5.5
+      },
+      {
+        "name": "2 large eggs",
+        "weight": "100g",
+        "calories": 155,
+        "protein": 13,
+        "carbs": 1.1,
+        "fats": 11
+      },
+      {
+        "name": "3 large eggs",
+        "weight": "150g",
+        "calories": 233,
+        "protein": 19.5,
+        "carbs": 1.7,
+        "fats": 16.5
+      }
+    ],
+    "benefits": ["Complete protein", "Choline", "Vitamin D", "B vitamins"],
+    "allergens": ["eggs"],
+    "dietaryTags": ["complete-protein", "keto-friendly", "paleo"],
+    "preparationMethods": ["scrambled", "boiled", "fried", "poached"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food012",
+    "name": "Spinach",
+    "category": "vegetables",
+    "subcategory": "leafy-greens",
+    "description": "Fresh spinach leaves - nutrient-dense leafy green high in iron and folate",
+    "image": "https://images.unsplash.com/photo-1576045057773-2d41c32b86fc?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 23,
+      "protein": 2.9,
+      "carbs": 3.6,
+      "fats": 0.4,
+      "fiber": 2.2,
+      "sugar": 0.4,
+      "sodium": 79
+    },
+    "commonPortions": [
+      {
+        "name": "Small salad",
+        "weight": "50g",
+        "calories": 12,
+        "protein": 1.5,
+        "carbs": 1.8,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium salad",
+        "weight": "100g",
+        "calories": 23,
+        "protein": 2.9,
+        "carbs": 3.6,
+        "fats": 0.4
+      },
+      {
+        "name": "Large salad",
+        "weight": "150g",
+        "calories": 35,
+        "protein": 4.4,
+        "carbs": 5.4,
+        "fats": 0.6
+      }
+    ],
+    "benefits": ["Iron", "Folate", "Vitamin K", "Antioxidants"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "iron-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "sauteed", "steamed", "blended"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food013",
+    "name": "Blueberries",
+    "category": "carbs",
+    "subcategory": "fruits",
+    "description": "Fresh blueberries - antioxidant-rich superfruit low in calories",
+    "image": "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 57,
+      "protein": 0.7,
+      "carbs": 14.5,
+      "fats": 0.3,
+      "fiber": 2.4,
+      "sugar": 10,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "75g",
+        "calories": 43,
+        "protein": 0.5,
+        "carbs": 10.9,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium serving",
+        "weight": "125g",
+        "calories": 71,
+        "protein": 0.9,
+        "carbs": 18.1,
+        "fats": 0.4
+      },
+      {
+        "name": "Large serving",
+        "weight": "150g",
+        "calories": 86,
+        "protein": 1.1,
+        "carbs": 21.8,
+        "fats": 0.5
+      }
+    ],
+    "benefits": ["Antioxidants", "Vitamin C", "Low calorie", "Brain health"],
+    "allergens": [],
+    "dietaryTags": ["antioxidant-rich", "low-calorie", "natural-sugars"],
+    "preparationMethods": ["raw", "frozen", "smoothie"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food014",
+    "name": "Turkey Breast",
+    "category": "protein",
+    "subcategory": "poultry",
+    "description": "Lean turkey breast - low-fat, high-protein poultry option",
+    "image": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 135,
+      "protein": 30,
+      "carbs": 0,
+      "fats": 1,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 63
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "100g",
+        "calories": 135,
+        "protein": 30,
+        "carbs": 0,
+        "fats": 1
+      },
+      {
+        "name": "Medium portion",
+        "weight": "150g",
+        "calories": 203,
+        "protein": 45,
+        "carbs": 0,
+        "fats": 1.5
+      },
+      {
+        "name": "Large portion",
+        "weight": "200g",
+        "calories": 270,
+        "protein": 60,
+        "carbs": 0,
+        "fats": 2
+      }
+    ],
+    "benefits": ["Very high protein", "Very low fat", "Zero carbs", "B vitamins"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "low-fat", "zero-carb", "keto-friendly", "paleo"],
+    "preparationMethods": ["roasted", "grilled", "sliced", "ground"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food015",
+    "name": "Olive Oil",
+    "category": "fats",
+    "subcategory": "oils",
+    "description": "Extra virgin olive oil - healthy monounsaturated fat for cooking and dressing",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80",
+    "servingSize": "1 tbsp (15ml)",
+    "nutritionPer100g": {
+      "calories": 884,
+      "protein": 0,
+      "carbs": 0,
+      "fats": 100,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "1 tsp",
+        "weight": "5ml",
+        "calories": 44,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 5
+      },
+      {
+        "name": "1 tbsp",
+        "weight": "15ml",
+        "calories": 133,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 15
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "30ml",
+        "calories": 265,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 30
+      }
+    ],
+    "benefits": ["Monounsaturated fats", "Vitamin E", "Antioxidants", "Heart healthy"],
+    "allergens": [],
+    "dietaryTags": ["healthy-fats", "keto-friendly", "paleo", "heart-healthy"],
+    "preparationMethods": ["dressing", "cooking", "drizzling"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  }
+]
