@@ -18,6 +18,7 @@ import {
   Avatar,
   Divider,
   Tooltip,
+  Skeleton,
 } from '@mui/material';
 import {
   MoreVert as MoreVertIcon,
@@ -40,6 +41,7 @@ import {
 
 const FoodCard = ({ food, onEdit, onDelete, onToggleStatus }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [imageError, setImageError] = React.useState(false);
   const open = Boolean(anchorEl);
 
   const handleMenuClick = (event) => {
@@ -84,19 +86,27 @@ const FoodCard = ({ food, onEdit, onDelete, onToggleStatus }) => {
       }}
     >
       {/* Food Image */}
-      <CardMedia
-        component='img'
-        height='160'
-        image={food.image}
-        alt={food.name}
-        sx={{
-          objectFit: 'cover',
-          backgroundColor: 'grey.100',
-        }}
-        onError={(e) => {
-          e.target.src = 'https://via.placeholder.com/400x160?text=Food+Image';
-        }}
-      />
+      {imageError || !food.image ? (
+        <Skeleton
+          variant='rectangular'
+          height={160}
+          sx={{
+            backgroundColor: 'grey.100',
+          }}
+        />
+      ) : (
+        <CardMedia
+          component='img'
+          height='160'
+          image={food.image}
+          alt={food.name}
+          sx={{
+            objectFit: 'cover',
+            backgroundColor: 'grey.100',
+          }}
+          onError={() => setImageError(true)}
+        />
+      )}
 
       <CardContent>
         {/* Header with menu */}

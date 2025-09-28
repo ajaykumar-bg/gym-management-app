@@ -160,14 +160,14 @@ export const formatNutritionValue = (value, unit = '', decimals = 1) => {
 /**
  * Get food image URL with fallback
  * @param {Object} food - Food object
- * @returns {string} Image URL
+ * @returns {string|null} Image URL or null for skeleton fallback
  */
 export const getFoodImageUrl = (food) => {
-  if (!food) {
-    return 'https://via.placeholder.com/400x300?text=No+Image';
+  if (!food || !food.image) {
+    return null; // Return null to trigger skeleton component
   }
 
-  return food.image || 'https://via.placeholder.com/400x300?text=Food+Image';
+  return food.image;
 };
 
 /**
