@@ -967,5 +967,209 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food020",
+    "name": "Peanut Butter",
+    "category": "nuts-seeds",
+    "subcategory": "nut-butter",
+    "description": "Natural peanut butter - creamy, high-protein spread rich in healthy fats",
+    "image": "https://images.unsplash.com/photo-1654747781278-3aff38f76b0e?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "2 tbsp (32g)",
+    "nutritionPer100g": {
+      "calories": 588,
+      "protein": 25.8,
+      "carbs": 20,
+      "fats": 50,
+      "fiber": 8.5,
+      "sugar": 9.2,
+      "sodium": 17
+    },
+    "commonPortions": [
+      {
+        "name": "1 tbsp",
+        "weight": "16g",
+        "calories": 94,
+        "protein": 4.1,
+        "carbs": 3.2,
+        "fats": 8
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "32g",
+        "calories": 188,
+        "protein": 8.3,
+        "carbs": 6.4,
+        "fats": 16
+      },
+      {
+        "name": "3 tbsp",
+        "weight": "48g",
+        "calories": 282,
+        "protein": 12.4,
+        "carbs": 9.6,
+        "fats": 24
+      }
+    ],
+    "benefits": ["High protein", "Healthy fats", "Niacin", "Magnesium"],
+    "allergens": ["peanuts"],
+    "dietaryTags": ["high-protein", "healthy-fats", "high-calorie"],
+    "preparationMethods": ["spread", "smoothie", "sauce", "baking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food021",
+    "name": "Almond Butter",
+    "category": "nuts-seeds",
+    "subcategory": "nut-butter",
+    "description": "Natural almond butter - smooth, nutrient-dense spread high in vitamin E",
+    "image": "https://images.unsplash.com/photo-1654747780295-aa29ff49f5c0?q=80&w=736&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "2 tbsp (32g)",
+    "nutritionPer100g": {
+      "calories": 614,
+      "protein": 21.2,
+      "carbs": 18.8,
+      "fats": 55.8,
+      "fiber": 10.3,
+      "sugar": 4.4,
+      "sodium": 7
+    },
+    "commonPortions": [
+      {
+        "name": "1 tbsp",
+        "weight": "16g",
+        "calories": 98,
+        "protein": 3.4,
+        "carbs": 3,
+        "fats": 8.9
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "32g",
+        "calories": 196,
+        "protein": 6.8,
+        "carbs": 6,
+        "fats": 17.9
+      },
+      {
+        "name": "3 tbsp",
+        "weight": "48g",
+        "calories": 295,
+        "protein": 10.2,
+        "carbs": 9,
+        "fats": 26.8
+      }
+    ],
+    "benefits": ["Vitamin E", "Magnesium", "Healthy fats", "Fiber"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["high-protein", "healthy-fats", "vitamin-e-rich", "high-calorie"],
+    "preparationMethods": ["spread", "smoothie", "sauce", "baking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food022",
+    "name": "Cashews",
+    "category": "nuts-seeds",
+    "subcategory": "tree-nuts",
+    "description": "Raw cashews - creamy, mild-flavored nuts rich in copper and magnesium",
+    "image": "https://images.unsplash.com/photo-1729796350013-ebb27f079c76?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 553,
+      "protein": 18.2,
+      "carbs": 30.2,
+      "fats": 43.9,
+      "fiber": 3.3,
+      "sugar": 5.9,
+      "sodium": 12
+    },
+    "commonPortions": [
+      {
+        "name": "Small handful",
+        "weight": "20g",
+        "calories": 111,
+        "protein": 3.6,
+        "carbs": 6,
+        "fats": 8.8
+      },
+      {
+        "name": "Medium handful",
+        "weight": "30g",
+        "calories": 166,
+        "protein": 5.5,
+        "carbs": 9.1,
+        "fats": 13.2
+      },
+      {
+        "name": "Large handful",
+        "weight": "40g",
+        "calories": 221,
+        "protein": 7.3,
+        "carbs": 12.1,
+        "fats": 17.6
+      }
+    ],
+    "benefits": ["Copper", "Magnesium", "Zinc", "Heart healthy"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["healthy-fats", "high-protein", "mineral-rich", "heart-healthy"],
+    "preparationMethods": ["raw", "roasted", "chopped", "cashew-cream"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food023",
+    "name": "Walnuts",
+    "category": "nuts-seeds",
+    "subcategory": "tree-nuts",
+    "description": "Raw walnuts - omega-3 rich nuts excellent for brain health",
+    "image": "https://plus.unsplash.com/premium_photo-1668445743008-0d84ffc370e0?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 654,
+      "protein": 15.2,
+      "carbs": 13.7,
+      "fats": 65.2,
+      "fiber": 6.7,
+      "sugar": 2.6,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "Small handful",
+        "weight": "15g",
+        "calories": 98,
+        "protein": 2.3,
+        "carbs": 2.1,
+        "fats": 9.8
+      },
+      {
+        "name": "Medium handful",
+        "weight": "25g",
+        "calories": 164,
+        "protein": 3.8,
+        "carbs": 3.4,
+        "fats": 16.3
+      },
+      {
+        "name": "Large handful",
+        "weight": "35g",
+        "calories": 229,
+        "protein": 5.3,
+        "carbs": 4.8,
+        "fats": 22.8
+      }
+    ],
+    "benefits": ["Omega-3 fatty acids", "Brain health", "Antioxidants", "Heart healthy"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["omega-3", "brain-healthy", "antioxidant-rich", "heart-healthy"],
+    "preparationMethods": ["raw", "roasted", "chopped", "baking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]

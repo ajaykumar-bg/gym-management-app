@@ -83,6 +83,7 @@ export const FOOD_SUBCATEGORIES = {
 
   // Nuts & Seeds subcategories
   TREE_NUTS: 'tree-nuts',
+  NUT_BUTTER: 'nut-butter',
 
   // Dairy subcategories
   YOGURT: 'yogurt',
@@ -114,8 +115,8 @@ export const FOOD_SUBCATEGORY_LABELS = {
   [FOOD_SUBCATEGORIES.OATS]: 'Oats',
   [FOOD_SUBCATEGORIES.PSEUDOCEREAL]: 'Pseudocereals',
   [FOOD_SUBCATEGORIES.TREE_NUTS]: 'Tree Nuts',
+  [FOOD_SUBCATEGORIES.NUT_BUTTER]: 'Nut Butters',
   [FOOD_SUBCATEGORIES.YOGURT]: 'Yogurt',
-  [FOOD_SUBCATEGORIES.STONE_FRUITS]: 'Stone Fruits',
 };
 
 // Dietary Tags
