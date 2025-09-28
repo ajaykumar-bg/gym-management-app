@@ -3364,5 +3364,566 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food067",
+    "name": "Oranges",
+    "category": "fruits",
+    "subcategory": "citrus",
+    "description": "Fresh navel oranges - excellent source of vitamin C, fiber, and natural antioxidants",
+    "image": "https://images.unsplash.com/photo-1611080626919-7cf5a9dbab5b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 47,
+      "protein": 0.9,
+      "carbs": 11.8,
+      "fats": 0.1,
+      "fiber": 2.4,
+      "sugar": 9.4,
+      "sodium": 0
+    },
+    "commonPortions": [
+      {
+        "name": "Small orange",
+        "weight": "130g",
+        "calories": 61,
+        "protein": 1.2,
+        "carbs": 15.3,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium orange",
+        "weight": "154g",
+        "calories": 72,
+        "protein": 1.4,
+        "carbs": 18.2,
+        "fats": 0.2
+      },
+      {
+        "name": "Large orange",
+        "weight": "184g",
+        "calories": 86,
+        "protein": 1.7,
+        "carbs": 21.7,
+        "fats": 0.2
+      }
+    ],
+    "benefits": ["High vitamin C", "Natural antioxidants", "Digestive fiber", "Immune support", "Heart health"],
+    "allergens": [],
+    "dietaryTags": ["vitamin-c", "antioxidant", "natural-sugar", "fiber-rich", "citrus"],
+    "preparationMethods": ["fresh", "juice", "zest", "segments", "smoothie"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food068",
+    "name": "Sweet Potato",
+    "category": "vegetables",
+    "subcategory": "root_vegetables",
+    "description": "Orange sweet potato - nutrient-dense root vegetable high in beta-carotene and complex carbs",
+    "image": "https://images.unsplash.com/photo-1730815048561-45df6f7f331d?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 86,
+      "protein": 1.6,
+      "carbs": 20.1,
+      "fats": 0.1,
+      "fiber": 3.0,
+      "sugar": 4.2,
+      "sodium": 7
+    },
+    "commonPortions": [
+      {
+        "name": "Small sweet potato",
+        "weight": "130g",
+        "calories": 112,
+        "protein": 2.1,
+        "carbs": 26.1,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium sweet potato",
+        "weight": "180g",
+        "calories": 155,
+        "protein": 2.9,
+        "carbs": 36.2,
+        "fats": 0.2
+      },
+      {
+        "name": "Large sweet potato",
+        "weight": "250g",
+        "calories": 215,
+        "protein": 4.0,
+        "carbs": 50.3,
+        "fats": 0.3
+      }
+    ],
+    "benefits": ["High beta-carotene", "Complex carbohydrates", "Digestive fiber", "Potassium rich", "Natural sweetness"],
+    "allergens": [],
+    "dietaryTags": ["beta-carotene", "complex-carbs", "fiber-rich", "potassium", "natural-sweet"],
+    "preparationMethods": ["baked", "roasted", "mashed", "steamed", "grilled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food069",
+    "name": "Carrots",
+    "category": "vegetables",
+    "subcategory": "root_vegetables",
+    "description": "Fresh carrots - crunchy orange root vegetables packed with beta-carotene and fiber",
+    "image": "https://images.unsplash.com/photo-1639086495429-d60e72c53c81?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 41,
+      "protein": 0.9,
+      "carbs": 9.6,
+      "fats": 0.2,
+      "fiber": 2.8,
+      "sugar": 4.7,
+      "sodium": 69
+    },
+    "commonPortions": [
+      {
+        "name": "Small carrot",
+        "weight": "50g",
+        "calories": 21,
+        "protein": 0.5,
+        "carbs": 4.8,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium carrot",
+        "weight": "75g",
+        "calories": 31,
+        "protein": 0.7,
+        "carbs": 7.2,
+        "fats": 0.2
+      },
+      {
+        "name": "Large carrot",
+        "weight": "120g",
+        "calories": 49,
+        "protein": 1.1,
+        "carbs": 11.5,
+        "fats": 0.2
+      }
+    ],
+    "benefits": ["High beta-carotene", "Eye health", "Crunchy texture", "Natural sweetness", "Digestive fiber"],
+    "allergens": [],
+    "dietaryTags": ["beta-carotene", "eye-health", "fiber-rich", "crunchy", "natural-sweet"],
+    "preparationMethods": ["raw", "steamed", "roasted", "stir-fried", "juiced"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food070",
+    "name": "Cucumber",
+    "category": "vegetables",
+    "subcategory": "green_vegetables",
+    "description": "Fresh cucumber - hydrating vegetable with crisp texture and mild refreshing flavor",
+    "image": "https://images.unsplash.com/photo-1589621316382-008455b857cd?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 16,
+      "protein": 0.7,
+      "carbs": 4.0,
+      "fats": 0.1,
+      "fiber": 0.5,
+      "sugar": 1.7,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "Small cucumber",
+        "weight": "200g",
+        "calories": 32,
+        "protein": 1.4,
+        "carbs": 8.0,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium cucumber",
+        "weight": "300g",
+        "calories": 48,
+        "protein": 2.1,
+        "carbs": 12.0,
+        "fats": 0.3
+      },
+      {
+        "name": "1 cup sliced",
+        "weight": "120g",
+        "calories": 19,
+        "protein": 0.8,
+        "carbs": 4.8,
+        "fats": 0.1
+      }
+    ],
+    "benefits": ["High water content", "Low calorie", "Hydrating", "Crisp texture", "Cooling effect"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "hydrating", "refreshing", "crisp", "cooling"],
+    "preparationMethods": ["fresh", "salad", "pickled", "smoothie", "infused-water"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food071",
+    "name": "Sardines",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh sardines - small oily fish rich in omega-3 fatty acids, protein, and calcium",
+    "image": "https://images.unsplash.com/photo-1600699899970-b1c9fadd8f9e?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 208,
+      "protein": 24.6,
+      "carbs": 0,
+      "fats": 11.5,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 307
+    },
+    "commonPortions": [
+      {
+        "name": "Small can (3.75oz)",
+        "weight": "106g",
+        "calories": 220,
+        "protein": 26.1,
+        "carbs": 0,
+        "fats": 12.2
+      },
+      {
+        "name": "3-4 fresh sardines",
+        "weight": "85g",
+        "calories": 177,
+        "protein": 20.9,
+        "carbs": 0,
+        "fats": 9.8
+      },
+      {
+        "name": "Large serving",
+        "weight": "150g",
+        "calories": 312,
+        "protein": 36.9,
+        "carbs": 0,
+        "fats": 17.3
+      }
+    ],
+    "benefits": ["High omega-3", "Calcium rich", "Vitamin D", "Sustainable seafood", "Heart healthy"],
+    "allergens": ["fish"],
+    "dietaryTags": ["high-protein", "omega-3", "calcium", "vitamin-d", "sustainable"],
+    "preparationMethods": ["grilled", "canned", "smoked", "fresh", "mediterranean"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food072",
+    "name": "Shellfish",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Mixed shellfish - variety of mollusks and crustaceans high in protein and minerals",
+    "image": "https://plus.unsplash.com/premium_photo-1670742337965-fbc39ae092d9?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 90,
+      "protein": 18.8,
+      "carbs": 0.8,
+      "fats": 1.2,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 145
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "85g",
+        "calories": 77,
+        "protein": 16.0,
+        "carbs": 0.7,
+        "fats": 1.0
+      },
+      {
+        "name": "Medium serving",
+        "weight": "120g",
+        "calories": 108,
+        "protein": 22.6,
+        "carbs": 1.0,
+        "fats": 1.4
+      },
+      {
+        "name": "Large serving",
+        "weight": "180g",
+        "calories": 162,
+        "protein": 33.8,
+        "carbs": 1.4,
+        "fats": 2.2
+      }
+    ],
+    "benefits": ["High protein", "Low fat", "Rich in zinc", "Iodine source", "Mineral rich"],
+    "allergens": ["shellfish"],
+    "dietaryTags": ["high-protein", "low-fat", "mineral-rich", "zinc", "iodine"],
+    "preparationMethods": ["steamed", "boiled", "grilled", "stir-fried", "seafood-platter"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food073",
+    "name": "Trout",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh rainbow trout - delicate freshwater fish with mild flavor and healthy omega-3 fats",
+    "image": "https://images.unsplash.com/photo-1510130387422-82bed34b37e9?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 148,
+      "protein": 20.8,
+      "carbs": 0,
+      "fats": 6.6,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 67
+    },
+    "commonPortions": [
+      {
+        "name": "Small fillet",
+        "weight": "110g",
+        "calories": 163,
+        "protein": 22.9,
+        "carbs": 0,
+        "fats": 7.3
+      },
+      {
+        "name": "Medium fillet",
+        "weight": "150g",
+        "calories": 222,
+        "protein": 31.2,
+        "carbs": 0,
+        "fats": 9.9
+      },
+      {
+        "name": "Large fillet",
+        "weight": "200g",
+        "calories": 296,
+        "protein": 41.6,
+        "carbs": 0,
+        "fats": 13.2
+      }
+    ],
+    "benefits": ["High protein", "Omega-3 fatty acids", "Mild flavor", "Freshwater fish", "Heart healthy"],
+    "allergens": ["fish"],
+    "dietaryTags": ["high-protein", "omega-3", "mild-flavor", "freshwater", "heart-healthy"],
+    "preparationMethods": ["grilled", "baked", "pan-fried", "smoked", "whole-roasted"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food074",
+    "name": "Kidney Beans",
+    "category": "protein",
+    "subcategory": "legumes",
+    "description": "Red kidney beans - protein-rich legumes high in fiber, folate, and plant-based nutrition",
+    "image": "https://images.unsplash.com/flagged/photo-1577226259316-c566059cd6fc?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 127,
+      "protein": 8.7,
+      "carbs": 22.8,
+      "fats": 0.5,
+      "fiber": 6.4,
+      "sugar": 0.3,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "1/2 cup cooked",
+        "weight": "90g",
+        "calories": 114,
+        "protein": 7.8,
+        "carbs": 20.5,
+        "fats": 0.5
+      },
+      {
+        "name": "1 cup cooked",
+        "weight": "180g",
+        "calories": 229,
+        "protein": 15.7,
+        "carbs": 41.0,
+        "fats": 0.9
+      },
+      {
+        "name": "Large serving",
+        "weight": "250g",
+        "calories": 318,
+        "protein": 21.8,
+        "carbs": 57.0,
+        "fats": 1.3
+      }
+    ],
+    "benefits": ["Plant protein", "High fiber", "Folate rich", "Iron source", "Heart healthy"],
+    "allergens": [],
+    "dietaryTags": ["plant-protein", "high-fiber", "folate", "iron", "vegan"],
+    "preparationMethods": ["boiled", "stewed", "chili", "salad", "curry"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food075",
+    "name": "Lentils",
+    "category": "protein",
+    "subcategory": "legumes",
+    "description": "Green lentils - versatile legumes packed with protein, fiber, and essential minerals",
+    "image": "https://images.unsplash.com/photo-1708436477916-f97964f3ccf1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 116,
+      "protein": 9.0,
+      "carbs": 20.1,
+      "fats": 0.4,
+      "fiber": 7.9,
+      "sugar": 1.8,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "1/2 cup cooked",
+        "weight": "100g",
+        "calories": 116,
+        "protein": 9.0,
+        "carbs": 20.1,
+        "fats": 0.4
+      },
+      {
+        "name": "1 cup cooked",
+        "weight": "200g",
+        "calories": 232,
+        "protein": 18.0,
+        "carbs": 40.2,
+        "fats": 0.8
+      },
+      {
+        "name": "Large serving",
+        "weight": "300g",
+        "calories": 348,
+        "protein": 27.0,
+        "carbs": 60.3,
+        "fats": 1.2
+      }
+    ],
+    "benefits": ["High protein", "Excellent fiber", "Iron rich", "Folate source", "Quick cooking"],
+    "allergens": [],
+    "dietaryTags": ["plant-protein", "high-fiber", "iron", "folate", "vegan"],
+    "preparationMethods": ["boiled", "soup", "curry", "salad", "dal"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food076",
+    "name": "Peanuts",
+    "category": "nuts-seeds",
+    "subcategory": "nuts",
+    "description": "Roasted peanuts - technically legumes, rich in protein, healthy fats, and essential nutrients",
+    "image": "https://plus.unsplash.com/premium_photo-1726072356924-e29e8999df09?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 567,
+      "protein": 25.8,
+      "carbs": 16.1,
+      "fats": 49.2,
+      "fiber": 8.5,
+      "sugar": 4.7,
+      "sodium": 18
+    },
+    "commonPortions": [
+      {
+        "name": "Small handful",
+        "weight": "30g",
+        "calories": 170,
+        "protein": 7.7,
+        "carbs": 4.8,
+        "fats": 14.8
+      },
+      {
+        "name": "Medium handful",
+        "weight": "50g",
+        "calories": 284,
+        "protein": 12.9,
+        "carbs": 8.1,
+        "fats": 24.6
+      },
+      {
+        "name": "Large handful",
+        "weight": "75g",
+        "calories": 425,
+        "protein": 19.4,
+        "carbs": 12.1,
+        "fats": 36.9
+      }
+    ],
+    "benefits": ["High protein", "Healthy fats", "Vitamin E", "Niacin rich", "Energy dense"],
+    "allergens": ["peanuts"],
+    "dietaryTags": ["high-protein", "healthy-fats", "vitamin-e", "energy-dense", "plant-based"],
+    "preparationMethods": ["roasted", "raw", "butter", "snack", "cooking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food077",
+    "name": "Brazil Nuts",
+    "category": "nuts-seeds",
+    "subcategory": "tree_nuts",
+    "description": "Brazil nuts - large tree nuts exceptionally high in selenium and healthy monounsaturated fats",
+    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRbiLxc5Oh_W4cLg_mngV_dks3Xgsv6WMs-aTKlOq1_jpNZeKmkh4nLTXVdlh9RHwpUtHFIyOrNxkiBZb8Y77Ti9VYoKxavRn7OaevFmKzG",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 659,
+      "protein": 14.3,
+      "carbs": 12.3,
+      "fats": 67.1,
+      "fiber": 7.5,
+      "sugar": 2.3,
+      "sodium": 3
+    },
+    "commonPortions": [
+      {
+        "name": "1-2 nuts (recommended daily)",
+        "weight": "10g",
+        "calories": 66,
+        "protein": 1.4,
+        "carbs": 1.2,
+        "fats": 6.7
+      },
+      {
+        "name": "Small handful (3-4 nuts)",
+        "weight": "20g",
+        "calories": 132,
+        "protein": 2.9,
+        "carbs": 2.5,
+        "fats": 13.4
+      },
+      {
+        "name": "Large portion (6-8 nuts)",
+        "weight": "40g",
+        "calories": 264,
+        "protein": 5.7,
+        "carbs": 4.9,
+        "fats": 26.8
+      }
+    ],
+    "benefits": ["Extremely high selenium", "Healthy fats", "Antioxidant properties", "Thyroid support", "Large size"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["selenium-rich", "healthy-fats", "antioxidant", "thyroid-support", "energy-dense"],
+    "preparationMethods": ["raw", "roasted", "snack", "baking", "limited-portions"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
