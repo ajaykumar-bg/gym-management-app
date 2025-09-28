@@ -209,7 +209,7 @@
     "category": "protein",
     "subcategory": "dairy",
     "description": "Plain Greek yogurt (0% fat) - high in protein and probiotics",
-    "image": "https://images.unsplash.com/photo-1571212515416-fac8006d1c77?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&q=80",
     "servingSize": "100g",
     "nutritionPer100g": {
       "calories": 59,
@@ -413,7 +413,7 @@
     "category": "carbs",
     "subcategory": "grains",
     "description": "Steel-cut oats - whole grain breakfast option high in soluble fiber",
-    "image": "https://images.unsplash.com/photo-1517686749443-8f4d3a9e3ebd?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80",
     "servingSize": "100g cooked",
     "nutritionPer100g": {
       "calories": 68,
@@ -464,7 +464,7 @@
     "category": "carbs",
     "subcategory": "grains",
     "description": "Cooked quinoa - complete protein grain alternative, gluten-free",
-    "image": "https://images.unsplash.com/photo-1586318447488-6af9a98c13d4?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1601814933824-fd0b574dd592?w=400&q=80",
     "servingSize": "100g cooked",
     "nutritionPer100g": {
       "calories": 120,
@@ -566,7 +566,7 @@
     "category": "vegetables",
     "subcategory": "leafy-greens",
     "description": "Fresh spinach leaves - nutrient-dense leafy green high in iron and folate",
-    "image": "https://images.unsplash.com/photo-1576045057773-2d41c32b86fc?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?w=400&q=80",
     "servingSize": "100g",
     "nutritionPer100g": {
       "calories": 23,
