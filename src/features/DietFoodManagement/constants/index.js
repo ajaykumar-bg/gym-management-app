@@ -52,18 +52,30 @@ export const FOOD_SUBCATEGORIES = {
   ORGAN_MEAT: 'organ-meat',
   DAIRY: 'dairy',
   PLANT_PROTEIN: 'plant-protein',
+  LEGUMES: 'legumes',
+  SUPPLEMENTS: 'supplements',
 
   // Carb subcategories
   GRAINS: 'grains',
   VEGETABLES: 'vegetables',
   FRUITS: 'fruits',
-  LEGUMES: 'legumes',
+  SWEETENERS: 'sweeteners',
+  CRACKERS: 'crackers',
+  CEREALS: 'cereals',
 
   // Fat subcategories
   OILS: 'oils',
   NUTS: 'nuts',
   SEEDS: 'seeds',
   AVOCADO: 'avocado',
+  CHOCOLATE: 'chocolate',
+  DAIRY_FATS: 'dairy-fats',
+
+  // Dairy subcategories
+  CHEESE: 'cheese',
+  MILK: 'milk',
+  PLANT_MILK: 'plant-milk',
+  YOGURT: 'yogurt',
 
   // Vegetable subcategories
   LEAFY_GREENS: 'leafy-greens',
@@ -92,9 +104,6 @@ export const FOOD_SUBCATEGORIES = {
   // Nuts & Seeds subcategories
   TREE_NUTS: 'tree-nuts',
   NUT_BUTTER: 'nut-butter',
-
-  // Dairy subcategories
-  YOGURT: 'yogurt',
 };
 
 export const FOOD_SUBCATEGORY_LABELS = {
@@ -130,6 +139,16 @@ export const FOOD_SUBCATEGORY_LABELS = {
   [FOOD_SUBCATEGORIES.TREE_NUTS]: 'Tree Nuts',
   [FOOD_SUBCATEGORIES.NUT_BUTTER]: 'Nut Butters',
   [FOOD_SUBCATEGORIES.YOGURT]: 'Yogurt',
+  [FOOD_SUBCATEGORIES.CHEESE]: 'Cheese',
+  [FOOD_SUBCATEGORIES.MILK]: 'Milk',
+  [FOOD_SUBCATEGORIES.PLANT_MILK]: 'Plant Milk',
+  [FOOD_SUBCATEGORIES.SWEETENERS]: 'Sweeteners',
+  [FOOD_SUBCATEGORIES.CHOCOLATE]: 'Chocolate',
+  [FOOD_SUBCATEGORIES.DAIRY_FATS]: 'Dairy Fats',
+  [FOOD_SUBCATEGORIES.CRACKERS]: 'Crackers',
+  [FOOD_SUBCATEGORIES.CEREALS]: 'Cereals',
+  [FOOD_SUBCATEGORIES.SEEDS]: 'Seeds',
+  [FOOD_SUBCATEGORIES.SUPPLEMENTS]: 'Supplements',
 };
 
 // Dietary Tags

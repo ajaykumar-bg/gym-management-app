@@ -2344,5 +2344,872 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food047",
+    "name": "Cottage Cheese",
+    "category": "dairy",
+    "subcategory": "cheese",
+    "description": "Low-fat cottage cheese - high-protein dairy product with casein protein",
+    "image": "https://images.unsplash.com/photo-1559561853-08451507cbe7?q=80&w=1257&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 98,
+      "protein": 11.1,
+      "carbs": 3.4,
+      "fats": 4.3,
+      "fiber": 0,
+      "sugar": 2.7,
+      "sodium": 364
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup)",
+        "weight": "100g",
+        "calories": 98,
+        "protein": 11.1,
+        "carbs": 3.4,
+        "fats": 4.3
+      },
+      {
+        "name": "Medium serving (3/4 cup)",
+        "weight": "150g",
+        "calories": 147,
+        "protein": 16.7,
+        "carbs": 5.1,
+        "fats": 6.5
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "200g",
+        "calories": 196,
+        "protein": 22.2,
+        "carbs": 6.8,
+        "fats": 8.6
+      }
+    ],
+    "benefits": ["High protein", "Casein protein", "Calcium", "Low fat"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["high-protein", "low-fat", "casein-protein"],
+    "preparationMethods": ["plain", "with-fruit", "savory", "smoothie"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food048",
+    "name": "Cream Cheese",
+    "category": "dairy",
+    "subcategory": "cheese",
+    "description": "Full-fat cream cheese - rich, creamy cheese high in fat and moderate protein",
+    "image": "https://images.unsplash.com/photo-1573810655264-8d1e50f1592d?q=80&w=1333&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 342,
+      "protein": 5.9,
+      "carbs": 4.1,
+      "fats": 34,
+      "fiber": 0,
+      "sugar": 3.2,
+      "sodium": 321
+    },
+    "commonPortions": [
+      {
+        "name": "1 tbsp",
+        "weight": "15g",
+        "calories": 51,
+        "protein": 0.9,
+        "carbs": 0.6,
+        "fats": 5.1
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "30g",
+        "calories": 103,
+        "protein": 1.8,
+        "carbs": 1.2,
+        "fats": 10.2
+      },
+      {
+        "name": "1/4 cup",
+        "weight": "60g",
+        "calories": 205,
+        "protein": 3.5,
+        "carbs": 2.5,
+        "fats": 20.4
+      }
+    ],
+    "benefits": ["Rich flavor", "Vitamin A", "Calcium", "Creamy texture"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["high-fat", "keto-friendly", "rich-flavor"],
+    "preparationMethods": ["spread", "baking", "frosting", "dip"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food049",
+    "name": "Whole Milk",
+    "category": "dairy",
+    "subcategory": "milk",
+    "description": "Whole cow's milk (3.25% fat) - complete protein source with calcium",
+    "image": "https://plus.unsplash.com/premium_photo-1694481100261-ab16523c4093?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100ml",
+    "nutritionPer100g": {
+      "calories": 61,
+      "protein": 3.2,
+      "carbs": 4.8,
+      "fats": 3.3,
+      "fiber": 0,
+      "sugar": 4.8,
+      "sodium": 44
+    },
+    "commonPortions": [
+      {
+        "name": "Small glass (150ml)",
+        "weight": "150ml",
+        "calories": 92,
+        "protein": 4.8,
+        "carbs": 7.2,
+        "fats": 5
+      },
+      {
+        "name": "Medium glass (200ml)",
+        "weight": "200ml",
+        "calories": 122,
+        "protein": 6.4,
+        "carbs": 9.6,
+        "fats": 6.6
+      },
+      {
+        "name": "Large glass (250ml)",
+        "weight": "250ml",
+        "calories": 153,
+        "protein": 8,
+        "carbs": 12,
+        "fats": 8.3
+      }
+    ],
+    "benefits": ["Complete protein", "Calcium", "Vitamin D", "B vitamins"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["complete-protein", "calcium-rich", "vitamin-d"],
+    "preparationMethods": ["drink", "cereal", "smoothie", "cooking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food050",
+    "name": "Almond Milk",
+    "category": "dairy",
+    "subcategory": "plant-milk",
+    "description": "Unsweetened almond milk - low-calorie plant-based milk alternative",
+    "image": "https://plus.unsplash.com/premium_photo-1663126462918-89b37026420b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100ml",
+    "nutritionPer100g": {
+      "calories": 17,
+      "protein": 0.6,
+      "carbs": 0.3,
+      "fats": 1.5,
+      "fiber": 0.2,
+      "sugar": 0,
+      "sodium": 63
+    },
+    "commonPortions": [
+      {
+        "name": "Small glass (150ml)",
+        "weight": "150ml",
+        "calories": 26,
+        "protein": 0.9,
+        "carbs": 0.5,
+        "fats": 2.3
+      },
+      {
+        "name": "Medium glass (200ml)",
+        "weight": "200ml",
+        "calories": 34,
+        "protein": 1.2,
+        "carbs": 0.6,
+        "fats": 3
+      },
+      {
+        "name": "Large glass (250ml)",
+        "weight": "250ml",
+        "calories": 43,
+        "protein": 1.5,
+        "carbs": 0.8,
+        "fats": 3.8
+      }
+    ],
+    "benefits": ["Low calorie", "Dairy-free", "Vitamin E", "Lactose-free"],
+    "allergens": ["tree-nuts"],
+    "dietaryTags": ["low-calorie", "dairy-free", "plant-based", "keto-friendly"],
+    "preparationMethods": ["drink", "cereal", "smoothie", "coffee"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food051",
+    "name": "Honey",
+    "category": "carbs",
+    "subcategory": "sweeteners",
+    "description": "Pure honey - natural sweetener with antioxidants and enzymes",
+    "image": "https://images.unsplash.com/photo-1587049352851-8d4e89133924?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 tbsp (21g)",
+    "nutritionPer100g": {
+      "calories": 304,
+      "protein": 0.3,
+      "carbs": 82.4,
+      "fats": 0,
+      "fiber": 0.2,
+      "sugar": 82.1,
+      "sodium": 4
+    },
+    "commonPortions": [
+      {
+        "name": "1 tsp",
+        "weight": "7g",
+        "calories": 21,
+        "protein": 0,
+        "carbs": 5.8,
+        "fats": 0
+      },
+      {
+        "name": "1 tbsp",
+        "weight": "21g",
+        "calories": 64,
+        "protein": 0.1,
+        "carbs": 17.3,
+        "fats": 0
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "42g",
+        "calories": 128,
+        "protein": 0.1,
+        "carbs": 34.6,
+        "fats": 0
+      }
+    ],
+    "benefits": ["Natural sweetener", "Antioxidants", "Antibacterial", "Quick energy"],
+    "allergens": [],
+    "dietaryTags": ["natural-sweetener", "antioxidant-rich", "quick-energy"],
+    "preparationMethods": ["sweetener", "tea", "baking", "drizzle"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food052",
+    "name": "Dark Chocolate",
+    "category": "fats",
+    "subcategory": "chocolate",
+    "description": "Dark chocolate (70% cocoa) - antioxidant-rich treat with moderate caffeine",
+    "image": "https://images.unsplash.com/photo-1641896482215-2d049113cb00?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 546,
+      "protein": 7.9,
+      "carbs": 45.9,
+      "fats": 31.3,
+      "fiber": 10.9,
+      "sugar": 24,
+      "sodium": 20
+    },
+    "commonPortions": [
+      {
+        "name": "Small square (10g)",
+        "weight": "10g",
+        "calories": 55,
+        "protein": 0.8,
+        "carbs": 4.6,
+        "fats": 3.1
+      },
+      {
+        "name": "Medium piece (20g)",
+        "weight": "20g",
+        "calories": 109,
+        "protein": 1.6,
+        "carbs": 9.2,
+        "fats": 6.3
+      },
+      {
+        "name": "Large piece (30g)",
+        "weight": "30g",
+        "calories": 164,
+        "protein": 2.4,
+        "carbs": 13.8,
+        "fats": 9.4
+      }
+    ],
+    "benefits": ["Antioxidants", "Flavonoids", "Heart health", "Mood enhancement"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["antioxidant-rich", "heart-healthy", "moderate-caffeine"],
+    "preparationMethods": ["snack", "baking", "melted", "dessert"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food053",
+    "name": "Butter",
+    "category": "fats",
+    "subcategory": "dairy-fats",
+    "description": "Unsalted butter - saturated fat source for cooking and baking",
+    "image": "https://plus.unsplash.com/premium_photo-1699292720983-725a6bb65d8a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 tbsp (14g)",
+    "nutritionPer100g": {
+      "calories": 717,
+      "protein": 0.9,
+      "carbs": 0.1,
+      "fats": 81.1,
+      "fiber": 0,
+      "sugar": 0.1,
+      "sodium": 11
+    },
+    "commonPortions": [
+      {
+        "name": "1 tsp",
+        "weight": "5g",
+        "calories": 36,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 4.1
+      },
+      {
+        "name": "1 tbsp",
+        "weight": "14g",
+        "calories": 100,
+        "protein": 0.1,
+        "carbs": 0,
+        "fats": 11.4
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "28g",
+        "calories": 201,
+        "protein": 0.3,
+        "carbs": 0,
+        "fats": 22.7
+      }
+    ],
+    "benefits": ["Vitamin A", "Rich flavor", "Cooking versatility", "Fat-soluble vitamins"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["high-fat", "keto-friendly", "cooking-fat"],
+    "preparationMethods": ["cooking", "baking", "spread", "sauteing"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food054",
+    "name": "Coconut Oil",
+    "category": "fats",
+    "subcategory": "oils",
+    "description": "Virgin coconut oil - medium-chain triglycerides (MCT) rich cooking oil",
+    "image": "https://images.unsplash.com/photo-1588413333412-82148535db53?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 tbsp (14g)",
+    "nutritionPer100g": {
+      "calories": 862,
+      "protein": 0,
+      "carbs": 0,
+      "fats": 100,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 0
+    },
+    "commonPortions": [
+      {
+        "name": "1 tsp",
+        "weight": "5g",
+        "calories": 43,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 5
+      },
+      {
+        "name": "1 tbsp",
+        "weight": "14g",
+        "calories": 121,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 14
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "28g",
+        "calories": 241,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 28
+      }
+    ],
+    "benefits": ["MCT content", "High smoke point", "Lauric acid", "Antimicrobial"],
+    "allergens": [],
+    "dietaryTags": ["mct-rich", "keto-friendly", "paleo", "cooking-oil"],
+    "preparationMethods": ["cooking", "baking", "frying", "smoothie"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food055",
+    "name": "MCT Oil",
+    "category": "fats",
+    "subcategory": "oils",
+    "description": "Medium-chain triglyceride oil - fast-absorbing ketogenic fat source",
+    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80",
+    "servingSize": "1 tbsp (14g)",
+    "nutritionPer100g": {
+      "calories": 828,
+      "protein": 0,
+      "carbs": 0,
+      "fats": 93,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 0
+    },
+    "commonPortions": [
+      {
+        "name": "1 tsp",
+        "weight": "5g",
+        "calories": 41,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 4.7
+      },
+      {
+        "name": "1 tbsp",
+        "weight": "14g",
+        "calories": 116,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 13
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "28g",
+        "calories": 232,
+        "protein": 0,
+        "carbs": 0,
+        "fats": 26
+      }
+    ],
+    "benefits": ["Rapid ketone production", "Quick energy", "Brain fuel", "Fat burning"],
+    "allergens": [],
+    "dietaryTags": ["pure-mct", "ketogenic", "fast-energy", "brain-fuel"],
+    "preparationMethods": ["smoothie", "coffee", "salad-dressing", "supplement"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food056",
+    "name": "Hummus",
+    "category": "protein",
+    "subcategory": "plant-protein",
+    "description": "Chickpea hummus - plant-based protein spread with fiber and minerals",
+    "image": "https://images.unsplash.com/photo-1637949385162-e416fb15b2ce?q=80&w=1152&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 166,
+      "protein": 8,
+      "carbs": 14.3,
+      "fats": 9.6,
+      "fiber": 6,
+      "sugar": 0.3,
+      "sodium": 379
+    },
+    "commonPortions": [
+      {
+        "name": "2 tbsp",
+        "weight": "30g",
+        "calories": 50,
+        "protein": 2.4,
+        "carbs": 4.3,
+        "fats": 2.9
+      },
+      {
+        "name": "1/4 cup",
+        "weight": "60g",
+        "calories": 100,
+        "protein": 4.8,
+        "carbs": 8.6,
+        "fats": 5.8
+      },
+      {
+        "name": "1/2 cup",
+        "weight": "120g",
+        "calories": 199,
+        "protein": 9.6,
+        "carbs": 17.2,
+        "fats": 11.5
+      }
+    ],
+    "benefits": ["Plant protein", "Fiber", "Iron", "Folate"],
+    "allergens": ["sesame"],
+    "dietaryTags": ["plant-based", "high-fiber", "protein-rich", "vegan"],
+    "preparationMethods": ["dip", "spread", "sandwich", "bowl"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food057",
+    "name": "Whole Grain Crackers",
+    "category": "carbs",
+    "subcategory": "crackers",
+    "description": "Whole grain crackers - fiber-rich snack crackers made with whole wheat",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 438,
+      "protein": 10.7,
+      "carbs": 71.9,
+      "fats": 12.4,
+      "fiber": 6.6,
+      "sugar": 2.8,
+      "sodium": 734
+    },
+    "commonPortions": [
+      {
+        "name": "5 crackers",
+        "weight": "15g",
+        "calories": 66,
+        "protein": 1.6,
+        "carbs": 10.8,
+        "fats": 1.9
+      },
+      {
+        "name": "10 crackers",
+        "weight": "30g",
+        "calories": 131,
+        "protein": 3.2,
+        "carbs": 21.6,
+        "fats": 3.7
+      },
+      {
+        "name": "15 crackers",
+        "weight": "45g",
+        "calories": 197,
+        "protein": 4.8,
+        "carbs": 32.4,
+        "fats": 5.6
+      }
+    ],
+    "benefits": ["Whole grains", "Fiber", "B vitamins", "Complex carbs"],
+    "allergens": ["wheat", "gluten"],
+    "dietaryTags": ["whole-grain", "high-fiber", "complex-carbs"],
+    "preparationMethods": ["snack", "with-hummus", "cheese", "toppings"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food058",
+    "name": "Granola",
+    "category": "carbs",
+    "subcategory": "cereals",
+    "description": "Homestyle granola - oat-based cereal with nuts and dried fruits",
+    "image": "https://images.unsplash.com/photo-1571197119271-c26492e0c4e3?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 471,
+      "protein": 12.8,
+      "carbs": 64.7,
+      "fats": 18.9,
+      "fiber": 8.9,
+      "sugar": 21.8,
+      "sodium": 293
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/4 cup)",
+        "weight": "30g",
+        "calories": 141,
+        "protein": 3.8,
+        "carbs": 19.4,
+        "fats": 5.7
+      },
+      {
+        "name": "Medium serving (1/2 cup)",
+        "weight": "60g",
+        "calories": 283,
+        "protein": 7.7,
+        "carbs": 38.8,
+        "fats": 11.3
+      },
+      {
+        "name": "Large serving (3/4 cup)",
+        "weight": "90g",
+        "calories": 424,
+        "protein": 11.5,
+        "carbs": 58.2,
+        "fats": 17
+      }
+    ],
+    "benefits": ["Whole grains", "Protein", "Healthy fats", "Fiber"],
+    "allergens": ["tree-nuts", "gluten"],
+    "dietaryTags": ["whole-grain", "high-fiber", "protein-rich", "breakfast"],
+    "preparationMethods": ["cereal", "yogurt-topping", "snack", "smoothie-bowl"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food059",
+    "name": "Chia Seeds",
+    "category": "nuts-seeds",
+    "subcategory": "seeds",
+    "description": "Chia seeds - superfood seeds rich in omega-3, fiber, and plant protein",
+    "image": "https://images.unsplash.com/photo-1502825926876-e8819fbb2fd0?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 486,
+      "protein": 16.5,
+      "carbs": 42.1,
+      "fats": 30.7,
+      "fiber": 34.4,
+      "sugar": 0,
+      "sodium": 16
+    },
+    "commonPortions": [
+      {
+        "name": "1 tbsp",
+        "weight": "12g",
+        "calories": 58,
+        "protein": 2,
+        "carbs": 5.1,
+        "fats": 3.7
+      },
+      {
+        "name": "2 tbsp",
+        "weight": "24g",
+        "calories": 117,
+        "protein": 4,
+        "carbs": 10.1,
+        "fats": 7.4
+      },
+      {
+        "name": "1/4 cup",
+        "weight": "40g",
+        "calories": 194,
+        "protein": 6.6,
+        "carbs": 16.8,
+        "fats": 12.3
+      }
+    ],
+    "benefits": ["Omega-3 fatty acids", "Very high fiber", "Plant protein", "Antioxidants"],
+    "allergens": [],
+    "dietaryTags": ["superfood", "omega-3", "very-high-fiber", "plant-protein"],
+    "preparationMethods": ["pudding", "smoothie", "topping", "baking"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food060",
+    "name": "Mixed Seeds",
+    "category": "nuts-seeds",
+    "subcategory": "seeds",
+    "description": "Mixed seeds blend (pumpkin, sunflower, sesame) - variety of healthy fats and minerals",
+    "image": "https://plus.unsplash.com/premium_photo-1664007711018-d7cb92e664b1?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 559,
+      "protein": 20.1,
+      "carbs": 20.7,
+      "fats": 45.6,
+      "fiber": 9,
+      "sugar": 2.6,
+      "sodium": 9
+    },
+    "commonPortions": [
+      {
+        "name": "Small handful",
+        "weight": "15g",
+        "calories": 84,
+        "protein": 3,
+        "carbs": 3.1,
+        "fats": 6.8
+      },
+      {
+        "name": "Medium handful",
+        "weight": "25g",
+        "calories": 140,
+        "protein": 5,
+        "carbs": 5.2,
+        "fats": 11.4
+      },
+      {
+        "name": "Large handful",
+        "weight": "35g",
+        "calories": 196,
+        "protein": 7,
+        "carbs": 7.2,
+        "fats": 16
+      }
+    ],
+    "benefits": ["Healthy fats", "Protein", "Magnesium", "Zinc"],
+    "allergens": ["sesame"],
+    "dietaryTags": ["healthy-fats", "protein-rich", "mineral-rich", "keto-friendly"],
+    "preparationMethods": ["snack", "salad-topping", "yogurt", "trail-mix"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food061",
+    "name": "Black Beans",
+    "category": "protein",
+    "subcategory": "legumes",
+    "description": "Cooked black beans - high-protein, high-fiber legume with folate and iron",
+    "image": "https://images.unsplash.com/photo-1647545401750-6dd5539879ac?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 132,
+      "protein": 8.9,
+      "carbs": 23.7,
+      "fats": 0.5,
+      "fiber": 8.7,
+      "sugar": 0.3,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/3 cup)",
+        "weight": "85g",
+        "calories": 112,
+        "protein": 7.6,
+        "carbs": 20.1,
+        "fats": 0.4
+      },
+      {
+        "name": "Medium serving (1/2 cup)",
+        "weight": "130g",
+        "calories": 172,
+        "protein": 11.6,
+        "carbs": 30.8,
+        "fats": 0.7
+      },
+      {
+        "name": "Large serving (3/4 cup)",
+        "weight": "195g",
+        "calories": 257,
+        "protein": 17.4,
+        "carbs": 46.2,
+        "fats": 1
+      }
+    ],
+    "benefits": ["Plant protein", "Very high fiber", "Folate", "Iron"],
+    "allergens": [],
+    "dietaryTags": ["plant-protein", "very-high-fiber", "iron-rich", "vegan"],
+    "preparationMethods": ["salad", "burrito", "soup", "side-dish"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food062",
+    "name": "Whey Protein Isolate",
+    "category": "protein",
+    "subcategory": "supplements",
+    "description": "Whey protein isolate powder - fast-absorbing complete protein supplement",
+    "image": "https://images.unsplash.com/photo-1693996045300-521e9d08cabc?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 scoop (30g)",
+    "nutritionPer100g": {
+      "calories": 370,
+      "protein": 90,
+      "carbs": 1,
+      "fats": 1,
+      "fiber": 0,
+      "sugar": 1,
+      "sodium": 300
+    },
+    "commonPortions": [
+      {
+        "name": "1 scoop",
+        "weight": "30g",
+        "calories": 111,
+        "protein": 27,
+        "carbs": 0.3,
+        "fats": 0.3
+      },
+      {
+        "name": "1.5 scoops",
+        "weight": "45g",
+        "calories": 167,
+        "protein": 40.5,
+        "carbs": 0.5,
+        "fats": 0.5
+      },
+      {
+        "name": "2 scoops",
+        "weight": "60g",
+        "calories": 222,
+        "protein": 54,
+        "carbs": 0.6,
+        "fats": 0.6
+      }
+    ],
+    "benefits": ["Complete protein", "Fast absorption", "Muscle building", "Post-workout"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["complete-protein", "fast-absorbing", "muscle-building", "post-workout"],
+    "preparationMethods": ["shake", "smoothie", "baking", "oatmeal"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food063",
+    "name": "Casein Protein",
+    "category": "protein",
+    "subcategory": "supplements",
+    "description": "Casein protein powder - slow-digesting protein ideal for nighttime recovery",
+    "image": "https://images.unsplash.com/photo-1693996045369-781799bbaea0?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 scoop (30g)",
+    "nutritionPer100g": {
+      "calories": 360,
+      "protein": 78,
+      "carbs": 7.8,
+      "fats": 1.9,
+      "fiber": 0,
+      "sugar": 0.6,
+      "sodium": 550
+    },
+    "commonPortions": [
+      {
+        "name": "1 scoop",
+        "weight": "30g",
+        "calories": 108,
+        "protein": 23.4,
+        "carbs": 2.3,
+        "fats": 0.6
+      },
+      {
+        "name": "1.5 scoops",
+        "weight": "45g",
+        "calories": 162,
+        "protein": 35.1,
+        "carbs": 3.5,
+        "fats": 0.9
+      },
+      {
+        "name": "2 scoops",
+        "weight": "60g",
+        "calories": 216,
+        "protein": 46.8,
+        "carbs": 4.7,
+        "fats": 1.1
+      }
+    ],
+    "benefits": ["Slow digestion", "Sustained amino acids", "Nighttime recovery", "Anti-catabolic"],
+    "allergens": ["dairy"],
+    "dietaryTags": ["slow-digesting", "sustained-release", "nighttime-protein", "anti-catabolic"],
+    "preparationMethods": ["shake", "pudding", "baking", "bedtime-snack"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
