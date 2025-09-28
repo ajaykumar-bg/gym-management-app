@@ -75,6 +75,17 @@ export const FOOD_SUBCATEGORIES = {
   CITRUS: 'citrus',
   TROPICAL: 'tropical',
   STONE_FRUITS: 'stone-fruits',
+  FRESH: 'fresh',
+
+  // Grains subcategories
+  OATS: 'oats',
+  PSEUDOCEREAL: 'pseudocereal',
+
+  // Nuts & Seeds subcategories
+  TREE_NUTS: 'tree-nuts',
+
+  // Dairy subcategories
+  YOGURT: 'yogurt',
 };
 
 export const FOOD_SUBCATEGORY_LABELS = {
@@ -98,6 +109,12 @@ export const FOOD_SUBCATEGORY_LABELS = {
   [FOOD_SUBCATEGORIES.BERRIES]: 'Berries',
   [FOOD_SUBCATEGORIES.CITRUS]: 'Citrus',
   [FOOD_SUBCATEGORIES.TROPICAL]: 'Tropical',
+  [FOOD_SUBCATEGORIES.STONE_FRUITS]: 'Stone Fruits',
+  [FOOD_SUBCATEGORIES.FRESH]: 'Fresh Fruits',
+  [FOOD_SUBCATEGORIES.OATS]: 'Oats',
+  [FOOD_SUBCATEGORIES.PSEUDOCEREAL]: 'Pseudocereals',
+  [FOOD_SUBCATEGORIES.TREE_NUTS]: 'Tree Nuts',
+  [FOOD_SUBCATEGORIES.YOGURT]: 'Yogurt',
   [FOOD_SUBCATEGORIES.STONE_FRUITS]: 'Stone Fruits',
 };
 
