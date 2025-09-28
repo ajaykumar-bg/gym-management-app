@@ -3160,5 +3160,209 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food063",
+    "name": "Shrimp",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh cooked shrimp - low calorie, high protein seafood rich in selenium and vitamin B12",
+    "image": "https://plus.unsplash.com/premium_photo-1707935175109-ba307d98bfe2?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 85,
+      "protein": 18,
+      "carbs": 0.2,
+      "fats": 1.7,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 111
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion (6-8 pieces)",
+        "weight": "85g",
+        "calories": 72,
+        "protein": 15.3,
+        "carbs": 0.2,
+        "fats": 1.4
+      },
+      {
+        "name": "Medium portion (10-12 pieces)",
+        "weight": "120g",
+        "calories": 102,
+        "protein": 21.6,
+        "carbs": 0.2,
+        "fats": 2.0
+      },
+      {
+        "name": "Large portion (15-20 pieces)",
+        "weight": "200g",
+        "calories": 170,
+        "protein": 36,
+        "carbs": 0.4,
+        "fats": 3.4
+      }
+    ],
+    "benefits": ["High protein", "Low calorie", "Rich in selenium", "Vitamin B12", "Low cholesterol"],
+    "allergens": ["shellfish"],
+    "dietaryTags": ["high-protein", "low-carb", "low-calorie", "keto-friendly"],
+    "preparationMethods": ["boiled", "grilled", "stir-fried", "steamed", "cocktail"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food064",
+    "name": "Tuna",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh yellowfin tuna - lean fish high in protein and omega-3 fatty acids",
+    "image": "https://images.unsplash.com/photo-1678049379716-dcdf375eda2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 144,
+      "protein": 23,
+      "carbs": 0,
+      "fats": 4.9,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 37
+    },
+    "commonPortions": [
+      {
+        "name": "Small steak",
+        "weight": "120g",
+        "calories": 173,
+        "protein": 27.6,
+        "carbs": 0,
+        "fats": 5.9
+      },
+      {
+        "name": "Medium steak",
+        "weight": "150g",
+        "calories": 216,
+        "protein": 34.5,
+        "carbs": 0,
+        "fats": 7.4
+      },
+      {
+        "name": "Large steak",
+        "weight": "200g",
+        "calories": 288,
+        "protein": 46,
+        "carbs": 0,
+        "fats": 9.8
+      }
+    ],
+    "benefits": ["High protein", "Omega-3 fatty acids", "Mercury consideration", "Heart healthy", "Brain function"],
+    "allergens": ["fish"],
+    "dietaryTags": ["high-protein", "low-carb", "omega-3", "heart-healthy", "keto-friendly"],
+    "preparationMethods": ["seared", "grilled", "sashimi", "tataki", "canned"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food065",
+    "name": "Tiger Prawns",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Large tiger prawns - premium shellfish with sweet flavor and firm texture, high in protein",
+    "image": "https://images.unsplash.com/photo-1559737558-2f5a35f4523b?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 95,
+      "protein": 18.3,
+      "carbs": 0.9,
+      "fats": 1.4,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 148
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion (4-5 pieces)",
+        "weight": "100g",
+        "calories": 95,
+        "protein": 18.3,
+        "carbs": 0.9,
+        "fats": 1.4
+      },
+      {
+        "name": "Medium portion (6-8 pieces)",
+        "weight": "150g",
+        "calories": 143,
+        "protein": 27.5,
+        "carbs": 1.4,
+        "fats": 2.1
+      },
+      {
+        "name": "Large portion (10-12 pieces)",
+        "weight": "250g",
+        "calories": 238,
+        "protein": 45.8,
+        "carbs": 2.3,
+        "fats": 3.5
+      }
+    ],
+    "benefits": ["High protein", "Low fat", "Rich in iodine", "Vitamin B12", "Premium seafood"],
+    "allergens": ["shellfish"],
+    "dietaryTags": ["high-protein", "low-carb", "low-fat", "premium", "keto-friendly"],
+    "preparationMethods": ["grilled", "tempura", "curry", "stir-fried", "barbecue"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food066",
+    "name": "Crab",
+    "category": "protein",
+    "subcategory": "fish",
+    "description": "Fresh crab meat - delicate sweet flavor, excellent source of protein and essential minerals",
+    "image": "https://images.unsplash.com/photo-1553659971-f01207815844?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 83,
+      "protein": 18.1,
+      "carbs": 0,
+      "fats": 1.1,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 293
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion (1/2 crab)",
+        "weight": "85g",
+        "calories": 71,
+        "protein": 15.4,
+        "carbs": 0,
+        "fats": 0.9
+      },
+      {
+        "name": "Medium portion (1 whole crab)",
+        "weight": "120g",
+        "calories": 100,
+        "protein": 21.7,
+        "carbs": 0,
+        "fats": 1.3
+      },
+      {
+        "name": "Large portion (1.5 crabs)",
+        "weight": "180g",
+        "calories": 149,
+        "protein": 32.6,
+        "carbs": 0,
+        "fats": 2.0
+      }
+    ],
+    "benefits": ["High protein", "Low calorie", "Rich in zinc", "Vitamin B12", "Sweet delicate flavor"],
+    "allergens": ["shellfish"],
+    "dietaryTags": ["high-protein", "low-carb", "low-calorie", "mineral-rich", "keto-friendly"],
+    "preparationMethods": ["boiled", "steamed", "crab-cakes", "stir-fried", "soup"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
