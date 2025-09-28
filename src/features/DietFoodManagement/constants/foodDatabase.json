@@ -2755,57 +2755,6 @@
   },
   {
     "id": "food055",
-    "name": "MCT Oil",
-    "category": "fats",
-    "subcategory": "oils",
-    "description": "Medium-chain triglyceride oil - fast-absorbing ketogenic fat source",
-    "image": "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=400&q=80",
-    "servingSize": "1 tbsp (14g)",
-    "nutritionPer100g": {
-      "calories": 828,
-      "protein": 0,
-      "carbs": 0,
-      "fats": 93,
-      "fiber": 0,
-      "sugar": 0,
-      "sodium": 0
-    },
-    "commonPortions": [
-      {
-        "name": "1 tsp",
-        "weight": "5g",
-        "calories": 41,
-        "protein": 0,
-        "carbs": 0,
-        "fats": 4.7
-      },
-      {
-        "name": "1 tbsp",
-        "weight": "14g",
-        "calories": 116,
-        "protein": 0,
-        "carbs": 0,
-        "fats": 13
-      },
-      {
-        "name": "2 tbsp",
-        "weight": "28g",
-        "calories": 232,
-        "protein": 0,
-        "carbs": 0,
-        "fats": 26
-      }
-    ],
-    "benefits": ["Rapid ketone production", "Quick energy", "Brain fuel", "Fat burning"],
-    "allergens": [],
-    "dietaryTags": ["pure-mct", "ketogenic", "fast-energy", "brain-fuel"],
-    "preparationMethods": ["smoothie", "coffee", "salad-dressing", "supplement"],
-    "isActive": true,
-    "createdAt": "2024-01-01T10:00:00Z",
-    "updatedAt": "2024-01-01T10:00:00Z"
-  },
-  {
-    "id": "food056",
     "name": "Hummus",
     "category": "protein",
     "subcategory": "plant-protein",
@@ -2856,7 +2805,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food057",
+    "id": "food056",
     "name": "Whole Grain Crackers",
     "category": "carbs",
     "subcategory": "crackers",
@@ -2907,7 +2856,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food058",
+    "id": "food057",
     "name": "Granola",
     "category": "carbs",
     "subcategory": "cereals",
@@ -2958,7 +2907,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food059",
+    "id": "food058",
     "name": "Chia Seeds",
     "category": "nuts-seeds",
     "subcategory": "seeds",
@@ -3009,7 +2958,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food060",
+    "id": "food059",
     "name": "Mixed Seeds",
     "category": "nuts-seeds",
     "subcategory": "seeds",
@@ -3060,7 +3009,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food061",
+    "id": "food060",
     "name": "Black Beans",
     "category": "protein",
     "subcategory": "legumes",
@@ -3111,7 +3060,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food062",
+    "id": "food061",
     "name": "Whey Protein Isolate",
     "category": "protein",
     "subcategory": "supplements",
@@ -3162,7 +3111,7 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food063",
+    "id": "food062",
     "name": "Casein Protein",
     "category": "protein",
     "subcategory": "supplements",
