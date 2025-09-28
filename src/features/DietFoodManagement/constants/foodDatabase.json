@@ -357,57 +357,6 @@
     "updatedAt": "2024-01-01T10:00:00Z"
   },
   {
-    "id": "food008",
-    "name": "Sweet Potato",
-    "category": "carbs",
-    "subcategory": "vegetables",
-    "description": "Roasted sweet potato - complex carbohydrate rich in beta-carotene and fiber",
-    "image": "https://images.unsplash.com/photo-1557844352-761f2565b576?w=400&q=80",
-    "servingSize": "100g",
-    "nutritionPer100g": {
-      "calories": 86,
-      "protein": 1.6,
-      "carbs": 20.1,
-      "fats": 0.1,
-      "fiber": 3,
-      "sugar": 4.2,
-      "sodium": 6
-    },
-    "commonPortions": [
-      {
-        "name": "Small potato",
-        "weight": "150g",
-        "calories": 129,
-        "protein": 2.4,
-        "carbs": 30.2,
-        "fats": 0.2
-      },
-      {
-        "name": "Medium potato",
-        "weight": "200g",
-        "calories": 172,
-        "protein": 3.2,
-        "carbs": 40.2,
-        "fats": 0.2
-      },
-      {
-        "name": "Large potato",
-        "weight": "300g",
-        "calories": 258,
-        "protein": 4.8,
-        "carbs": 60.3,
-        "fats": 0.3
-      }
-    ],
-    "benefits": ["Complex carbs", "Beta-carotene", "High fiber", "Potassium"],
-    "allergens": [],
-    "dietaryTags": ["complex-carbs", "high-fiber", "beta-carotene"],
-    "preparationMethods": ["baked", "roasted", "mashed", "grilled"],
-    "isActive": true,
-    "createdAt": "2024-01-01T10:00:00Z",
-    "updatedAt": "2024-01-01T10:00:00Z"
-  },
-  {
     "id": "food009",
     "name": "Oatmeal",
     "category": "grains",
@@ -2810,7 +2759,7 @@
     "category": "carbs",
     "subcategory": "crackers",
     "description": "Whole grain crackers - fiber-rich snack crackers made with whole wheat",
-    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
+    "image": "https://static01.nyt.com/images/2011/05/03/science/02recipehealth/02recipehealth-jumbo-v2.jpg?quality=75&auto=webp",
     "servingSize": "100g",
     "nutritionPer100g": {
       "calories": 438,
