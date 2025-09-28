@@ -1681,5 +1681,260 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food034",
+    "name": "White Rice Cakes",
+    "category": "grains",
+    "subcategory": "rice-products",
+    "description": "Plain white rice cakes - light, crispy snack made from puffed rice",
+    "image": "https://plus.unsplash.com/premium_photo-1674062989120-099d47c4c23d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 cake (9g)",
+    "nutritionPer100g": {
+      "calories": 387,
+      "protein": 7.5,
+      "carbs": 81.5,
+      "fats": 2.8,
+      "fiber": 4,
+      "sugar": 0.4,
+      "sodium": 401
+    },
+    "commonPortions": [
+      {
+        "name": "1 rice cake",
+        "weight": "9g",
+        "calories": 35,
+        "protein": 0.7,
+        "carbs": 7.3,
+        "fats": 0.3
+      },
+      {
+        "name": "2 rice cakes",
+        "weight": "18g",
+        "calories": 70,
+        "protein": 1.4,
+        "carbs": 14.7,
+        "fats": 0.5
+      },
+      {
+        "name": "3 rice cakes",
+        "weight": "27g",
+        "calories": 104,
+        "protein": 2,
+        "carbs": 22,
+        "fats": 0.8
+      }
+    ],
+    "benefits": ["Gluten-free", "Low fat", "Quick energy", "Portable snack"],
+    "allergens": [],
+    "dietaryTags": ["gluten-free", "low-fat", "quick-energy", "snack"],
+    "preparationMethods": ["ready-to-eat", "topping-base"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food035",
+    "name": "Jasmine Rice",
+    "category": "grains",
+    "subcategory": "rice",
+    "description": "Cooked jasmine rice - fragrant, long-grain white rice with subtle floral aroma",
+    "image": "https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&q=80",
+    "servingSize": "100g cooked",
+    "nutritionPer100g": {
+      "calories": 130,
+      "protein": 2.7,
+      "carbs": 28,
+      "fats": 0.3,
+      "fiber": 0.4,
+      "sugar": 0.1,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup)",
+        "weight": "90g",
+        "calories": 117,
+        "protein": 2.4,
+        "carbs": 25.2,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium serving (3/4 cup)",
+        "weight": "135g",
+        "calories": 176,
+        "protein": 3.6,
+        "carbs": 37.8,
+        "fats": 0.4
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "180g",
+        "calories": 234,
+        "protein": 4.9,
+        "carbs": 50.4,
+        "fats": 0.5
+      }
+    ],
+    "benefits": ["Quick energy", "Easy to digest", "Gluten-free", "Versatile"],
+    "allergens": [],
+    "dietaryTags": ["gluten-free", "quick-energy", "easy-digest"],
+    "preparationMethods": ["boiled", "steamed", "rice-cooker", "pilaf"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food036",
+    "name": "Basmati Rice",
+    "category": "grains",
+    "subcategory": "rice",
+    "description": "Cooked basmati rice - aromatic, long-grain rice with distinctive nutty flavor",
+    "image": "https://plus.unsplash.com/premium_photo-1723925093264-40b6b957c44d?q=80&w=1024&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g cooked",
+    "nutritionPer100g": {
+      "calories": 121,
+      "protein": 2.5,
+      "carbs": 25,
+      "fats": 0.4,
+      "fiber": 0.6,
+      "sugar": 0.1,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup)",
+        "weight": "90g",
+        "calories": 109,
+        "protein": 2.3,
+        "carbs": 22.5,
+        "fats": 0.4
+      },
+      {
+        "name": "Medium serving (3/4 cup)",
+        "weight": "135g",
+        "calories": 163,
+        "protein": 3.4,
+        "carbs": 33.8,
+        "fats": 0.5
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "180g",
+        "calories": 218,
+        "protein": 4.5,
+        "carbs": 45,
+        "fats": 0.7
+      }
+    ],
+    "benefits": ["Aromatic", "Low glycemic index", "Gluten-free", "Premium quality"],
+    "allergens": [],
+    "dietaryTags": ["gluten-free", "aromatic", "premium-grain", "low-gi"],
+    "preparationMethods": ["boiled", "steamed", "pilaf", "biryani"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food037",
+    "name": "Whole Grain Toast",
+    "category": "grains",
+    "subcategory": "bread",
+    "description": "Whole grain bread slice, toasted - high-fiber bread made from whole grains",
+    "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
+    "servingSize": "1 slice (28g)",
+    "nutritionPer100g": {
+      "calories": 247,
+      "protein": 13,
+      "carbs": 41,
+      "fats": 4.2,
+      "fiber": 7,
+      "sugar": 5.6,
+      "sodium": 491
+    },
+    "commonPortions": [
+      {
+        "name": "1 slice",
+        "weight": "28g",
+        "calories": 69,
+        "protein": 3.6,
+        "carbs": 11.5,
+        "fats": 1.2
+      },
+      {
+        "name": "2 slices",
+        "weight": "56g",
+        "calories": 138,
+        "protein": 7.3,
+        "carbs": 23,
+        "fats": 2.4
+      },
+      {
+        "name": "3 slices",
+        "weight": "84g",
+        "calories": 207,
+        "protein": 10.9,
+        "carbs": 34.4,
+        "fats": 3.5
+      }
+    ],
+    "benefits": ["High fiber", "Whole grains", "B vitamins", "Sustained energy"],
+    "allergens": ["gluten", "wheat"],
+    "dietaryTags": ["whole-grain", "high-fiber", "high-protein"],
+    "preparationMethods": ["toasted", "sandwich", "open-faced"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food038",
+    "name": "Whole Grain Bagel",
+    "category": "grains",
+    "subcategory": "bread",
+    "description": "Whole grain bagel - dense, chewy bread ring made from whole grain flour",
+    "image": "https://images.unsplash.com/photo-1609090821634-70bb9048a04f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "1 bagel (95g)",
+    "nutritionPer100g": {
+      "calories": 250,
+      "protein": 10,
+      "carbs": 48,
+      "fats": 1.5,
+      "fiber": 5,
+      "sugar": 6,
+      "sodium": 430
+    },
+    "commonPortions": [
+      {
+        "name": "Half bagel",
+        "weight": "48g",
+        "calories": 120,
+        "protein": 4.8,
+        "carbs": 23,
+        "fats": 0.7
+      },
+      {
+        "name": "Whole bagel",
+        "weight": "95g",
+        "calories": 238,
+        "protein": 9.5,
+        "carbs": 45.6,
+        "fats": 1.4
+      },
+      {
+        "name": "Bagel with spread",
+        "weight": "110g",
+        "calories": 275,
+        "protein": 11,
+        "carbs": 52.8,
+        "fats": 1.7
+      }
+    ],
+    "benefits": ["Whole grains", "High fiber", "Protein", "Long-lasting energy"],
+    "allergens": ["gluten", "wheat"],
+    "dietaryTags": ["whole-grain", "high-fiber", "breakfast", "filling"],
+    "preparationMethods": ["toasted", "fresh", "sandwich", "with-toppings"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]

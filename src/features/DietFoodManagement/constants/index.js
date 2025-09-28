@@ -84,6 +84,9 @@ export const FOOD_SUBCATEGORIES = {
   // Grains subcategories
   OATS: 'oats',
   PSEUDOCEREAL: 'pseudocereal',
+  RICE: 'rice',
+  RICE_PRODUCTS: 'rice-products',
+  BREAD: 'bread',
 
   // Nuts & Seeds subcategories
   TREE_NUTS: 'tree-nuts',
