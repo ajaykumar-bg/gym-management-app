@@ -107,7 +107,7 @@
     "category": "carbs",
     "subcategory": "grains",
     "description": "Whole grain brown rice - excellent source of complex carbohydrates and fiber",
-    "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1669563794789-2412eeb7e62d?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "servingSize": "100g cooked",
     "nutritionPer100g": {
       "calories": 112,
@@ -413,7 +413,7 @@
     "category": "carbs",
     "subcategory": "grains",
     "description": "Steel-cut oats - whole grain breakfast option high in soluble fiber",
-    "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1583687463124-ff2aa00b1160?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "servingSize": "100g cooked",
     "nutritionPer100g": {
       "calories": 68,
@@ -464,7 +464,7 @@
     "category": "carbs",
     "subcategory": "grains",
     "description": "Cooked quinoa - complete protein grain alternative, gluten-free",
-    "image": "https://images.unsplash.com/photo-1601814933824-fd0b574dd592?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1562923690-e274ba919781?q=80&w=776&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "servingSize": "100g cooked",
     "nutritionPer100g": {
       "calories": 120,
@@ -566,7 +566,7 @@
     "category": "vegetables",
     "subcategory": "leafy-greens",
     "description": "Fresh spinach leaves - nutrient-dense leafy green high in iron and folate",
-    "image": "https://images.unsplash.com/photo-1463123081488-789f998ac9c4?w=400&q=80",
+    "image": "https://images.unsplash.com/photo-1580910365203-91ea9115a319?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "servingSize": "100g",
     "nutritionPer100g": {
       "calories": 23,
