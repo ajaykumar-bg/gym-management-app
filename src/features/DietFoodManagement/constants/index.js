@@ -69,6 +69,10 @@ export const FOOD_SUBCATEGORIES = {
   CRUCIFEROUS: 'cruciferous',
   ROOT_VEGETABLES: 'root-vegetables',
   NIGHTSHADES: 'nightshades',
+  GREEN_VEGETABLES: 'green-vegetables',
+  SQUASH: 'squash',
+  FUNGI: 'fungi',
+  MIXED: 'mixed',
 
   // Fruit subcategories
   BERRIES: 'berries',
@@ -107,6 +111,10 @@ export const FOOD_SUBCATEGORY_LABELS = {
   [FOOD_SUBCATEGORIES.CRUCIFEROUS]: 'Cruciferous',
   [FOOD_SUBCATEGORIES.ROOT_VEGETABLES]: 'Root Vegetables',
   [FOOD_SUBCATEGORIES.NIGHTSHADES]: 'Nightshades',
+  [FOOD_SUBCATEGORIES.GREEN_VEGETABLES]: 'Green Vegetables',
+  [FOOD_SUBCATEGORIES.SQUASH]: 'Squash',
+  [FOOD_SUBCATEGORIES.FUNGI]: 'Mushrooms',
+  [FOOD_SUBCATEGORIES.MIXED]: 'Mixed Vegetables',
   [FOOD_SUBCATEGORIES.BERRIES]: 'Berries',
   [FOOD_SUBCATEGORIES.CITRUS]: 'Citrus',
   [FOOD_SUBCATEGORIES.TROPICAL]: 'Tropical',

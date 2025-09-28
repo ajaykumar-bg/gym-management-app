@@ -1171,5 +1171,515 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food024",
+    "name": "Asparagus",
+    "category": "vegetables",
+    "subcategory": "green-vegetables",
+    "description": "Fresh asparagus spears - low-calorie vegetable high in folate and vitamin K",
+    "image": "https://plus.unsplash.com/premium_photo-1663127195623-171b560e1a7e?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 20,
+      "protein": 2.2,
+      "carbs": 3.9,
+      "fats": 0.1,
+      "fiber": 2.1,
+      "sugar": 1.9,
+      "sodium": 2
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (5 spears)",
+        "weight": "60g",
+        "calories": 12,
+        "protein": 1.3,
+        "carbs": 2.3,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium serving (8 spears)",
+        "weight": "100g",
+        "calories": 20,
+        "protein": 2.2,
+        "carbs": 3.9,
+        "fats": 0.1
+      },
+      {
+        "name": "Large serving (12 spears)",
+        "weight": "150g",
+        "calories": 30,
+        "protein": 3.3,
+        "carbs": 5.9,
+        "fats": 0.2
+      }
+    ],
+    "benefits": ["Folate", "Vitamin K", "Low calorie", "Antioxidants"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "low-carb", "keto-friendly", "paleo"],
+    "preparationMethods": ["grilled", "steamed", "roasted", "sauteed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food025",
+    "name": "Bell Peppers",
+    "category": "vegetables",
+    "subcategory": "nightshades",
+    "description": "Mixed bell peppers (red, yellow, green) - colorful vegetables high in vitamin C",
+    "image": "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 26,
+      "protein": 1,
+      "carbs": 6,
+      "fats": 0.3,
+      "fiber": 2.5,
+      "sugar": 4.2,
+      "sodium": 4
+    },
+    "commonPortions": [
+      {
+        "name": "Half pepper",
+        "weight": "75g",
+        "calories": 20,
+        "protein": 0.8,
+        "carbs": 4.5,
+        "fats": 0.2
+      },
+      {
+        "name": "Whole pepper",
+        "weight": "150g",
+        "calories": 39,
+        "protein": 1.5,
+        "carbs": 9,
+        "fats": 0.5
+      },
+      {
+        "name": "Sliced (1 cup)",
+        "weight": "120g",
+        "calories": 31,
+        "protein": 1.2,
+        "carbs": 7.2,
+        "fats": 0.4
+      }
+    ],
+    "benefits": ["Vitamin C", "Vitamin A", "Antioxidants", "Low calorie"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "vitamin-c-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "roasted", "grilled", "stir-fried"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food026",
+    "name": "Cherry Tomatoes",
+    "category": "vegetables",
+    "subcategory": "nightshades",
+    "description": "Fresh cherry tomatoes - sweet, bite-sized tomatoes rich in lycopene",
+    "image": "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 18,
+      "protein": 0.9,
+      "carbs": 3.9,
+      "fats": 0.2,
+      "fiber": 1.2,
+      "sugar": 2.6,
+      "sodium": 5
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (5 tomatoes)",
+        "weight": "50g",
+        "calories": 9,
+        "protein": 0.5,
+        "carbs": 2,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium serving (10 tomatoes)",
+        "weight": "100g",
+        "calories": 18,
+        "protein": 0.9,
+        "carbs": 3.9,
+        "fats": 0.2
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "150g",
+        "calories": 27,
+        "protein": 1.4,
+        "carbs": 5.9,
+        "fats": 0.3
+      }
+    ],
+    "benefits": ["Lycopene", "Vitamin C", "Potassium", "Antioxidants"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "antioxidant-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "roasted", "grilled", "salad"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food027",
+    "name": "Kale",
+    "category": "vegetables",
+    "subcategory": "leafy-greens",
+    "description": "Fresh kale leaves - superfood leafy green packed with vitamins and minerals",
+    "image": "https://images.unsplash.com/photo-1685504513848-df0dd6893cec?q=80&w=764&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 35,
+      "protein": 2.9,
+      "carbs": 4.4,
+      "fats": 1.5,
+      "fiber": 4.1,
+      "sugar": 0.8,
+      "sodium": 53
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1 cup chopped)",
+        "weight": "67g",
+        "calories": 23,
+        "protein": 1.9,
+        "carbs": 2.9,
+        "fats": 1
+      },
+      {
+        "name": "Medium serving (1.5 cups)",
+        "weight": "100g",
+        "calories": 35,
+        "protein": 2.9,
+        "carbs": 4.4,
+        "fats": 1.5
+      },
+      {
+        "name": "Large serving (2 cups)",
+        "weight": "134g",
+        "calories": 47,
+        "protein": 3.9,
+        "carbs": 5.9,
+        "fats": 2
+      }
+    ],
+    "benefits": ["Vitamin K", "Vitamin A", "Iron", "Calcium"],
+    "allergens": [],
+    "dietaryTags": ["superfood", "nutrient-dense", "keto-friendly", "paleo"],
+    "preparationMethods": ["raw", "massaged", "sauteed", "baked-chips"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food028",
+    "name": "Brussels Sprouts",
+    "category": "vegetables",
+    "subcategory": "cruciferous",
+    "description": "Fresh Brussels sprouts - mini cabbages high in vitamin C and fiber",
+    "image": "https://images.unsplash.com/photo-1614087434853-25e6e8357217?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 43,
+      "protein": 3.4,
+      "carbs": 5.9,
+      "fats": 0.3,
+      "fiber": 3.8,
+      "sugar": 2.2,
+      "sodium": 25
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (5 sprouts)",
+        "weight": "80g",
+        "calories": 34,
+        "protein": 2.7,
+        "carbs": 4.7,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium serving (8 sprouts)",
+        "weight": "130g",
+        "calories": 56,
+        "protein": 4.4,
+        "carbs": 7.7,
+        "fats": 0.4
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "160g",
+        "calories": 69,
+        "protein": 5.4,
+        "carbs": 9.4,
+        "fats": 0.5
+      }
+    ],
+    "benefits": ["Vitamin C", "Vitamin K", "Fiber", "Antioxidants"],
+    "allergens": [],
+    "dietaryTags": ["high-fiber", "low-calorie", "keto-friendly", "paleo"],
+    "preparationMethods": ["roasted", "steamed", "sauteed", "grilled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food029",
+    "name": "Green Beans",
+    "category": "vegetables",
+    "subcategory": "green-vegetables",
+    "description": "Fresh green beans - crisp, tender pods rich in vitamins and minerals",
+    "image": "https://plus.unsplash.com/premium_photo-1664478267784-401d60a6dfd1?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 31,
+      "protein": 1.8,
+      "carbs": 7,
+      "fats": 0.2,
+      "fiber": 2.7,
+      "sugar": 3.3,
+      "sodium": 6
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "75g",
+        "calories": 23,
+        "protein": 1.4,
+        "carbs": 5.3,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium serving (1 cup)",
+        "weight": "125g",
+        "calories": 39,
+        "protein": 2.3,
+        "carbs": 8.8,
+        "fats": 0.3
+      },
+      {
+        "name": "Large serving",
+        "weight": "150g",
+        "calories": 47,
+        "protein": 2.7,
+        "carbs": 10.5,
+        "fats": 0.3
+      }
+    ],
+    "benefits": ["Folate", "Vitamin C", "Vitamin K", "Manganese"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "high-fiber", "keto-friendly", "paleo"],
+    "preparationMethods": ["steamed", "sauteed", "roasted", "blanched"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food030",
+    "name": "Zucchini",
+    "category": "vegetables",
+    "subcategory": "squash",
+    "description": "Fresh zucchini - versatile summer squash low in calories and high in potassium",
+    "image": "https://images.unsplash.com/photo-1687199126774-bc777f6d7c6e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 17,
+      "protein": 1.2,
+      "carbs": 3.1,
+      "fats": 0.3,
+      "fiber": 1,
+      "sugar": 2.5,
+      "sodium": 8
+    },
+    "commonPortions": [
+      {
+        "name": "Small zucchini",
+        "weight": "100g",
+        "calories": 17,
+        "protein": 1.2,
+        "carbs": 3.1,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium zucchini",
+        "weight": "200g",
+        "calories": 34,
+        "protein": 2.4,
+        "carbs": 6.2,
+        "fats": 0.6
+      },
+      {
+        "name": "Sliced (1 cup)",
+        "weight": "124g",
+        "calories": 21,
+        "protein": 1.5,
+        "carbs": 3.8,
+        "fats": 0.4
+      }
+    ],
+    "benefits": ["Potassium", "Vitamin C", "Low calorie", "Hydrating"],
+    "allergens": [],
+    "dietaryTags": ["very-low-calorie", "hydrating", "keto-friendly", "paleo"],
+    "preparationMethods": ["grilled", "sauteed", "spiralized", "baked"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food031",
+    "name": "Cauliflower",
+    "category": "vegetables",
+    "subcategory": "cruciferous",
+    "description": "Fresh cauliflower - versatile white vegetable perfect for low-carb substitutes",
+    "image": "https://images.unsplash.com/photo-1584615467033-75627d04dffe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 25,
+      "protein": 1.9,
+      "carbs": 5,
+      "fats": 0.3,
+      "fiber": 2,
+      "sugar": 1.9,
+      "sodium": 30
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup)",
+        "weight": "60g",
+        "calories": 15,
+        "protein": 1.1,
+        "carbs": 3,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium serving (1 cup)",
+        "weight": "100g",
+        "calories": 25,
+        "protein": 1.9,
+        "carbs": 5,
+        "fats": 0.3
+      },
+      {
+        "name": "Large serving (1.5 cups)",
+        "weight": "150g",
+        "calories": 38,
+        "protein": 2.9,
+        "carbs": 7.5,
+        "fats": 0.5
+      }
+    ],
+    "benefits": ["Vitamin C", "Fiber", "Choline", "Low carb"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "low-carb", "keto-friendly", "paleo"],
+    "preparationMethods": ["roasted", "mashed", "riced", "steamed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food032",
+    "name": "Mushrooms",
+    "category": "vegetables",
+    "subcategory": "fungi",
+    "description": "Mixed mushrooms (button, shiitake, portobello) - umami-rich fungi with B vitamins",
+    "image": "https://plus.unsplash.com/premium_photo-1674575415644-3dcf6b288855?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 22,
+      "protein": 3.1,
+      "carbs": 3.3,
+      "fats": 0.3,
+      "fiber": 1,
+      "sugar": 2,
+      "sodium": 5
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup sliced)",
+        "weight": "35g",
+        "calories": 8,
+        "protein": 1.1,
+        "carbs": 1.2,
+        "fats": 0.1
+      },
+      {
+        "name": "Medium serving (1 cup sliced)",
+        "weight": "70g",
+        "calories": 15,
+        "protein": 2.2,
+        "carbs": 2.3,
+        "fats": 0.2
+      },
+      {
+        "name": "Large serving (1.5 cups)",
+        "weight": "105g",
+        "calories": 23,
+        "protein": 3.3,
+        "carbs": 3.5,
+        "fats": 0.3
+      }
+    ],
+    "benefits": ["B vitamins", "Selenium", "Potassium", "Umami flavor"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "protein-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["sauteed", "grilled", "roasted", "stuffed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food033",
+    "name": "Mixed Vegetables",
+    "category": "vegetables",
+    "subcategory": "mixed",
+    "description": "Mixed vegetable blend (carrots, peas, corn, green beans) - convenient frozen vegetable mix",
+    "image": "https://images.unsplash.com/photo-1707529172036-fb5ffbc70bf8?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 59,
+      "protein": 2.6,
+      "carbs": 11.2,
+      "fats": 0.4,
+      "fiber": 3.9,
+      "sugar": 4.5,
+      "sodium": 243
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving (1/2 cup)",
+        "weight": "80g",
+        "calories": 47,
+        "protein": 2.1,
+        "carbs": 9,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium serving (3/4 cup)",
+        "weight": "120g",
+        "calories": 71,
+        "protein": 3.1,
+        "carbs": 13.4,
+        "fats": 0.5
+      },
+      {
+        "name": "Large serving (1 cup)",
+        "weight": "160g",
+        "calories": 94,
+        "protein": 4.2,
+        "carbs": 17.9,
+        "fats": 0.6
+      }
+    ],
+    "benefits": ["Variety of nutrients", "Convenient", "Fiber", "Vitamins A & C"],
+    "allergens": [],
+    "dietaryTags": ["mixed-nutrients", "convenient", "high-fiber"],
+    "preparationMethods": ["steamed", "microwaved", "stir-fried", "boiled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
