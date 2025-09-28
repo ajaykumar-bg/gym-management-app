@@ -15,6 +15,8 @@ export const NAVIGATION_PATHS = {
   EQUIPMENT_MANAGEMENT: '/equipment',
   WORKOUT_PLANS: '/workout-plans',
   MEMBERSHIP_PACKAGES: '/membership-packages',
+  DIET_PLANS: '/diet-plans',
+  DIET_FOODS: '/diet-foods',
 };
 
 // Sidebar configuration

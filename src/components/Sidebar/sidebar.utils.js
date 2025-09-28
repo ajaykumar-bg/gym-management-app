@@ -9,6 +9,7 @@ import {
   Assignment as AssignmentIcon,
   CardMembership as CardMembershipIcon,
   Restaurant as RestaurantIcon,
+  LocalDining as LocalDiningIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -42,6 +43,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Diet Plans',
     path: '/diet-plans',
     icon: <RestaurantIcon />,
+  },
+  {
+    label: 'Food Database',
+    path: '/diet-foods',
+    icon: <LocalDiningIcon />,
   },
 ];
 

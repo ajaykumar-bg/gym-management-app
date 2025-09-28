@@ -9,7 +9,7 @@ import {
   Restaurant as RestaurantIcon,
   LocalFireDepartment as CalorieIcon,
   FitnessCenter as ProteinIcon,
-  Eco as VeganIcon,
+  Grass as VeganIcon,
   TrendingUp as TrendingIcon,
 } from '@mui/icons-material';
 import { useDietFood } from '../context/DietFoodContext';

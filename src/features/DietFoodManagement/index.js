@@ -9,3 +9,6 @@ export { default as DietFoodList } from './components/DietFoodList';
 export { DietFoodProvider, useDietFood } from './context/DietFoodContext';
 export * from './constants';
 export { default as foodDatabase } from './constants/foodDatabase.json';
+
+// Default export for routing
+export { default } from './components/DietFoodApp';

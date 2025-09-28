@@ -36,6 +36,9 @@ const Exercises = React.lazy(() => import('./features/Exercises'));
 const DietPlanManagement = React.lazy(() =>
   import('./features/DietPlanManagement')
 );
+const DietFoodManagement = React.lazy(() =>
+  import('./features/DietFoodManagement')
+);
 
 const Settings = React.lazy(() => import('./features/Settings'));
 
@@ -90,6 +93,10 @@ function AppRoutes() {
                       <Route
                         path='/diet-plans'
                         element={<DietPlanManagement />}
+                      />
+                      <Route
+                        path='/diet-foods'
+                        element={<DietFoodManagement />}
                       />
                       <Route path='*' element={<Navigate to='/' replace />} />
                     </Routes>
