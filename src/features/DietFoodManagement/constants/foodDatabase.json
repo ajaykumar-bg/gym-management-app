@@ -763,5 +763,209 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food016",
+    "name": "Apple",
+    "category": "carbs",
+    "subcategory": "fruits",
+    "description": "Fresh apple - crisp, sweet fruit rich in fiber and vitamin C",
+    "image": "https://images.unsplash.com/photo-1619546813926-a78fa6372cd2?w=400&q=80",
+    "servingSize": "1 medium (180g)",
+    "nutritionPer100g": {
+      "calories": 52,
+      "protein": 0.3,
+      "carbs": 13.8,
+      "fats": 0.2,
+      "fiber": 2.4,
+      "sugar": 10.4,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small apple",
+        "weight": "150g",
+        "calories": 78,
+        "protein": 0.4,
+        "carbs": 20.7,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium apple",
+        "weight": "180g",
+        "calories": 94,
+        "protein": 0.5,
+        "carbs": 24.8,
+        "fats": 0.4
+      },
+      {
+        "name": "Large apple",
+        "weight": "220g",
+        "calories": 114,
+        "protein": 0.7,
+        "carbs": 30.4,
+        "fats": 0.4
+      }
+    ],
+    "benefits": ["High fiber", "Vitamin C", "Antioxidants", "Low calorie"],
+    "allergens": [],
+    "dietaryTags": ["natural-sugars", "high-fiber", "low-calorie", "antioxidant-rich"],
+    "preparationMethods": ["raw", "baked", "stewed", "juiced"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food017",
+    "name": "Banana",
+    "category": "carbs",
+    "subcategory": "fruits",
+    "description": "Fresh banana - energy-rich fruit high in potassium and natural sugars",
+    "image": "https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=400&q=80",
+    "servingSize": "1 medium (120g)",
+    "nutritionPer100g": {
+      "calories": 89,
+      "protein": 1.1,
+      "carbs": 22.8,
+      "fats": 0.3,
+      "fiber": 2.6,
+      "sugar": 12.2,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small banana",
+        "weight": "100g",
+        "calories": 89,
+        "protein": 1.1,
+        "carbs": 22.8,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium banana",
+        "weight": "120g",
+        "calories": 107,
+        "protein": 1.3,
+        "carbs": 27.4,
+        "fats": 0.4
+      },
+      {
+        "name": "Large banana",
+        "weight": "140g",
+        "calories": 125,
+        "protein": 1.5,
+        "carbs": 31.9,
+        "fats": 0.4
+      }
+    ],
+    "benefits": ["High potassium", "Quick energy", "Vitamin B6", "Natural electrolytes"],
+    "allergens": [],
+    "dietaryTags": ["natural-sugars", "high-potassium", "pre-workout", "energy-boosting"],
+    "preparationMethods": ["raw", "smoothie", "baked", "frozen"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food018",
+    "name": "Berries Mixed",
+    "category": "carbs",
+    "subcategory": "fruits",
+    "description": "Mixed berries (strawberries, blueberries, raspberries) - antioxidant powerhouse with low sugar",
+    "image": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 56,
+      "protein": 0.8,
+      "carbs": 13.2,
+      "fats": 0.4,
+      "fiber": 3.8,
+      "sugar": 9.1,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "75g",
+        "calories": 42,
+        "protein": 0.6,
+        "carbs": 9.9,
+        "fats": 0.3
+      },
+      {
+        "name": "Medium serving",
+        "weight": "100g",
+        "calories": 56,
+        "protein": 0.8,
+        "carbs": 13.2,
+        "fats": 0.4
+      },
+      {
+        "name": "Large serving",
+        "weight": "150g",
+        "calories": 84,
+        "protein": 1.2,
+        "carbs": 19.8,
+        "fats": 0.6
+      }
+    ],
+    "benefits": ["Very high antioxidants", "Low sugar", "Vitamin C", "Anti-inflammatory"],
+    "allergens": [],
+    "dietaryTags": ["antioxidant-rich", "low-sugar", "anti-inflammatory", "superfruit"],
+    "preparationMethods": ["raw", "frozen", "smoothie", "topping"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food019",
+    "name": "Strawberries",
+    "category": "carbs",
+    "subcategory": "fruits",
+    "description": "Fresh strawberries - sweet, juicy berries packed with vitamin C and antioxidants",
+    "image": "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 32,
+      "protein": 0.7,
+      "carbs": 7.7,
+      "fats": 0.3,
+      "fiber": 2.0,
+      "sugar": 4.9,
+      "sodium": 1
+    },
+    "commonPortions": [
+      {
+        "name": "Small serving",
+        "weight": "75g",
+        "calories": 24,
+        "protein": 0.5,
+        "carbs": 5.8,
+        "fats": 0.2
+      },
+      {
+        "name": "Medium serving",
+        "weight": "100g",
+        "calories": 32,
+        "protein": 0.7,
+        "carbs": 7.7,
+        "fats": 0.3
+      },
+      {
+        "name": "Large serving",
+        "weight": "150g",
+        "calories": 48,
+        "protein": 1.1,
+        "carbs": 11.6,
+        "fats": 0.5
+      }
+    ],
+    "benefits": ["Very high vitamin C", "Low calorie", "Antioxidants", "Folate"],
+    "allergens": [],
+    "dietaryTags": ["low-calorie", "vitamin-c-rich", "antioxidant-rich", "low-sugar"],
+    "preparationMethods": ["raw", "sliced", "smoothie", "frozen"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
