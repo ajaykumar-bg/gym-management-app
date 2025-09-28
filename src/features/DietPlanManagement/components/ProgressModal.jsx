@@ -97,10 +97,12 @@ const MealTrackingTable = ({ meals, progress }) => {
                 <TableCell>
                   <Chip label={meal.type} size='small' variant='outlined' />
                 </TableCell>
-                <TableCell align='center'>{meal.calories}</TableCell>
-                <TableCell align='center'>{meal.macros.protein}g</TableCell>
-                <TableCell align='center'>{meal.macros.carbs}g</TableCell>
-                <TableCell align='center'>{meal.macros.fats}g</TableCell>
+                <TableCell align='center'>{meal.calories || 0}</TableCell>
+                <TableCell align='center'>
+                  {meal.macros?.protein || 0}g
+                </TableCell>
+                <TableCell align='center'>{meal.macros?.carbs || 0}g</TableCell>
+                <TableCell align='center'>{meal.macros?.fats || 0}g</TableCell>
                 <TableCell align='center'>
                   <Typography
                     variant='body2'

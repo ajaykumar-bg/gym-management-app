@@ -320,9 +320,9 @@ const CreatePlanModal = ({ open, onClose }) => {
   );
   const totalMacros = formData.meals.reduce(
     (acc, meal) => ({
-      protein: acc.protein + meal.macros.protein,
-      carbs: acc.carbs + meal.macros.carbs,
-      fats: acc.fats + meal.macros.fats,
+      protein: acc.protein + (meal.macros?.protein || 0),
+      carbs: acc.carbs + (meal.macros?.carbs || 0),
+      fats: acc.fats + (meal.macros?.fats || 0),
     }),
     { protein: 0, carbs: 0, fats: 0 }
   );
