@@ -49,6 +49,7 @@ export const FOOD_SUBCATEGORIES = {
   POULTRY: 'poultry',
   FISH: 'fish',
   MEAT: 'meat',
+  ORGAN_MEAT: 'organ-meat',
   DAIRY: 'dairy',
   PLANT_PROTEIN: 'plant-protein',
 
@@ -100,6 +101,7 @@ export const FOOD_SUBCATEGORY_LABELS = {
   [FOOD_SUBCATEGORIES.POULTRY]: 'Poultry',
   [FOOD_SUBCATEGORIES.FISH]: 'Fish & Seafood',
   [FOOD_SUBCATEGORIES.MEAT]: 'Meat',
+  [FOOD_SUBCATEGORIES.ORGAN_MEAT]: 'Organ Meats',
   [FOOD_SUBCATEGORIES.DAIRY]: 'Dairy Products',
   [FOOD_SUBCATEGORIES.PLANT_PROTEIN]: 'Plant Proteins',
   [FOOD_SUBCATEGORIES.GRAINS]: 'Grains & Cereals',

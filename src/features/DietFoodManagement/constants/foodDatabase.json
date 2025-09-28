@@ -1936,5 +1936,413 @@
     "isActive": true,
     "createdAt": "2024-01-01T10:00:00Z",
     "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food039",
+    "name": "Beef Steak",
+    "category": "protein",
+    "subcategory": "meat",
+    "description": "Lean beef sirloin steak - high-quality protein rich in iron and B vitamins",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 271,
+      "protein": 25.4,
+      "carbs": 0,
+      "fats": 18.3,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 59
+    },
+    "commonPortions": [
+      {
+        "name": "Small steak",
+        "weight": "120g",
+        "calories": 325,
+        "protein": 30.5,
+        "carbs": 0,
+        "fats": 22
+      },
+      {
+        "name": "Medium steak",
+        "weight": "180g",
+        "calories": 488,
+        "protein": 45.7,
+        "carbs": 0,
+        "fats": 33
+      },
+      {
+        "name": "Large steak",
+        "weight": "250g",
+        "calories": 678,
+        "protein": 63.5,
+        "carbs": 0,
+        "fats": 45.8
+      }
+    ],
+    "benefits": ["High protein", "Iron", "B vitamins", "Zinc"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "iron-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["grilled", "pan-seared", "broiled", "roasted"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food040",
+    "name": "Beef Mince",
+    "category": "protein",
+    "subcategory": "meat",
+    "description": "Lean ground beef (90/10) - versatile protein for cooking various dishes",
+    "image": "https://plus.unsplash.com/premium_photo-1670357599582-de7232e949a0?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 176,
+      "protein": 25,
+      "carbs": 0,
+      "fats": 8,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 66
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "80g",
+        "calories": 141,
+        "protein": 20,
+        "carbs": 0,
+        "fats": 6.4
+      },
+      {
+        "name": "Medium portion",
+        "weight": "120g",
+        "calories": 211,
+        "protein": 30,
+        "carbs": 0,
+        "fats": 9.6
+      },
+      {
+        "name": "Large portion",
+        "weight": "150g",
+        "calories": 264,
+        "protein": 37.5,
+        "carbs": 0,
+        "fats": 12
+      }
+    ],
+    "benefits": ["High protein", "Iron", "B vitamins", "Versatile cooking"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "lean-meat", "keto-friendly", "paleo"],
+    "preparationMethods": ["pan-fried", "grilled", "baked", "stewed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food041",
+    "name": "Beef Ribs",
+    "category": "protein",
+    "subcategory": "meat",
+    "description": "Beef short ribs - rich, flavorful cut with higher fat content",
+    "image": "https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 338,
+      "protein": 18.9,
+      "carbs": 0,
+      "fats": 28.1,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 57
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "100g",
+        "calories": 338,
+        "protein": 18.9,
+        "carbs": 0,
+        "fats": 28.1
+      },
+      {
+        "name": "Medium portion",
+        "weight": "150g",
+        "calories": 507,
+        "protein": 28.4,
+        "carbs": 0,
+        "fats": 42.2
+      },
+      {
+        "name": "Large portion",
+        "weight": "200g",
+        "calories": 676,
+        "protein": 37.8,
+        "carbs": 0,
+        "fats": 56.2
+      }
+    ],
+    "benefits": ["Rich flavor", "Protein", "Iron", "Collagen"],
+    "allergens": [],
+    "dietaryTags": ["high-fat", "protein-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["braised", "slow-cooked", "grilled", "smoked"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food042",
+    "name": "Pork",
+    "category": "protein",
+    "subcategory": "meat",
+    "description": "Lean pork loin - tender cut with balanced protein and moderate fat content",
+    "image": "https://images.unsplash.com/photo-1602470520998-f4a52199a3d6?w=400&q=80",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 242,
+      "protein": 27.3,
+      "carbs": 0,
+      "fats": 14,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 62
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "100g",
+        "calories": 242,
+        "protein": 27.3,
+        "carbs": 0,
+        "fats": 14
+      },
+      {
+        "name": "Medium portion",
+        "weight": "150g",
+        "calories": 363,
+        "protein": 41,
+        "carbs": 0,
+        "fats": 21
+      },
+      {
+        "name": "Large portion",
+        "weight": "200g",
+        "calories": 484,
+        "protein": 54.6,
+        "carbs": 0,
+        "fats": 28
+      }
+    ],
+    "benefits": ["High protein", "B vitamins", "Thiamine", "Selenium"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "b-vitamins", "keto-friendly"],
+    "preparationMethods": ["roasted", "grilled", "pan-fried", "braised"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food043",
+    "name": "Mutton",
+    "category": "protein",
+    "subcategory": "meat",
+    "description": "Lean mutton leg - flavorful lamb meat rich in protein and minerals",
+    "image": "https://images.unsplash.com/photo-1751347999317-a0ed6f471cb3?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 294,
+      "protein": 24.5,
+      "carbs": 0,
+      "fats": 20.9,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 72
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "100g",
+        "calories": 294,
+        "protein": 24.5,
+        "carbs": 0,
+        "fats": 20.9
+      },
+      {
+        "name": "Medium portion",
+        "weight": "150g",
+        "calories": 441,
+        "protein": 36.8,
+        "carbs": 0,
+        "fats": 31.4
+      },
+      {
+        "name": "Large portion",
+        "weight": "200g",
+        "calories": 588,
+        "protein": 49,
+        "carbs": 0,
+        "fats": 41.8
+      }
+    ],
+    "benefits": ["High protein", "Iron", "Zinc", "B vitamins"],
+    "allergens": [],
+    "dietaryTags": ["high-protein", "iron-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["roasted", "curried", "grilled", "braised"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food044",
+    "name": "Mutton Brain",
+    "category": "protein",
+    "subcategory": "organ-meat",
+    "description": "Mutton brain - organ meat rich in cholesterol and unique nutrients",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGiE-MUgnoq5ddM2d3FKCs_UbmAPFiN51ODg&s",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 143,
+      "protein": 10.4,
+      "carbs": 0,
+      "fats": 10.9,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 126
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "50g",
+        "calories": 72,
+        "protein": 5.2,
+        "carbs": 0,
+        "fats": 5.5
+      },
+      {
+        "name": "Medium portion",
+        "weight": "75g",
+        "calories": 107,
+        "protein": 7.8,
+        "carbs": 0,
+        "fats": 8.2
+      },
+      {
+        "name": "Large portion",
+        "weight": "100g",
+        "calories": 143,
+        "protein": 10.4,
+        "carbs": 0,
+        "fats": 10.9
+      }
+    ],
+    "benefits": ["Choline", "B vitamins", "Phosphorus", "Unique nutrients"],
+    "allergens": [],
+    "dietaryTags": ["organ-meat", "nutrient-dense", "keto-friendly"],
+    "preparationMethods": ["fried", "curried", "scrambled", "sauteed"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food045",
+    "name": "Chicken Liver",
+    "category": "protein",
+    "subcategory": "organ-meat",
+    "description": "Chicken liver - nutrient-dense organ meat extremely rich in iron and vitamin A",
+    "image": "https://t4.ftcdn.net/jpg/02/04/04/61/360_F_204046168_Ras467W0gvRkF0Pwt9y91yhGmcmFYYsp.jpg",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 167,
+      "protein": 24.5,
+      "carbs": 0.7,
+      "fats": 6.5,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 79
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "50g",
+        "calories": 84,
+        "protein": 12.3,
+        "carbs": 0.4,
+        "fats": 3.3
+      },
+      {
+        "name": "Medium portion",
+        "weight": "75g",
+        "calories": 125,
+        "protein": 18.4,
+        "carbs": 0.5,
+        "fats": 4.9
+      },
+      {
+        "name": "Large portion",
+        "weight": "100g",
+        "calories": 167,
+        "protein": 24.5,
+        "carbs": 0.7,
+        "fats": 6.5
+      }
+    ],
+    "benefits": ["Very high iron", "Vitamin A", "B vitamins", "Folate"],
+    "allergens": [],
+    "dietaryTags": ["organ-meat", "iron-rich", "vitamin-a-rich", "nutrient-dense"],
+    "preparationMethods": ["sauteed", "pan-fried", "pate", "curried"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
+  },
+  {
+    "id": "food046",
+    "name": "Duck",
+    "category": "protein",
+    "subcategory": "poultry",
+    "description": "Duck breast meat - rich, flavorful poultry with higher fat content than chicken",
+    "image": "https://images.unsplash.com/photo-1513623954575-263b061498a3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "servingSize": "100g",
+    "nutritionPer100g": {
+      "calories": 337,
+      "protein": 18.3,
+      "carbs": 0,
+      "fats": 28.4,
+      "fiber": 0,
+      "sugar": 0,
+      "sodium": 59
+    },
+    "commonPortions": [
+      {
+        "name": "Small portion",
+        "weight": "100g",
+        "calories": 337,
+        "protein": 18.3,
+        "carbs": 0,
+        "fats": 28.4
+      },
+      {
+        "name": "Medium portion",
+        "weight": "150g",
+        "calories": 506,
+        "protein": 27.5,
+        "carbs": 0,
+        "fats": 42.6
+      },
+      {
+        "name": "Large portion",
+        "weight": "200g",
+        "calories": 674,
+        "protein": 36.6,
+        "carbs": 0,
+        "fats": 56.8
+      }
+    ],
+    "benefits": ["Rich flavor", "Protein", "Iron", "B vitamins"],
+    "allergens": [],
+    "dietaryTags": ["high-fat", "protein-rich", "keto-friendly", "paleo"],
+    "preparationMethods": ["roasted", "confit", "pan-seared", "grilled"],
+    "isActive": true,
+    "createdAt": "2024-01-01T10:00:00Z",
+    "updatedAt": "2024-01-01T10:00:00Z"
   }
 ]
