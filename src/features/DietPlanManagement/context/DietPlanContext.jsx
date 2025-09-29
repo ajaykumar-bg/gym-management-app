@@ -17,6 +17,7 @@ import {
   sortAssignmentsByPriority,
   filterAssignments,
 } from '../utils/dietPlanUtils';
+import ProgressModal from '../components/ProgressModal';
 
 // Create the context
 const DietPlanContext = createContext(undefined);
@@ -387,6 +388,11 @@ export const DietPlanProvider = ({ children }) => {
   return (
     <DietPlanContext.Provider value={contextValue}>
       {children}
+      <ProgressModal
+        open={isProgressModalOpen}
+        onClose={closeProgressModal}
+        assignment={selectedAssignment}
+      />
     </DietPlanContext.Provider>
   );
 };

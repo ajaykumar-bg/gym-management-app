@@ -567,7 +567,8 @@ const ProgressModal = ({ open, onClose, assignment }) => {
                       <strong>Duration:</strong> {plan.duration} days
                     </Typography>
                     <Typography variant='body2'>
-                      <strong>Goals:</strong> {plan.goals.join(', ')}
+                      <strong>Goals:</strong>{' '}
+                      {plan.tags?.join(', ') || 'Not specified'}
                     </Typography>
                     <Box sx={{ mt: 2 }}>
                       <Typography variant='caption' color='text.secondary'>
