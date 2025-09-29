@@ -443,7 +443,7 @@ const AssignmentList = () => {
         </Box>
       ) : (
         <TableContainer component={Paper}>
-          <Table>
+          <Table size='small'>
             <TableHead>
               <TableRow>
                 <TableCell>Member</TableCell>

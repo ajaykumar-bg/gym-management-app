@@ -120,7 +120,7 @@ const TopPerformersTable = ({ assignments, dietPlans }) => {
 
   return (
     <TableContainer component={Paper}>
-      <Table>
+      <Table size='small'>
         <TableHead>
           <TableRow>
             <TableCell>Member</TableCell>
