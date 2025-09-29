@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Box,
   Typography,
@@ -22,6 +22,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableSortLabel,
   Paper,
   IconButton,
 } from '@mui/material';
@@ -48,6 +49,8 @@ const EquipmentManagement = () => {
   const [showForm, setShowForm] = useState(false);
   const [filterCategory, setFilterCategory] = useState('all');
   const [filterStatus, setFilterStatus] = useState('all');
+  const [orderBy, setOrderBy] = useState('name');
+  const [order, setOrder] = useState('asc');
   const [formData, setFormData] = useState({
     name: '',
     category: '',
@@ -136,6 +139,37 @@ const EquipmentManagement = () => {
     return categoryMatch && statusMatch;
   });
 
+  const handleRequestSort = (property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
+  };
+
+  const sortedAndFilteredEquipment = useMemo(() => {
+    return filteredEquipment.sort((a, b) => {
+      let aValue = a[orderBy];
+      let bValue = b[orderBy];
+
+      // Handle date sorting
+      if (orderBy === 'purchaseDate') {
+        aValue = new Date(aValue);
+        bValue = new Date(bValue);
+      }
+
+      // Handle string sorting
+      if (typeof aValue === 'string') {
+        aValue = aValue.toLowerCase();
+        bValue = bValue.toLowerCase();
+      }
+
+      let result = 0;
+      if (aValue < bValue) result = -1;
+      if (aValue > bValue) result = 1;
+
+      return order === 'desc' ? -result : result;
+    });
+  }, [filteredEquipment, orderBy, order]);
+
   const getStatusIcon = (status) => {
     switch (status) {
       case 'operational':
@@ -151,13 +185,16 @@ const EquipmentManagement = () => {
     }
   };
 
-  const equipmentStats = {
-    total: equipment.length,
-    operational: equipment.filter((eq) => eq.status === 'operational').length,
-    maintenance: equipment.filter((eq) => eq.status === 'maintenance').length,
-    repair: equipment.filter((eq) => eq.status === 'repair').length,
-    outOfOrder: equipment.filter((eq) => eq.status === 'out-of-order').length,
-  };
+  const equipmentStats = useMemo(
+    () => ({
+      total: equipment.length,
+      operational: equipment.filter((eq) => eq.status === 'operational').length,
+      maintenance: equipment.filter((eq) => eq.status === 'maintenance').length,
+      repair: equipment.filter((eq) => eq.status === 'repair').length,
+      outOfOrder: equipment.filter((eq) => eq.status === 'out-of-order').length,
+    }),
+    [equipment]
+  );
 
   return (
     <Box sx={{ p: 3 }}>
@@ -275,17 +312,65 @@ const EquipmentManagement = () => {
         <Table size='small'>
           <TableHead>
             <TableRow>
-              <TableCell>Equipment</TableCell>
-              <TableCell>Category</TableCell>
-              <TableCell>Status</TableCell>
-              <TableCell>Location</TableCell>
-              <TableCell>Last Maintenance</TableCell>
-              <TableCell>Next Maintenance</TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'name'}
+                  direction={orderBy === 'name' ? order : 'asc'}
+                  onClick={() => handleRequestSort('name')}
+                >
+                  Equipment
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'category'}
+                  direction={orderBy === 'category' ? order : 'asc'}
+                  onClick={() => handleRequestSort('category')}
+                >
+                  Category
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'status'}
+                  direction={orderBy === 'status' ? order : 'asc'}
+                  onClick={() => handleRequestSort('status')}
+                >
+                  Status
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'location'}
+                  direction={orderBy === 'location' ? order : 'asc'}
+                  onClick={() => handleRequestSort('location')}
+                >
+                  Location
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'lastMaintenance'}
+                  direction={orderBy === 'lastMaintenance' ? order : 'asc'}
+                  onClick={() => handleRequestSort('lastMaintenance')}
+                >
+                  Last Maintenance
+                </TableSortLabel>
+              </TableCell>
+              <TableCell>
+                <TableSortLabel
+                  active={orderBy === 'nextMaintenance'}
+                  direction={orderBy === 'nextMaintenance' ? order : 'asc'}
+                  onClick={() => handleRequestSort('nextMaintenance')}
+                >
+                  Next Maintenance
+                </TableSortLabel>
+              </TableCell>
               <TableCell>Actions</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
-            {filteredEquipment.map((item) => (
+            {sortedAndFilteredEquipment.map((item) => (
               <TableRow key={item.id}>
                 <TableCell>
                   <Box>

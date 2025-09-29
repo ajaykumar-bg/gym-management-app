@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import {
   Card,
   CardContent,
@@ -12,6 +12,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableSortLabel,
   Paper,
   Chip,
   IconButton,
@@ -49,14 +50,62 @@ const MemberList = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [membershipFilter, setMembershipFilter] = useState('all');
+  const [orderBy, setOrderBy] = useState('name');
+  const [order, setOrder] = useState('asc');
 
-  const filteredMembers = filterMembers(
-    members,
-    searchTerm,
-    statusFilter,
-    membershipFilter
-  );
-  const tableData = filteredMembers.map(formatMemberForTable);
+  const handleRequestSort = (property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
+  };
+
+  const sortedAndFilteredMembers = useMemo(() => {
+    const filtered = filterMembers(
+      members,
+      searchTerm,
+      statusFilter,
+      membershipFilter
+    );
+
+    const sorted = [...filtered].sort((a, b) => {
+      let aValue, bValue;
+
+      switch (orderBy) {
+        case 'name':
+          aValue = `${a.firstName || ''} ${a.lastName || ''}`.toLowerCase();
+          bValue = `${b.firstName || ''} ${b.lastName || ''}`.toLowerCase();
+          break;
+        case 'email':
+          aValue = (a.email || '').toLowerCase();
+          bValue = (b.email || '').toLowerCase();
+          break;
+        case 'membershipType':
+          aValue = a.membershipInfo?.type || '';
+          bValue = b.membershipInfo?.type || '';
+          break;
+        case 'status':
+          aValue = a.membershipInfo?.status || '';
+          bValue = b.membershipInfo?.status || '';
+          break;
+        case 'joinDate':
+          aValue = new Date(a.joinDate || '');
+          bValue = new Date(b.joinDate || '');
+          break;
+        default:
+          aValue = a[orderBy];
+          bValue = b[orderBy];
+      }
+
+      if (order === 'desc') {
+        return bValue < aValue ? -1 : bValue > aValue ? 1 : 0;
+      }
+      return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
+    });
+
+    return sorted;
+  }, [members, searchTerm, statusFilter, membershipFilter, order, orderBy]);
+
+  const tableData = sortedAndFilteredMembers.map(formatMemberForTable);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -154,7 +203,8 @@ const MemberList = ({
         {/* Results Summary */}
         <Box sx={{ mb: 2 }}>
           <Typography variant='body2' color='text.secondary'>
-            Showing {filteredMembers.length} of {members.length} members
+            Showing {sortedAndFilteredMembers.length} of {members.length}{' '}
+            members
           </Typography>
         </Box>
 
@@ -163,11 +213,51 @@ const MemberList = ({
           <Table size='small'>
             <TableHead>
               <TableRow>
-                <TableCell>Member</TableCell>
-                <TableCell>Contact</TableCell>
-                <TableCell>Membership</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Join Date</TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'name'}
+                    direction={orderBy === 'name' ? order : 'asc'}
+                    onClick={() => handleRequestSort('name')}
+                  >
+                    Member
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'email'}
+                    direction={orderBy === 'email' ? order : 'asc'}
+                    onClick={() => handleRequestSort('email')}
+                  >
+                    Contact
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'membershipType'}
+                    direction={orderBy === 'membershipType' ? order : 'asc'}
+                    onClick={() => handleRequestSort('membershipType')}
+                  >
+                    Membership
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'status'}
+                    direction={orderBy === 'status' ? order : 'asc'}
+                    onClick={() => handleRequestSort('status')}
+                  >
+                    Status
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'joinDate'}
+                    direction={orderBy === 'joinDate' ? order : 'asc'}
+                    onClick={() => handleRequestSort('joinDate')}
+                  >
+                    Join Date
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell align='center'>Actions</TableCell>
               </TableRow>
             </TableHead>
@@ -258,7 +348,7 @@ const MemberList = ({
           </Table>
         </TableContainer>
 
-        {filteredMembers.length === 0 && (
+        {sortedAndFilteredMembers.length === 0 && (
           <Box textAlign='center' py={4}>
             <Typography variant='h6' color='text.secondary'>
               No members found

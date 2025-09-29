@@ -3,7 +3,7 @@
  * Displays and manages diet plan assignments
  */
 
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useCallback } from 'react';
 import {
   Box,
   Card,
@@ -28,6 +28,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableSortLabel,
   Paper,
 } from '@mui/material';
 import {
@@ -230,10 +231,81 @@ const AssignmentList = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filterStatus, setFilterStatus] = useState('all');
   const [filterType, setFilterType] = useState('all');
+  const [orderBy, setOrderBy] = useState('memberName');
+  const [order, setOrder] = useState('asc');
+
+  const handleRequestSort = (property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
+  };
+
+  const descendingComparator = useCallback(
+    (a, b, orderBy) => {
+      const plan = dietPlans.find((p) => p.id === a.dietPlanId);
+      const planB = dietPlans.find((p) => p.id === b.dietPlanId);
+
+      let aValue, bValue;
+
+      switch (orderBy) {
+        case 'memberName':
+          aValue = a.memberName.toLowerCase();
+          bValue = b.memberName.toLowerCase();
+          break;
+        case 'planName':
+          aValue = (plan?.name || 'Unknown Plan').toLowerCase();
+          bValue = (planB?.name || 'Unknown Plan').toLowerCase();
+          break;
+        case 'status':
+          aValue = a.status;
+          bValue = b.status;
+          break;
+        case 'startDate':
+          aValue = new Date(a.startDate);
+          bValue = new Date(b.startDate);
+          break;
+        case 'endDate':
+          aValue = new Date(a.endDate);
+          bValue = new Date(b.endDate);
+          break;
+        case 'adherence':
+          aValue = a.progress?.adherence || 0;
+          bValue = b.progress?.adherence || 0;
+          break;
+        default:
+          aValue = a[orderBy];
+          bValue = b[orderBy];
+      }
+
+      if (bValue < aValue) return -1;
+      if (bValue > aValue) return 1;
+      return 0;
+    },
+    [dietPlans]
+  );
+
+  const getComparator = useCallback(
+    (order, orderBy) => {
+      return order === 'desc'
+        ? (a, b) => descendingComparator(a, b, orderBy)
+        : (a, b) => -descendingComparator(a, b, orderBy);
+    },
+    [descendingComparator]
+  );
+
+  const sortData = useCallback((array, comparator) => {
+    const stabilizedArray = array.map((el, index) => [el, index]);
+    stabilizedArray.sort((a, b) => {
+      const order = comparator(a[0], b[0]);
+      if (order !== 0) return order;
+      return a[1] - b[1];
+    });
+    return stabilizedArray.map((el) => el[0]);
+  }, []);
 
   // Filter and search logic
   const filteredAssignments = useMemo(() => {
-    return assignments.filter((assignment) => {
+    const filtered = assignments.filter((assignment) => {
       const plan = dietPlans.find((p) => p.id === assignment.dietPlanId);
 
       const matchesSearch =
@@ -248,7 +320,19 @@ const AssignmentList = () => {
 
       return matchesSearch && matchesStatus && matchesType;
     });
-  }, [assignments, dietPlans, searchTerm, filterStatus, filterType]);
+
+    return sortData(filtered, getComparator(order, orderBy));
+  }, [
+    assignments,
+    dietPlans,
+    searchTerm,
+    filterStatus,
+    filterType,
+    order,
+    orderBy,
+    getComparator,
+    sortData,
+  ]);
 
   // Group assignments by status for summary
   const assignmentSummary = useMemo(() => {
@@ -446,12 +530,52 @@ const AssignmentList = () => {
           <Table size='small'>
             <TableHead>
               <TableRow>
-                <TableCell>Member</TableCell>
-                <TableCell>Diet Plan</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Duration</TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'memberName'}
+                    direction={orderBy === 'memberName' ? order : 'asc'}
+                    onClick={() => handleRequestSort('memberName')}
+                  >
+                    Member
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'planName'}
+                    direction={orderBy === 'planName' ? order : 'asc'}
+                    onClick={() => handleRequestSort('planName')}
+                  >
+                    Diet Plan
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'status'}
+                    direction={orderBy === 'status' ? order : 'asc'}
+                    onClick={() => handleRequestSort('status')}
+                  >
+                    Status
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'startDate'}
+                    direction={orderBy === 'startDate' ? order : 'asc'}
+                    onClick={() => handleRequestSort('startDate')}
+                  >
+                    Duration
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell>Progress</TableCell>
-                <TableCell>Adherence</TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={orderBy === 'adherence'}
+                    direction={orderBy === 'adherence' ? order : 'asc'}
+                    onClick={() => handleRequestSort('adherence')}
+                  >
+                    Adherence
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell width={50}>Actions</TableCell>
               </TableRow>
             </TableHead>

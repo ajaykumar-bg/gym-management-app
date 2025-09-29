@@ -28,6 +28,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableSortLabel,
   Paper,
 } from '@mui/material';
 import {
@@ -67,24 +68,138 @@ const TabPanel = ({ children, value, index, ...other }) => (
 );
 
 const MealTrackingTable = ({ meals, progress }) => {
-  const mealProgress = progress?.mealTracking || {};
+  const [orderBy, setOrderBy] = useState('name');
+  const [order, setOrder] = useState('asc');
+
+  const mealProgress = useMemo(() => progress?.mealTracking || {}, [progress]);
+
+  const handleRequestSort = (property) => {
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
+    setOrderBy(property);
+  };
+
+  const sortedMeals = useMemo(() => {
+    const comparator = (a, b, orderBy) => {
+      let aValue, bValue;
+      const aMealProgress = mealProgress[a.id] || {};
+      const bMealProgress = mealProgress[b.id] || {};
+
+      switch (orderBy) {
+        case 'name':
+          aValue = a.name.toLowerCase();
+          bValue = b.name.toLowerCase();
+          break;
+        case 'type':
+          aValue = a.type;
+          bValue = b.type;
+          break;
+        case 'calories':
+          aValue = a.calories;
+          bValue = b.calories;
+          break;
+        case 'protein':
+          aValue = a.foods.reduce((sum, food) => sum + food.protein, 0);
+          bValue = b.foods.reduce((sum, food) => sum + food.protein, 0);
+          break;
+        case 'carbs':
+          aValue = a.foods.reduce((sum, food) => sum + food.carbs, 0);
+          bValue = b.foods.reduce((sum, food) => sum + food.carbs, 0);
+          break;
+        case 'fats':
+          aValue = a.foods.reduce((sum, food) => sum + food.fats, 0);
+          bValue = b.foods.reduce((sum, food) => sum + food.fats, 0);
+          break;
+        case 'adherence':
+          aValue = aMealProgress.adherence || 0;
+          bValue = bMealProgress.adherence || 0;
+          break;
+        default:
+          aValue = a[orderBy];
+          bValue = b[orderBy];
+      }
+
+      if (order === 'desc') {
+        return bValue < aValue ? -1 : bValue > aValue ? 1 : 0;
+      }
+      return aValue < bValue ? -1 : aValue > bValue ? 1 : 0;
+    };
+
+    return [...meals].sort((a, b) => comparator(a, b, orderBy));
+  }, [meals, mealProgress, order, orderBy]);
 
   return (
     <TableContainer component={Paper} variant='outlined'>
       <Table size='small'>
         <TableHead>
           <TableRow>
-            <TableCell>Meal</TableCell>
-            <TableCell>Type</TableCell>
-            <TableCell align='center'>Calories</TableCell>
-            <TableCell align='center'>Protein</TableCell>
-            <TableCell align='center'>Carbs</TableCell>
-            <TableCell align='center'>Fats</TableCell>
-            <TableCell align='center'>Adherence</TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === 'name'}
+                direction={orderBy === 'name' ? order : 'asc'}
+                onClick={() => handleRequestSort('name')}
+              >
+                Meal
+              </TableSortLabel>
+            </TableCell>
+            <TableCell>
+              <TableSortLabel
+                active={orderBy === 'type'}
+                direction={orderBy === 'type' ? order : 'asc'}
+                onClick={() => handleRequestSort('type')}
+              >
+                Type
+              </TableSortLabel>
+            </TableCell>
+            <TableCell align='center'>
+              <TableSortLabel
+                active={orderBy === 'calories'}
+                direction={orderBy === 'calories' ? order : 'asc'}
+                onClick={() => handleRequestSort('calories')}
+              >
+                Calories
+              </TableSortLabel>
+            </TableCell>
+            <TableCell align='center'>
+              <TableSortLabel
+                active={orderBy === 'protein'}
+                direction={orderBy === 'protein' ? order : 'asc'}
+                onClick={() => handleRequestSort('protein')}
+              >
+                Protein
+              </TableSortLabel>
+            </TableCell>
+            <TableCell align='center'>
+              <TableSortLabel
+                active={orderBy === 'carbs'}
+                direction={orderBy === 'carbs' ? order : 'asc'}
+                onClick={() => handleRequestSort('carbs')}
+              >
+                Carbs
+              </TableSortLabel>
+            </TableCell>
+            <TableCell align='center'>
+              <TableSortLabel
+                active={orderBy === 'fats'}
+                direction={orderBy === 'fats' ? order : 'asc'}
+                onClick={() => handleRequestSort('fats')}
+              >
+                Fats
+              </TableSortLabel>
+            </TableCell>
+            <TableCell align='center'>
+              <TableSortLabel
+                active={orderBy === 'adherence'}
+                direction={orderBy === 'adherence' ? order : 'asc'}
+                onClick={() => handleRequestSort('adherence')}
+              >
+                Adherence
+              </TableSortLabel>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {meals.map((meal, index) => {
+          {sortedMeals.map((meal, index) => {
             const adherence =
               mealProgress[meal.name] || Math.floor(Math.random() * 30) + 70; // Mock adherence
             return (

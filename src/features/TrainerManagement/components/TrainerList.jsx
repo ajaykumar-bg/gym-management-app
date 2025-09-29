@@ -8,6 +8,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
+  TableSortLabel,
   TextField,
   Button,
   Chip,
@@ -211,27 +212,52 @@ const TrainerList = ({
           <Table size='small'>
             <TableHead>
               <TableRow>
-                <TableCell>Trainer</TableCell>
-                <TableCell
-                  onClick={() => handleSort('experience')}
-                  sx={{ cursor: 'pointer' }}
-                >
-                  Experience
+                <TableCell>
+                  <TableSortLabel
+                    active={sortBy === 'name'}
+                    direction={sortBy === 'name' ? sortOrder : 'asc'}
+                    onClick={() => handleSort('name')}
+                  >
+                    Trainer
+                  </TableSortLabel>
+                </TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortBy === 'experience'}
+                    direction={sortBy === 'experience' ? sortOrder : 'asc'}
+                    onClick={() => handleSort('experience')}
+                  >
+                    Experience
+                  </TableSortLabel>
                 </TableCell>
                 <TableCell>Specializations</TableCell>
-                <TableCell
-                  onClick={() => handleSort('rating')}
-                  sx={{ cursor: 'pointer' }}
-                >
-                  Rating
+                <TableCell>
+                  <TableSortLabel
+                    active={sortBy === 'rating'}
+                    direction={sortBy === 'rating' ? sortOrder : 'asc'}
+                    onClick={() => handleSort('rating')}
+                  >
+                    Rating
+                  </TableSortLabel>
                 </TableCell>
-                <TableCell
-                  onClick={() => handleSort('clients')}
-                  sx={{ cursor: 'pointer' }}
-                >
-                  Clients
+                <TableCell>
+                  <TableSortLabel
+                    active={sortBy === 'clients'}
+                    direction={sortBy === 'clients' ? sortOrder : 'asc'}
+                    onClick={() => handleSort('clients')}
+                  >
+                    Clients
+                  </TableSortLabel>
                 </TableCell>
-                <TableCell>Capacity</TableCell>
+                <TableCell>
+                  <TableSortLabel
+                    active={sortBy === 'capacity'}
+                    direction={sortBy === 'capacity' ? sortOrder : 'asc'}
+                    onClick={() => handleSort('capacity')}
+                  >
+                    Capacity
+                  </TableSortLabel>
+                </TableCell>
                 <TableCell>Status</TableCell>
                 <TableCell>Actions</TableCell>
               </TableRow>
