@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkgym_management_app=self.webpackChunkgym_management_app||[]).push([[985],{3366:(a,e,p)=>{p.r(e),p.d(e,{default:()=>m.A});var m=p(3847)}}]);
