@@ -293,6 +293,24 @@ export const generatePerformanceSummary = (trainer) => {
  * Validate trainer data
  */
 export const validateTrainerData = (trainerData) => {
+  if (!trainerData) return false;
+
+  const requiredFields = ['name', 'email', 'phone'];
+  const hasRequiredFields = requiredFields.every(
+    (field) => trainerData[field] && trainerData[field].toString().trim()
+  );
+
+  const hasValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(trainerData.email);
+  const hasSpecializations =
+    trainerData.specializations && trainerData.specializations.length > 0;
+
+  return hasRequiredFields && hasValidEmail && hasSpecializations;
+};
+
+/**
+ * Get detailed validation errors
+ */
+export const getValidationErrors = (trainerData) => {
   const errors = {};
 
   if (!trainerData.name?.trim()) {
@@ -325,4 +343,100 @@ export const validateTrainerData = (trainerData) => {
   }
 
   return errors;
+};
+
+/**
+ * Generate unique trainer ID
+ */
+export const generateTrainerId = () => {
+  return `trainer_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+};
+
+/**
+ * Filter trainers based on user role
+ */
+export const filterTrainersByRole = (trainers, user) => {
+  if (!user) return [];
+
+  if (user.role === 'admin') {
+    return trainers; // Admin can see all trainers
+  } else if (user.role === 'trainer') {
+    // Trainers can see all trainers for collaboration
+    return trainers;
+  } else {
+    // Members can see all active trainers for selection
+    return trainers.filter((trainer) => trainer.status === 'active');
+  }
+};
+
+/**
+ * Check if user can perform trainer action
+ */
+export const canPerformTrainerAction = (user, action, trainer) => {
+  if (!user) return false;
+
+  switch (action) {
+    case 'view':
+      return (
+        user.role === 'admin' ||
+        user.role === 'trainer' ||
+        user.role === 'member'
+      );
+    case 'edit':
+    case 'delete':
+    case 'create':
+      return user.role === 'admin';
+    case 'assign':
+      return user.role === 'admin' || user.role === 'trainer';
+    case 'schedule':
+      return (
+        user.role === 'admin' ||
+        (user.role === 'trainer' && user.id === trainer?.id)
+      );
+    default:
+      return false;
+  }
+};
+
+/**
+ * Format trainer data for export
+ */
+export const formatTrainerForExport = (trainer) => {
+  return {
+    ID: trainer.id,
+    Name: trainer.name,
+    Email: trainer.email,
+    Phone: trainer.phone,
+    Status: trainer.status,
+    'Hire Date': trainer.hireDate,
+    'Years at Gym': calculateYearsAtGym(trainer.hireDate),
+    Specializations: getSpecializationsText(trainer.specializations),
+    'Hourly Rate': `$${trainer.hourlyRate}`,
+    'Current Clients': trainer.currentClients,
+    'Max Clients': trainer.maxClients,
+    'Capacity Utilization': `${calculateCapacityUtilization(
+      trainer.currentClients,
+      trainer.maxClients
+    )}%`,
+    'Average Rating': trainer.averageRating,
+    'Client Retention Rate': `${trainer.clientRetentionRate}%`,
+  };
+};
+
+/**
+ * Get trainer quick stats
+ */
+export const getTrainerQuickStats = (trainers) => {
+  const total = trainers.length;
+  const active = trainers.filter((t) => t.status === 'active').length;
+  const inactive = trainers.filter((t) => t.status === 'inactive').length;
+  const onLeave = trainers.filter((t) => t.status === 'on-leave').length;
+
+  return {
+    total,
+    active,
+    inactive,
+    onLeave,
+    activePercentage: total > 0 ? Math.round((active / total) * 100) : 0,
+  };
 };
