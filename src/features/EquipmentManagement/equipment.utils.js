@@ -240,3 +240,48 @@ export const getEquipmentStatistics = (equipment) => {
 
   return stats;
 };
+
+/**
+ * Filter equipment based on multiple criteria
+ * @param {Array} equipment - Array of equipment objects
+ * @param {Object} filters - Filter criteria
+ * @returns {Array} - Filtered equipment array
+ */
+export const filterEquipment = (equipment, filters) => {
+  let filtered = [...equipment];
+
+  if (filters.category && filters.category !== 'all') {
+    filtered = filterEquipmentByCategory(filtered, filters.category);
+  }
+
+  if (filters.status && filters.status !== 'all') {
+    filtered = filterEquipmentByStatus(filtered, filters.status);
+  }
+
+  if (filters.search) {
+    filtered = searchEquipment(filtered, filters.search);
+  }
+
+  return filtered;
+};
+
+/**
+ * Validate equipment form data
+ * @param {Object} formData - Form data to validate
+ * @returns {boolean} - True if valid
+ */
+export const validateEquipmentData = (formData) => {
+  if (!formData.name?.trim()) return false;
+  if (!formData.category) return false;
+  if (formData.purchasePrice && isNaN(parseFloat(formData.purchasePrice)))
+    return false;
+  return true;
+};
+
+/**
+ * Generate unique equipment ID
+ * @returns {string} - Unique equipment ID
+ */
+export const generateEquipmentId = () => {
+  return `EQ${Date.now().toString().slice(-6)}`;
+};
