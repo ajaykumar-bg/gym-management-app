@@ -152,7 +152,6 @@ const ExerciseApp = () => {
           flexGrow: 1,
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden',
           width: { xs: '100%', md: 'calc(100% - 320px)' },
         }}
       >
@@ -246,7 +245,6 @@ const ExerciseApp = () => {
         <Box
           sx={{
             flexGrow: 1,
-            overflow: 'auto',
             p: 2,
           }}
         >
