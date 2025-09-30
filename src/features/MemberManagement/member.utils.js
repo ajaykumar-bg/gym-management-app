@@ -205,3 +205,145 @@ export const filterMembers = (
     return matchesSearch && matchesStatus && matchesMembership;
   });
 };
+
+/**
+ * Filter members based on user role and permissions
+ * @param {Array} members - Array of member objects
+ * @param {Object} user - Current user object
+ * @returns {Array} - Filtered members array
+ */
+export const filterMembersByRole = (members, user) => {
+  if (!user) return [];
+
+  if (user.role === 'admin') {
+    return members; // Admin can see all members
+  } else if (user.role === 'trainer') {
+    // Trainer can only see their assigned members
+    return members.filter((member) => member.trainerId === user.id);
+  } else {
+    // Members can only see their own profile
+    return members.filter((member) => member.id === user.id);
+  }
+};
+
+/**
+ * Validate member form data
+ * @param {Object} memberData - Member data to validate
+ * @returns {boolean} - True if valid
+ */
+export const validateMemberData = (memberData) => {
+  if (!memberData.firstName?.trim()) return false;
+  if (!memberData.lastName?.trim()) return false;
+  if (!memberData.email?.trim()) return false;
+  if (!memberData.phone?.trim()) return false;
+  if (!memberData.membershipInfo?.type) return false;
+  if (!memberData.membershipInfo?.startDate) return false;
+  return true;
+};
+
+/**
+ * Generate unique member ID
+ * @returns {string} - Unique member ID
+ */
+export const generateMemberId = () => {
+  return `MEM${Date.now().toString().slice(-6)}`;
+};
+
+/**
+ * Check if membership is expired
+ * @param {string} endDate - Membership end date
+ * @returns {boolean} - True if expired
+ */
+export const isMembershipExpired = (endDate) => {
+  if (!endDate) return false;
+
+  const today = new Date();
+  const expiryDate = new Date(endDate);
+
+  return today > expiryDate;
+};
+
+/**
+ * Get membership status with additional info
+ * @param {Object} member - Member object
+ * @returns {Object} - Status information
+ */
+export const getMembershipStatusInfo = (member) => {
+  const endDate = member.membershipInfo?.endDate;
+  const status = member.membershipInfo?.status;
+
+  return {
+    status,
+    isExpired: isMembershipExpired(endDate),
+    isExpiringSoon: isMembershipExpiringSoon(endDate),
+    daysUntilExpiry: endDate
+      ? Math.ceil((new Date(endDate) - new Date()) / (1000 * 60 * 60 * 24))
+      : null,
+  };
+};
+
+/**
+ * Search members by multiple fields
+ * @param {Array} members - Array of member objects
+ * @param {string} searchTerm - Search term
+ * @returns {Array} - Filtered members array
+ */
+export const searchMembers = (members, searchTerm) => {
+  if (!searchTerm) return members;
+
+  const term = searchTerm.toLowerCase();
+
+  return members.filter(
+    (member) =>
+      `${member.firstName} ${member.lastName}`.toLowerCase().includes(term) ||
+      member.email.toLowerCase().includes(term) ||
+      member.phone.toLowerCase().includes(term) ||
+      member.id.toLowerCase().includes(term)
+  );
+};
+
+/**
+ * Sort members by specified field
+ * @param {Array} members - Array of member objects
+ * @param {string} field - Field to sort by
+ * @param {string} direction - Sort direction ('asc' or 'desc')
+ * @returns {Array} - Sorted members array
+ */
+export const sortMembers = (members, field, direction = 'asc') => {
+  return [...members].sort((a, b) => {
+    let aVal, bVal;
+
+    switch (field) {
+      case 'name':
+        aVal = `${a.firstName} ${a.lastName}`.toLowerCase();
+        bVal = `${b.firstName} ${b.lastName}`.toLowerCase();
+        break;
+      case 'joinDate':
+        aVal = new Date(a.joinDate || '1900-01-01');
+        bVal = new Date(b.joinDate || '1900-01-01');
+        break;
+      case 'membershipType':
+        aVal = a.membershipInfo?.type || '';
+        bVal = b.membershipInfo?.type || '';
+        break;
+      case 'status':
+        aVal = a.membershipInfo?.status || '';
+        bVal = b.membershipInfo?.status || '';
+        break;
+      default:
+        aVal = a[field] || '';
+        bVal = b[field] || '';
+    }
+
+    if (typeof aVal === 'string') {
+      aVal = aVal.toLowerCase();
+      bVal = bVal.toLowerCase();
+    }
+
+    if (direction === 'asc') {
+      return aVal > bVal ? 1 : -1;
+    } else {
+      return aVal < bVal ? 1 : -1;
+    }
+  });
+};

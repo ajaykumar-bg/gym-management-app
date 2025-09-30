@@ -1,161 +1,73 @@
-import React, { useState } from 'react';
-import { Box, Snackbar, Alert, Typography } from '@mui/material';
+import React from 'react';
+import { Box } from '@mui/material';
 import { useUser } from '../../context/UserContext';
-import MemberList from './components/MemberList';
-import MemberProfile from './components/MemberProfile';
-import MemberForm from './components/MemberForm';
-import { MOCK_MEMBERS } from './member.constants';
+import { MemberProvider, useMember } from './context';
+import {
+  MemberStats,
+  MemberViewRouter,
+  PermissionGuard,
+  NotificationSnackbar,
+} from './components';
 
-const MemberManagement = () => {
+// Member Management Content Component (wrapped by provider)
+const MemberManagementContent = () => {
   const { user, permissions } = useUser();
-  const [members, setMembers] = useState(MOCK_MEMBERS);
-  const [selectedMember, setSelectedMember] = useState(null);
-  const [viewMode, setViewMode] = useState('list'); // 'list', 'profile', 'edit', 'add'
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    message: '',
-    severity: 'success',
-  });
+  const {
+    // State
+    selectedMember,
+    viewMode,
+    snackbar,
+    memberStats,
 
-  // Check permissions
-  const canManageMembers = permissions.canManageMembers;
-  const isAdmin = user.role === 'admin';
-  const isTrainer = user.role === 'trainer';
+    // Actions
+    viewMember,
+    editMember,
+    addMember,
+    backToList,
+    saveMember,
+    deleteMember,
+    hideSnackbar,
 
-  const showSnackbar = (message, severity = 'success') => {
-    setSnackbar({ open: true, message, severity });
-  };
+    // Utility functions
+    getFilteredMembers,
+  } = useMember();
 
-  const handleCloseSnackbar = () => {
-    setSnackbar({ ...snackbar, open: false });
-  };
-
-  const handleViewMember = (member) => {
-    setSelectedMember(member);
-    setViewMode('profile');
-  };
-
-  const handleEditMember = (member) => {
-    if (!canManageMembers) {
-      showSnackbar('You do not have permission to edit members', 'error');
-      return;
-    }
-    setSelectedMember(member);
-    setViewMode('edit');
-  };
-
-  const handleAddMember = () => {
-    if (!canManageMembers) {
-      showSnackbar('You do not have permission to add members', 'error');
-      return;
-    }
-    setSelectedMember(null);
-    setViewMode('add');
-  };
-
-  const handleDeleteMember = (memberId) => {
-    if (!isAdmin) {
-      showSnackbar('Only administrators can delete members', 'error');
-      return;
-    }
-
-    if (window.confirm('Are you sure you want to delete this member?')) {
-      setMembers(members.filter((m) => m.id !== memberId));
-      showSnackbar('Member deleted successfully', 'success');
-    }
-  };
-
-  const handleBackToList = () => {
-    setSelectedMember(null);
-    setViewMode('list');
-  };
-
-  // Filter members based on role
-  const getFilteredMembers = () => {
-    if (isAdmin) {
-      return members; // Admin can see all members
-    } else if (isTrainer) {
-      // Trainer can only see their assigned members
-      return members.filter((member) => member.trainerId === user.id);
-    } else {
-      // Members can only see their own profile (handled differently in member portal)
-      return members.filter((member) => member.id === user.id);
-    }
-  };
-
-  const filteredMembers = getFilteredMembers();
-
-  if (!permissions.canViewDashboard) {
-    return (
-      <Box sx={{ p: 3, textAlign: 'center' }}>
-        <Typography variant='h6' color='error'>
-          Access Denied
-        </Typography>
-        <Typography variant='body2' color='text.secondary'>
-          You do not have permission to access member management.
-        </Typography>
-      </Box>
-    );
-  }
+  const filteredMembers = getFilteredMembers(user);
 
   return (
-    <Box sx={{ p: 3 }}>
-      {viewMode === 'list' && (
-        <MemberList
-          members={filteredMembers}
-          onViewMember={handleViewMember}
-          onEditMember={handleEditMember}
-          onDeleteMember={handleDeleteMember}
-          onAddMember={handleAddMember}
-        />
-      )}
+    <PermissionGuard permissions={permissions}>
+      <Box sx={{ p: 3 }}>
+        {/* Member Statistics - Show only for list view */}
+        {viewMode === 'list' && <MemberStats stats={memberStats} />}
 
-      {viewMode === 'profile' && selectedMember && (
-        <MemberProfile
-          member={selectedMember}
-          onEdit={handleEditMember}
-          onClose={handleBackToList}
+        {/* View Router */}
+        <MemberViewRouter
+          viewMode={viewMode}
+          selectedMember={selectedMember}
+          filteredMembers={filteredMembers}
+          user={user}
+          permissions={permissions}
+          onViewMember={viewMember}
+          onEditMember={editMember}
+          onDeleteMember={deleteMember}
+          onAddMember={addMember}
+          onBackToList={backToList}
+          onSaveMember={saveMember}
         />
-      )}
 
-      {/* Member Form for 'edit' and 'add' modes */}
-      {(viewMode === 'edit' || viewMode === 'add') && (
-        <MemberForm
-          open={true}
-          onClose={handleBackToList}
-          member={viewMode === 'edit' ? selectedMember : null}
-          onSave={(memberData) => {
-            if (viewMode === 'edit') {
-              // Update existing member
-              setMembers(
-                members.map((m) => (m.id === memberData.id ? memberData : m))
-              );
-              showSnackbar('Member updated successfully');
-            } else {
-              // Add new member
-              setMembers([...members, memberData]);
-              showSnackbar('Member added successfully');
-            }
-            handleBackToList();
-          }}
-        />
-      )}
+        {/* Notification Snackbar */}
+        <NotificationSnackbar snackbar={snackbar} onClose={hideSnackbar} />
+      </Box>
+    </PermissionGuard>
+  );
+};
 
-      <Snackbar
-        open={snackbar.open}
-        autoHideDuration={6000}
-        onClose={handleCloseSnackbar}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-      >
-        <Alert
-          onClose={handleCloseSnackbar}
-          severity={snackbar.severity}
-          sx={{ width: '100%' }}
-        >
-          {snackbar.message}
-        </Alert>
-      </Snackbar>
-    </Box>
+// Main Member Management Component with Provider
+const MemberManagement = () => {
+  return (
+    <MemberProvider>
+      <MemberManagementContent />
+    </MemberProvider>
   );
 };
 
