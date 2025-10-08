@@ -16,6 +16,10 @@ export const permissionLabels = {
   canViewAllReports: 'View All Reports',
   canViewAnalytics: 'View Analytics',
   canViewFinancials: 'View Financials',
+  canViewWorkouts: 'View Workouts',
+  canManageWorkouts: 'Manage Workouts',
+  canViewExercises: 'View Exercises',
+  canCreateWorkoutTemplates: 'Create Workout Templates',
 };
 
 export const adminOnlyPermissions = [
@@ -62,6 +66,7 @@ export const roleAccessDetails = [
       'System & role configuration',
       'Complete reports & analytics',
       'Equipment & facility management',
+      'Workout template management',
     ],
   },
   {
@@ -78,6 +83,8 @@ export const roleAccessDetails = [
       'Equipment status tracking',
       'Training analytics & progress',
       'Member fitness assessments',
+      'Create member workout plans',
+      'Workout template creation',
     ],
   },
   {
@@ -93,6 +100,8 @@ export const roleAccessDetails = [
       'Personal workout tracking',
       'Membership & payment history',
       'Equipment availability check',
+      'Create personal workouts',
+      'Track workout progress',
     ],
   },
 ];

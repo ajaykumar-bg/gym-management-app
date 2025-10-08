@@ -10,6 +10,7 @@ import {
   CardMembership as CardMembershipIcon,
   Restaurant as RestaurantIcon,
   LocalDining as LocalDiningIcon,
+  DirectionsRun as WorkoutIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -49,6 +50,11 @@ const BUSINESS_MODULE_ITEMS = [
     path: '/diet-foods',
     icon: <LocalDiningIcon />,
   },
+  {
+    label: 'Workout Management',
+    path: '/workouts',
+    icon: <WorkoutIcon />,
+  },
 ];
 
 // Trainer-specific additional items
@@ -71,6 +77,11 @@ const MEMBER_NAVIGATION_ITEMS = [
     label: 'Trainers',
     path: '/trainers',
     icon: <FitnessCenterIcon />,
+  },
+  {
+    label: 'My Workouts',
+    path: '/workouts',
+    icon: <WorkoutIcon />,
   },
 ];
 

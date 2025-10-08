@@ -39,6 +39,10 @@ export const UserProvider = ({ children }) => {
       canViewAllReports: true,
       canViewAnalytics: true,
       canViewFinancials: true,
+      canViewWorkouts: true,
+      canManageWorkouts: true,
+      canViewExercises: true,
+      canCreateWorkoutTemplates: true,
     },
     trainer: {
       canViewDashboard: true,
@@ -58,6 +62,10 @@ export const UserProvider = ({ children }) => {
       canViewAllReports: false,
       canViewAnalytics: true,
       canViewFinancials: false,
+      canViewWorkouts: true,
+      canManageWorkouts: true,
+      canViewExercises: true,
+      canCreateWorkoutTemplates: true,
     },
     member: {
       canViewDashboard: true,
@@ -77,6 +85,10 @@ export const UserProvider = ({ children }) => {
       canViewAllReports: false,
       canViewAnalytics: false,
       canViewFinancials: false,
+      canViewWorkouts: true,
+      canManageWorkouts: true,
+      canViewExercises: true,
+      canCreateWorkoutTemplates: false,
     },
   };
 
