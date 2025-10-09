@@ -3,7 +3,7 @@
  * Dialog for viewing detailed information about a workout template
  */
 
-import React, { memo } from 'react';
+import React, { memo, useMemo } from 'react';
 import {
   Box,
   Typography,
@@ -14,24 +14,25 @@ import {
   DialogContent,
   DialogActions,
   Button,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
   Divider,
+  List,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from '@mui/material';
 import {
   Schedule as DurationIcon,
   FitnessCenter as ExerciseIcon,
   Close as CloseIcon,
+  ExpandMore as ExpandMoreIcon,
 } from '@mui/icons-material';
+import { getAllExercises } from '../workout.utils';
+import ExerciseInfo from './ExerciseInfo';
 
 const TemplateDetailsDialog = memo(({ open, template, onClose }) => {
-  if (!template) return null;
+  const exerciseDatabase = useMemo(() => getAllExercises(), []);
 
+  if (!template) return null;
   const getTotalExercises = (exercises) => {
     return (exercises || []).reduce(
       (total, req) => total + (req.count || 0),
@@ -50,6 +51,43 @@ const TemplateDetailsDialog = memo(({ open, template, onClose }) => {
       default:
         return 'default';
     }
+  };
+
+  // Function to find exercises matching the template requirements
+  const findMatchingExercises = (exerciseReq) => {
+    if (!exerciseDatabase || !Array.isArray(exerciseDatabase)) {
+      return [];
+    }
+
+    const isCompound = exerciseReq.category === 'compound';
+    const targetMuscles = exerciseReq.muscleGroups || [];
+
+    return exerciseDatabase
+      .filter((exercise) => {
+        // Check if exercise matches the compound/isolation requirement
+        const exerciseIsCompound = exercise.mechanic === 'compound';
+        if (isCompound !== exerciseIsCompound) return false;
+
+        // Check if exercise targets the required muscle groups
+        const exerciseMuscles = [
+          ...(exercise.primaryMuscles || []),
+          ...(exercise.secondaryMuscles || []),
+        ].map((muscle) => muscle.toLowerCase());
+
+        return targetMuscles.some((targetMuscle) =>
+          exerciseMuscles.includes(targetMuscle.toLowerCase())
+        );
+      })
+      .slice(0, exerciseReq.count + 2); // Get a few extra options
+  };
+
+  const getExerciseTypeLabel = (exerciseReq) => {
+    const category =
+      exerciseReq.category === 'compound' ? 'Compound' : 'Isolation';
+    const muscles = (exerciseReq.muscleGroups || [])
+      .map((muscle) => muscle.charAt(0).toUpperCase() + muscle.slice(1))
+      .join(', ');
+    return `${category} - ${muscles}`;
   };
 
   return (
@@ -126,55 +164,107 @@ const TemplateDetailsDialog = memo(({ open, template, onClose }) => {
           Exercise Breakdown:
         </Typography>
 
-        <TableContainer component={Paper} variant='outlined'>
-          <Table size='small'>
-            <TableHead>
-              <TableRow>
-                <TableCell>Exercise Type</TableCell>
-                <TableCell align='center'>Count</TableCell>
-                <TableCell>Target Muscles</TableCell>
-                <TableCell>Notes</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {(template.exercises || []).map((exercise, index) => (
-                <TableRow key={index}>
-                  <TableCell>
-                    <Typography variant='body2' fontWeight='medium'>
-                      {exercise.type || 'Unknown'}
+        <Box sx={{ mb: 3 }}>
+          {(template.exercises || []).map((exerciseReq, index) => {
+            const matchingExercises = findMatchingExercises(exerciseReq);
+            const typeLabel = getExerciseTypeLabel(exerciseReq);
+            const priorityColor =
+              exerciseReq.priority === 'high'
+                ? 'error'
+                : exerciseReq.priority === 'medium'
+                ? 'warning'
+                : 'success';
+
+            return (
+              <Accordion key={index} sx={{ mb: 1 }}>
+                <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                  <Box
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 2,
+                      width: '100%',
+                    }}
+                  >
+                    <Typography
+                      variant='body1'
+                      fontWeight='medium'
+                      sx={{ flex: 1 }}
+                    >
+                      {typeLabel}
                     </Typography>
-                  </TableCell>
-                  <TableCell align='center'>
                     <Chip
-                      label={exercise.count || 0}
+                      label={`${exerciseReq.count} exercises`}
                       size='small'
                       color='primary'
                       variant='outlined'
                     />
-                  </TableCell>
-                  <TableCell>
-                    <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-                      {(exercise.muscles || []).map((muscle, muscleIndex) => (
-                        <Chip
-                          key={muscleIndex}
-                          label={muscle}
-                          size='small'
-                          variant='outlined'
-                          sx={{ fontSize: '0.7rem' }}
-                        />
-                      ))}
-                    </Box>
-                  </TableCell>
-                  <TableCell>
-                    <Typography variant='body2' color='text.secondary'>
-                      {exercise.notes || 'Standard execution'}
+                    <Chip
+                      label={exerciseReq.priority || 'medium'}
+                      size='small'
+                      color={priorityColor}
+                      variant='outlined'
+                    />
+                  </Box>
+                </AccordionSummary>
+                <AccordionDetails>
+                  <Box>
+                    <Typography
+                      variant='body2'
+                      color='text.secondary'
+                      sx={{ mb: 2 }}
+                    >
+                      Recommended exercises for this category:
                     </Typography>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+
+                    {matchingExercises.length > 0 ? (
+                      <List dense>
+                        {matchingExercises
+                          .slice(0, exerciseReq.count + 2)
+                          .map((exercise, exerciseIndex) => (
+                            <ExerciseInfo
+                              key={exerciseIndex}
+                              exercise={exercise}
+                              getDifficultyColor={getDifficultyColor}
+                            />
+                          ))}
+                      </List>
+                    ) : (
+                      <Typography
+                        variant='body2'
+                        color='text.secondary'
+                        sx={{ fontStyle: 'italic' }}
+                      >
+                        No matching exercises found in database
+                      </Typography>
+                    )}
+
+                    <Box
+                      sx={{
+                        mt: 2,
+                        p: 2,
+                        // bgcolor: 'grey.50',
+                        borderRadius: 1,
+                      }}
+                    >
+                      <Typography variant='caption' color='text.secondary'>
+                        <strong>Training Tip:</strong> Choose{' '}
+                        {exerciseReq.count} exercise
+                        {exerciseReq.count > 1 ? 's' : ''} from the list above.
+                        {exerciseReq.priority === 'high' &&
+                          ' These are foundational exercises - focus on proper form and progressive overload.'}
+                        {exerciseReq.priority === 'medium' &&
+                          ' These exercises complement your main lifts - maintain good form and mind-muscle connection.'}
+                        {exerciseReq.priority === 'low' &&
+                          ' These are finishing exercises - focus on higher reps and muscle fatigue.'}
+                      </Typography>
+                    </Box>
+                  </Box>
+                </AccordionDetails>
+              </Accordion>
+            );
+          })}
+        </Box>
 
         {template.notes && (
           <Box sx={{ mt: 3 }}>
