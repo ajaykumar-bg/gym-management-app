@@ -366,73 +366,86 @@ const ExerciseSearchDialog = memo(({ open, onClose, onAddExercise }) => {
             onCancel={handleCancel}
           />
         ) : (
-          <Box sx={{ flex: 1, overflow: 'hidden' }}>
-            <Typography variant='body2' color='text.secondary' sx={{ mb: 1 }}>
+          <Box
+            sx={{
+              flex: 1,
+              display: 'flex',
+              flexDirection: 'column',
+              minHeight: 0,
+            }}
+          >
+            <Typography
+              variant='body2'
+              color='text.secondary'
+              sx={{ mb: 1, flexShrink: 0 }}
+            >
               {exercises.length} exercises found
             </Typography>
 
-            <List sx={{ flex: 1, overflow: 'auto' }}>
-              {exercises.length === 0 ? (
-                <ListItem>
-                  <ListItemText
-                    primary='No exercises found'
-                    secondary='Try adjusting your search terms or filters'
-                  />
-                </ListItem>
-              ) : (
-                exercises.map((exercise) => (
-                  <ListItem
-                    key={exercise.name}
-                    divider
-                    sx={{ cursor: 'pointer' }}
-                    onClick={() => handleSelectExercise(exercise)}
-                  >
+            <Box sx={{ flex: 1, minHeight: 0, overflow: 'auto' }}>
+              <List sx={{ py: 0 }}>
+                {exercises.length === 0 ? (
+                  <ListItem>
                     <ListItemText
-                      primary={exercise.name}
-                      secondary={
-                        <Box component='div'>
-                          <Box
-                            component='span'
-                            sx={{
-                              color: 'text.secondary',
-                              fontSize: '0.875rem',
-                            }}
-                          >
-                            {exercise.primaryMuscles.join(', ')}
-                          </Box>
-                          <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5 }}>
-                            <Chip
-                              label={exercise.equipment}
-                              size='small'
-                              variant='outlined'
-                            />
-                            <Chip
-                              label={exercise.level}
-                              size='small'
-                              color={
-                                exercise.level === 'beginner'
-                                  ? 'success'
-                                  : exercise.level === 'intermediate'
-                                  ? 'warning'
-                                  : 'error'
-                              }
-                            />
-                          </Box>
-                        </Box>
-                      }
+                      primary='No exercises found'
+                      secondary='Try adjusting your search terms or filters'
                     />
-                    <ListItemSecondaryAction>
-                      <IconButton
-                        edge='end'
-                        onClick={() => handleSelectExercise(exercise)}
-                      >
-                        <AddIcon />
-                      </IconButton>
-                    </ListItemSecondaryAction>
                   </ListItem>
-                ))
-              )}
-            </List>
+                ) : (
+                  exercises.map((exercise) => (
+                    <ListItem
+                      key={exercise.name}
+                      divider
+                      sx={{ cursor: 'pointer' }}
+                      onClick={() => handleSelectExercise(exercise)}
+                    >
+                      <ListItemText
+                        primary={exercise.name}
+                        secondary={
+                          <Box component='div'>
+                            <Box
+                              component='span'
+                              sx={{
+                                color: 'text.secondary',
+                                fontSize: '0.875rem',
+                              }}
+                            >
+                              {exercise.primaryMuscles.join(', ')}
+                            </Box>
+                            <Box sx={{ display: 'flex', gap: 0.5, mt: 0.5 }}>
+                              <Chip
+                                label={exercise.equipment}
+                                size='small'
+                                variant='outlined'
+                              />
+                              <Chip
+                                label={exercise.level}
+                                size='small'
+                                color={
+                                  exercise.level === 'beginner'
+                                    ? 'success'
+                                    : exercise.level === 'intermediate'
+                                    ? 'warning'
+                                    : 'error'
+                                }
+                              />
+                            </Box>
+                          </Box>
+                        }
+                      />
+                      <ListItemSecondaryAction>
+                        <IconButton
+                          edge='end'
+                          onClick={() => handleSelectExercise(exercise)}
+                        >
+                          <AddIcon />
+                        </IconButton>
+                      </ListItemSecondaryAction>
+                    </ListItem>
+                  ))
+                )}
+              </List>
+            </Box>
           </Box>
         )}
       </DialogContent>
