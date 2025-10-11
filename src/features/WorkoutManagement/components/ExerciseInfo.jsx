@@ -47,7 +47,7 @@ const ExerciseInfo = memo(({ exercise, getDifficultyColor }) => {
                 {exercise.name}
               </Typography>
               <Chip
-                label={exercise.equipment}
+                label={exercise.equipment || '----'}
                 size='small'
                 variant='outlined'
                 sx={{ fontSize: '0.7rem' }}

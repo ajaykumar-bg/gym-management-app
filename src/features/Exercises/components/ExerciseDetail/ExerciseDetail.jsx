@@ -93,6 +93,7 @@ function ExerciseDetail({
       open={open}
       onClose={onClose}
       sx={{
+        zIndex: (theme) => theme.zIndex.modal + 100, // Higher than dialog z-index
         '& .MuiDrawer-paper': {
           width: { xs: '100%', sm: 600, md: 700 },
           boxSizing: 'border-box',
