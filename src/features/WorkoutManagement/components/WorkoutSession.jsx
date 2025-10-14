@@ -463,6 +463,10 @@ const WorkoutSession = memo(() => {
     );
   }
 
+  // Debug: Log the current workout structure
+  console.log('Current Workout:', currentWorkout);
+  console.log('Exercises:', currentWorkout.exercises);
+
   const handleToggleExercise = (exerciseId) => {
     setExpandedExercise((prev) => (prev === exerciseId ? null : exerciseId));
   };
@@ -495,16 +499,28 @@ const WorkoutSession = memo(() => {
           Exercises
         </Typography>
 
-        {currentWorkout.exercises.map((exercise) => (
-          <ExerciseAccordion
-            key={exercise.id}
-            exercise={exercise}
-            expanded={expandedExercise === exercise.id}
-            onToggle={() => handleToggleExercise(exercise.id)}
-            onCompleteSet={completeSetInWorkout}
-            onFailSet={failSetInWorkout}
-          />
-        ))}
+        {currentWorkout.exercises && currentWorkout.exercises.length > 0 ? (
+          currentWorkout.exercises.map((exercise) => (
+            <ExerciseAccordion
+              key={exercise.id}
+              exercise={exercise}
+              expanded={expandedExercise === exercise.id}
+              onToggle={() => handleToggleExercise(exercise.id)}
+              onCompleteSet={completeSetInWorkout}
+              onFailSet={failSetInWorkout}
+            />
+          ))
+        ) : (
+          <Box sx={{ textAlign: 'center', py: 4 }}>
+            <Typography variant='body1' color='text.secondary' gutterBottom>
+              No exercises added to this workout yet.
+            </Typography>
+            <Typography variant='body2' color='text.secondary'>
+              Add exercises to your workout to get started with your training
+              session.
+            </Typography>
+          </Box>
+        )}
       </Box>
     </Box>
   );
