@@ -43,6 +43,10 @@ const WorkoutManagement = React.lazy(() =>
   import('./features/WorkoutManagement')
 );
 
+const AttendanceTracking = React.lazy(() =>
+  import('./features/AttendanceTracking')
+);
+
 const Settings = React.lazy(() => import('./features/Settings'));
 
 // Loading fallback component
@@ -102,6 +106,10 @@ function AppRoutes() {
                         element={<DietFoodManagement />}
                       />
                       <Route path='/workouts' element={<WorkoutManagement />} />
+                      <Route
+                        path='/attendance'
+                        element={<AttendanceTracking />}
+                      />
                       <Route path='*' element={<Navigate to='/' replace />} />
                     </Routes>
                   </Suspense>

@@ -20,7 +20,7 @@ The EquipmentManagement component has been successfully refactored to improve ma
 
 - **Updated**: `src/features/EquipmentManagement/equipment.utils.js`
 - **Added Functions**:
-  - `filterEquipment()` - Multi-criteria filtering
+  - `filterEquipments()` - Multi-criteria filtering
   - `validateEquipmentData()` - Form validation
   - `generateEquipmentId()` - Unique ID generation
   - Enhanced existing utility functions

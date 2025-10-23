@@ -11,6 +11,7 @@ import {
   Restaurant as RestaurantIcon,
   LocalDining as LocalDiningIcon,
   DirectionsRun as WorkoutIcon,
+  AccessTime as AttendanceIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -39,6 +40,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Membership & Packages',
     path: '/membership-packages',
     icon: <CardMembershipIcon />,
+  },
+  {
+    label: 'Attendance Tracking',
+    path: '/attendance',
+    icon: <AttendanceIcon />,
   },
   {
     label: 'Diet Plans',
@@ -77,6 +83,11 @@ const MEMBER_NAVIGATION_ITEMS = [
     label: 'Trainers',
     path: '/trainers',
     icon: <FitnessCenterIcon />,
+  },
+  {
+    label: 'My Attendance',
+    path: '/attendance',
+    icon: <AttendanceIcon />,
   },
   {
     label: 'My Workouts',
