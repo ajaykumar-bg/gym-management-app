@@ -185,7 +185,10 @@ export const filterByTimePeriod = (
   if (!startDate || !endDate) return records;
 
   return records.filter((record) => {
-    const recordDate = parseISO(record.checkInTime);
+    const recordDate =
+      typeof record.checkInTime === 'string'
+        ? parseISO(record.checkInTime)
+        : record.checkInTime;
     return recordDate >= startDate && recordDate <= endDate;
   });
 };

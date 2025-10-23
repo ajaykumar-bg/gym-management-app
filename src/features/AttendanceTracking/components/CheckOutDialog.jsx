@@ -89,7 +89,7 @@ const CheckOutDialog = () => {
           <DialogContent>
             <Box sx={{ pt: 1 }}>
               {/* Member Info */}
-              <Box sx={{ mb: 3, p: 2, bgcolor: 'grey.50', borderRadius: 1 }}>
+              <Box sx={{ mb: 3, p: 2, borderRadius: 1 }}>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
                   <Avatar sx={{ mr: 2, bgcolor: 'primary.light' }}>
                     <PersonIcon />
