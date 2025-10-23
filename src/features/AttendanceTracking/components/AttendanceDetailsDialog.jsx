@@ -130,7 +130,7 @@ const AttendanceDetailsDialog = () => {
           {/* Attendance Information */}
           <Grid container spacing={3}>
             {infoItems.map((item, index) => (
-              <Grid item xs={12} sm={6} key={index}>
+              <Grid size={{ xs: 12, sm: 6 }} key={index}>
                 <Box
                   sx={{
                     display: 'flex',
@@ -188,7 +188,7 @@ const AttendanceDetailsDialog = () => {
               Session Summary
             </Typography>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <Paper sx={{ p: 2, textAlign: 'center' }}>
                   <Typography variant='h4' color='primary.main'>
                     {formatTime(selectedRecord.checkInTime)}
@@ -198,7 +198,7 @@ const AttendanceDetailsDialog = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <Paper sx={{ p: 2, textAlign: 'center' }}>
                   <Typography
                     variant='h4'
@@ -217,7 +217,7 @@ const AttendanceDetailsDialog = () => {
                   </Typography>
                 </Paper>
               </Grid>
-              <Grid item xs={12} sm={4}>
+              <Grid size={{ xs: 12, sm: 4 }}>
                 <Paper sx={{ p: 2, textAlign: 'center' }}>
                   <Typography variant='h4' color='info.main'>
                     {formatDuration(selectedRecord.duration)}

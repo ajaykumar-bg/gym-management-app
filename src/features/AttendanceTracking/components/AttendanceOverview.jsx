@@ -82,7 +82,7 @@ const AttendanceOverview = () => {
       {/* Statistics Cards */}
       <Grid container spacing={3} sx={{ mb: 4 }}>
         {statsCards.map((card, index) => (
-          <Grid item xs={12} sm={6} md={3} key={index}>
+          <Grid size={{ xs: 12, sm: 6, md: 3 }} key={index}>
             <Card sx={{ height: '100%' }}>
               <CardContent>
                 <Box sx={{ display: 'flex', alignItems: 'center', mb: 2 }}>
@@ -122,7 +122,7 @@ const AttendanceOverview = () => {
 
             <Grid container spacing={2}>
               {checkedInMembers.map((record) => (
-                <Grid item xs={12} sm={6} md={4} key={record.id}>
+                <Grid size={{ xs: 12, sm: 6, md: 4 }} key={record.id}>
                   <Card variant='outlined'>
                     <CardContent sx={{ p: 2, '&:last-child': { pb: 2 } }}>
                       <Box
@@ -186,7 +186,7 @@ const AttendanceOverview = () => {
           </Typography>
 
           <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box>
                 <Typography variant='body2' color='text.secondary' gutterBottom>
                   Session Status
@@ -208,7 +208,7 @@ const AttendanceOverview = () => {
               </Box>
             </Grid>
 
-            <Grid item xs={12} md={6}>
+            <Grid size={{ xs: 12, md: 6 }}>
               <Box>
                 <Typography variant='body2' color='text.secondary' gutterBottom>
                   Total Activity Time

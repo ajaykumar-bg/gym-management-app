@@ -12,6 +12,7 @@ import {
   LocalDining as LocalDiningIcon,
   DirectionsRun as WorkoutIcon,
   AccessTime as AttendanceIcon,
+  Assessment as ReportsIcon,
 } from '@mui/icons-material';
 
 // Base navigation items available to all users
@@ -45,6 +46,11 @@ const BUSINESS_MODULE_ITEMS = [
     label: 'Attendance Tracking',
     path: '/attendance',
     icon: <AttendanceIcon />,
+  },
+  {
+    label: 'Reports & Analytics',
+    path: '/reports',
+    icon: <ReportsIcon />,
   },
   {
     label: 'Diet Plans',

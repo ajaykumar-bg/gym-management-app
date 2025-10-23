@@ -47,6 +47,8 @@ const AttendanceTracking = React.lazy(() =>
   import('./features/AttendanceTracking')
 );
 
+const Reporting = React.lazy(() => import('./features/Reporting'));
+
 const Settings = React.lazy(() => import('./features/Settings'));
 
 // Loading fallback component
@@ -110,6 +112,7 @@ function AppRoutes() {
                         path='/attendance'
                         element={<AttendanceTracking />}
                       />
+                      <Route path='/reports' element={<Reporting />} />
                       <Route path='*' element={<Navigate to='/' replace />} />
                     </Routes>
                   </Suspense>
