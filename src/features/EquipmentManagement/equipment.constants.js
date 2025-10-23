@@ -28,7 +28,7 @@ export const MAINTENANCE_SCHEDULE = {
 };
 
 // Mock Equipment Data
-export const MOCK_EQUIPMENT = [
+export const MOCK_EQUIPMENTS = [
   {
     id: 'EQ001',
     name: 'Life Fitness Treadmill X9i',

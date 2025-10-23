@@ -123,9 +123,9 @@ export const getDaysUntilWarrantyExpiry = (warrantyExpiryDate) => {
  * @param {string} status - Status to filter by
  * @returns {Array} - Filtered equipment array
  */
-export const filterEquipmentByStatus = (equipment, status) => {
-  if (!status || status === 'all') return equipment;
-  return equipment.filter((item) => item.status === status);
+export const filterEquipmentsByStatus = (equipments, status) => {
+  if (!status || status === 'all') return equipments;
+  return equipments.filter((item) => item.status === status);
 };
 
 /**
@@ -134,7 +134,7 @@ export const filterEquipmentByStatus = (equipment, status) => {
  * @param {string} category - Category to filter by
  * @returns {Array} - Filtered equipment array
  */
-export const filterEquipmentByCategory = (equipment, category) => {
+export const filterEquipmentsByCategory = (equipment, category) => {
   if (!category || category === 'all') return equipment;
   return equipment.filter((item) => item.category === category);
 };
@@ -247,15 +247,15 @@ export const getEquipmentStatistics = (equipment) => {
  * @param {Object} filters - Filter criteria
  * @returns {Array} - Filtered equipment array
  */
-export const filterEquipment = (equipment, filters) => {
+export const filterEquipments = (equipment, filters) => {
   let filtered = [...equipment];
 
   if (filters.category && filters.category !== 'all') {
-    filtered = filterEquipmentByCategory(filtered, filters.category);
+    filtered = filterEquipmentsByCategory(filtered, filters.category);
   }
 
   if (filters.status && filters.status !== 'all') {
-    filtered = filterEquipmentByStatus(filtered, filters.status);
+    filtered = filterEquipmentsByStatus(filtered, filters.status);
   }
 
   if (filters.search) {

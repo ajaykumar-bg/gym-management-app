@@ -10,9 +10,9 @@ import React, {
   useMemo,
   useCallback,
 } from 'react';
-import { MOCK_EQUIPMENT } from '../equipment.constants';
+import { MOCK_EQUIPMENTS } from '../equipment.constants';
 import {
-  filterEquipment,
+  filterEquipments,
   sortEquipment,
   validateEquipmentData,
   generateEquipmentId,
@@ -37,7 +37,7 @@ const INITIAL_FORM_DATA = {
 
 export const EquipmentProvider = ({ children }) => {
   // Core state
-  const [equipment, setEquipment] = useState(MOCK_EQUIPMENT);
+  const [equipments, setEquipments] = useState(MOCK_EQUIPMENTS);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
 
   // UI state
@@ -52,22 +52,25 @@ export const EquipmentProvider = ({ children }) => {
 
   // Computed values
   const filteredAndSortedEquipment = useMemo(() => {
-    const filtered = filterEquipment(equipment, {
+    const filtered = filterEquipments(equipments, {
       category: filterCategory,
       status: filterStatus,
     });
     return sortEquipment(filtered, orderBy, order);
-  }, [equipment, filterCategory, filterStatus, orderBy, order]);
+  }, [equipments, filterCategory, filterStatus, orderBy, order]);
 
   const equipmentStats = useMemo(
     () => ({
-      total: equipment.length,
-      operational: equipment.filter((eq) => eq.status === 'operational').length,
-      maintenance: equipment.filter((eq) => eq.status === 'maintenance').length,
-      repair: equipment.filter((eq) => eq.status === 'repair').length,
-      outOfOrder: equipment.filter((eq) => eq.status === 'out-of-order').length,
+      total: equipments.length,
+      operational: equipments.filter((eq) => eq.status === 'operational')
+        .length,
+      maintenance: equipments.filter((eq) => eq.status === 'maintenance')
+        .length,
+      repair: equipments.filter((eq) => eq.status === 'repair').length,
+      outOfOrder: equipments.filter((eq) => eq.status === 'out-of-order')
+        .length,
     }),
-    [equipment]
+    [equipments]
   );
 
   // Form actions
@@ -123,11 +126,11 @@ export const EquipmentProvider = ({ children }) => {
     };
 
     if (selectedEquipment) {
-      setEquipment((prev) =>
+      setEquipments((prev) =>
         prev.map((eq) => (eq.id === selectedEquipment.id ? equipmentData : eq))
       );
     } else {
-      setEquipment((prev) => [...prev, equipmentData]);
+      setEquipments((prev) => [...prev, equipmentData]);
     }
 
     closeForm();
@@ -136,7 +139,7 @@ export const EquipmentProvider = ({ children }) => {
 
   const deleteEquipment = useCallback((equipmentId) => {
     if (window.confirm('Are you sure you want to delete this equipment?')) {
-      setEquipment((prev) => prev.filter((eq) => eq.id !== equipmentId));
+      setEquipments((prev) => prev.filter((eq) => eq.id !== equipmentId));
       return true;
     }
     return false;
